@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html  lang="it">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Elementi di R e Radiant per un primo corso di Statistica</title>
+  <meta name="description" content="Breve manuale per l’apprendimento di alcuni elementi di R e Radiant. Materiale di supporto per il Corso 30001 (Statistica) dell’Università Bocconi.">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Elementi di R e Radiant per un primo corso di Statistica" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Breve manuale per l’apprendimento di alcuni elementi di R e Radiant. Materiale di supporto per il Corso 30001 (Statistica) dell’Università Bocconi." />
+  <meta name="github-repo" content="sergioventurini/manuale_R" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Elementi di R e Radiant per un primo corso di Statistica" />
+  
+  <meta name="twitter:description" content="Breve manuale per l’apprendimento di alcuni elementi di R e Radiant. Materiale di supporto per il Corso 30001 (Statistica) dell’Università Bocconi." />
+  
+
+<meta name="author" content="Sergio Venturini">
+
+
+<meta name="date" content="2018-07-16">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="inferenza-sulla-proporzione-di-successi-in-una-popolazione-bernoulliana.html">
+<link rel="next" href="inferenza-sullindice-di-correlazione-lineare.html">
+<script src="libs/jquery/jquery.min.js"></script>
+<link href="libs/gitbook/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Elementi di <tt>R</tt> e <tt>Radiant</tt></a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Premessa</a></li>
+<li class="chapter" data-level="1" data-path="introduzione.html"><a href="introduzione.html"><i class="fa fa-check"></i><b>1</b> Introduzione</a><ul>
+<li class="chapter" data-level="1.1" data-path="installazione-dei-software.html"><a href="installazione-dei-software.html"><i class="fa fa-check"></i><b>1.1</b> Installazione dei software</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="installazione-dei-software.html"><a href="installazione-dei-software.html#installazione-su-windows"><i class="fa fa-check"></i><b>1.1.1</b> Installazione su Windows</a></li>
+<li class="chapter" data-level="1.1.2" data-path="installazione-dei-software.html"><a href="installazione-dei-software.html#installazione-su-mac"><i class="fa fa-check"></i><b>1.1.2</b> Installazione su Mac</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="lapproccio-al-calcolo-statistico-di-r.html"><a href="lapproccio-al-calcolo-statistico-di-r.html"><i class="fa fa-check"></i><b>1.2</b> L’approccio al calcolo statistico di <tt>R</tt></a></li>
+<li class="chapter" data-level="1.3" data-path="le-principali-strutture-di-dati-disponibili-in-r.html"><a href="le-principali-strutture-di-dati-disponibili-in-r.html"><i class="fa fa-check"></i><b>1.3</b> Le principali strutture di dati disponibili in <tt>R</tt></a><ul>
+<li class="chapter" data-level="1.3.1" data-path="le-principali-strutture-di-dati-disponibili-in-r.html"><a href="le-principali-strutture-di-dati-disponibili-in-r.html#tipi-di-dati-di-base"><i class="fa fa-check"></i><b>1.3.1</b> Tipi di dati di base</a></li>
+<li class="chapter" data-level="1.3.2" data-path="le-principali-strutture-di-dati-disponibili-in-r.html"><a href="le-principali-strutture-di-dati-disponibili-in-r.html#vettori"><i class="fa fa-check"></i><b>1.3.2</b> Vettori</a></li>
+<li class="chapter" data-level="1.3.3" data-path="le-principali-strutture-di-dati-disponibili-in-r.html"><a href="le-principali-strutture-di-dati-disponibili-in-r.html#matrix"><i class="fa fa-check"></i><b>1.3.3</b> Matrici</a></li>
+<li class="chapter" data-level="1.3.4" data-path="le-principali-strutture-di-dati-disponibili-in-r.html"><a href="le-principali-strutture-di-dati-disponibili-in-r.html#factor-vector"><i class="fa fa-check"></i><b>1.3.4</b> Vettori factor</a></li>
+<li class="chapter" data-level="1.3.5" data-path="le-principali-strutture-di-dati-disponibili-in-r.html"><a href="le-principali-strutture-di-dati-disponibili-in-r.html#data-frame"><i class="fa fa-check"></i><b>1.3.5</b> Data frame</a></li>
+<li class="chapter" data-level="1.3.6" data-path="le-principali-strutture-di-dati-disponibili-in-r.html"><a href="le-principali-strutture-di-dati-disponibili-in-r.html#lists"><i class="fa fa-check"></i><b>1.3.6</b> Liste</a></li>
+<li class="chapter" data-level="1.3.7" data-path="le-principali-strutture-di-dati-disponibili-in-r.html"><a href="le-principali-strutture-di-dati-disponibili-in-r.html#funzioni"><i class="fa fa-check"></i><b>1.3.7</b> Funzioni</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="howtogethelp.html"><a href="howtogethelp.html"><i class="fa fa-check"></i><b>1.4</b> Come reperire informazioni sui comandi di <tt>R</tt></a></li>
+<li class="chapter" data-level="1.5" data-path="packages.html"><a href="packages.html"><i class="fa fa-check"></i><b>1.5</b> I pacchetti di <tt>R</tt></a></li>
+<li class="chapter" data-level="1.6" data-path="lapplicazione-rstudio.html"><a href="lapplicazione-rstudio.html"><i class="fa fa-check"></i><b>1.6</b> L’applicazione <tt>RStudio</tt></a></li>
+<li class="chapter" data-level="1.7" data-path="il-pacchetto-radiant.html"><a href="il-pacchetto-radiant.html"><i class="fa fa-check"></i><b>1.7</b> Il pacchetto <tt>Radiant</tt></a></li>
+<li class="chapter" data-level="1.8" data-path="file-loading.html"><a href="file-loading.html"><i class="fa fa-check"></i><b>1.8</b> Come caricare e salvare un file in <tt>R</tt> e <tt>Radiant</tt></a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="statistica-descrittiva.html"><a href="statistica-descrittiva.html"><i class="fa fa-check"></i><b>2</b> Statistica descrittiva</a><ul>
+<li class="chapter" data-level="2.1" data-path="descriptive-R.html"><a href="descriptive-R.html"><i class="fa fa-check"></i><b>2.1</b> Primi esempi con <tt>R</tt></a></li>
+<li class="chapter" data-level="2.2" data-path="analisi-descrittive-univariate.html"><a href="analisi-descrittive-univariate.html"><i class="fa fa-check"></i><b>2.2</b> Analisi descrittive univariate</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="analisi-descrittive-univariate.html"><a href="analisi-descrittive-univariate.html#una-singola-variabile-categorica"><i class="fa fa-check"></i><b>2.2.1</b> Una singola variabile categorica</a></li>
+<li class="chapter" data-level="2.2.2" data-path="analisi-descrittive-univariate.html"><a href="analisi-descrittive-univariate.html#una-singola-variabile-numerica"><i class="fa fa-check"></i><b>2.2.2</b> Una singola variabile numerica</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="analisi-descrittive-bivariate.html"><a href="analisi-descrittive-bivariate.html"><i class="fa fa-check"></i><b>2.3</b> Analisi descrittive bivariate</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="analisi-descrittive-bivariate.html"><a href="analisi-descrittive-bivariate.html#due-variabili-categoriche"><i class="fa fa-check"></i><b>2.3.1</b> Due variabili categoriche</a></li>
+<li class="chapter" data-level="2.3.2" data-path="analisi-descrittive-bivariate.html"><a href="analisi-descrittive-bivariate.html#lincorr"><i class="fa fa-check"></i><b>2.3.2</b> Due variabili numeriche</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="calcolo-delle-probabilita.html"><a href="calcolo-delle-probabilita.html"><i class="fa fa-check"></i><b>3</b> Calcolo delle probabilità</a><ul>
+<li class="chapter" data-level="3.1" data-path="variabili-aleatorie-binomiali.html"><a href="variabili-aleatorie-binomiali.html"><i class="fa fa-check"></i><b>3.1</b> Variabili aleatorie binomiali</a></li>
+<li class="chapter" data-level="3.2" data-path="variabili-aleatorie-normali-o-gaussiane.html"><a href="variabili-aleatorie-normali-o-gaussiane.html"><i class="fa fa-check"></i><b>3.2</b> Variabili aleatorie normali (o gaussiane)</a></li>
+<li class="chapter" data-level="3.3" data-path="altre-variabili-aleatorie.html"><a href="altre-variabili-aleatorie.html"><i class="fa fa-check"></i><b>3.3</b> Altre variabili aleatorie</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="statistica-inferenziale.html"><a href="statistica-inferenziale.html"><i class="fa fa-check"></i><b>4</b> Statistica inferenziale</a><ul>
+<li class="chapter" data-level="4.1" data-path="inferenza-sulla-media-di-una-popolazione-normale.html"><a href="inferenza-sulla-media-di-una-popolazione-normale.html"><i class="fa fa-check"></i><b>4.1</b> Inferenza sulla media di una popolazione normale</a></li>
+<li class="chapter" data-level="4.2" data-path="inferenza-sulla-proporzione-di-successi-in-una-popolazione-bernoulliana.html"><a href="inferenza-sulla-proporzione-di-successi-in-una-popolazione-bernoulliana.html"><i class="fa fa-check"></i><b>4.2</b> Inferenza sulla proporzione di successi in una popolazione bernoulliana</a></li>
+<li class="chapter" data-level="4.3" data-path="inferenza-sul-confronto-tra-le-medie-di-due-popolazioni-normali.html"><a href="inferenza-sul-confronto-tra-le-medie-di-due-popolazioni-normali.html"><i class="fa fa-check"></i><b>4.3</b> Inferenza sul confronto tra le medie di due popolazioni normali</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="inferenza-sul-confronto-tra-le-medie-di-due-popolazioni-normali.html"><a href="inferenza-sul-confronto-tra-le-medie-di-due-popolazioni-normali.html#campioni-indipendenti"><i class="fa fa-check"></i><b>4.3.1</b> Campioni indipendenti</a></li>
+<li class="chapter" data-level="4.3.2" data-path="inferenza-sul-confronto-tra-le-medie-di-due-popolazioni-normali.html"><a href="inferenza-sul-confronto-tra-le-medie-di-due-popolazioni-normali.html#paired-ttest"><i class="fa fa-check"></i><b>4.3.2</b> Campioni dipendenti</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="inferenza-sullindice-di-correlazione-lineare.html"><a href="inferenza-sullindice-di-correlazione-lineare.html"><i class="fa fa-check"></i><b>4.4</b> Inferenza sull’indice di correlazione lineare</a></li>
+<li class="chapter" data-level="4.5" data-path="test-sulla-bonta-di-adattamento-probabilita-completamente-specificate.html"><a href="test-sulla-bonta-di-adattamento-probabilita-completamente-specificate.html"><i class="fa fa-check"></i><b>4.5</b> Test sulla bontà di adattamento (probabilità completamente specificate)</a></li>
+<li class="chapter" data-level="4.6" data-path="test-di-indipendenza-in-una-tabella-a-doppia-entrata.html"><a href="test-di-indipendenza-in-una-tabella-a-doppia-entrata.html"><i class="fa fa-check"></i><b>4.6</b> Test di indipendenza in una tabella a doppia entrata</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="chapter5.html"><a href="chapter5.html"><i class="fa fa-check"></i><b>5</b> Il modello di regressione lineare</a><ul>
+<li class="chapter" data-level="5.1" data-path="simple-reg.html"><a href="simple-reg.html"><i class="fa fa-check"></i><b>5.1</b> Il modello di regressione lineare semplice</a></li>
+<li class="chapter" data-level="5.2" data-path="il-modello-di-regressione-lineare-multipla.html"><a href="il-modello-di-regressione-lineare-multipla.html"><i class="fa fa-check"></i><b>5.2</b> Il modello di regressione lineare multipla</a></li>
+<li class="chapter" data-level="5.3" data-path="come-calcolare-le-previsioni-per-un-modello-di-regressione-lineare.html"><a href="come-calcolare-le-previsioni-per-un-modello-di-regressione-lineare.html"><i class="fa fa-check"></i><b>5.3</b> Come calcolare le previsioni per un modello di regressione lineare</a></li>
+<li class="chapter" data-level="5.4" data-path="le-osservazioni-influenti.html"><a href="le-osservazioni-influenti.html"><i class="fa fa-check"></i><b>5.4</b> Le osservazioni influenti</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="appendix.html"><a href="appendix.html"><i class="fa fa-check"></i><b>6</b> Appendice</a><ul>
+<li class="chapter" data-level="6.1" data-path="alcune-funzioni-di-r-per-la-statistica-descrittiva.html"><a href="alcune-funzioni-di-r-per-la-statistica-descrittiva.html"><i class="fa fa-check"></i><b>6.1</b> Alcune funzioni di <tt>R</tt> per la statistica descrittiva</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="alcune-funzioni-di-r-per-la-statistica-descrittiva.html"><a href="alcune-funzioni-di-r-per-la-statistica-descrittiva.html#analisi-descrittive-univariate-1"><i class="fa fa-check"></i><b>6.1.1</b> Analisi descrittive univariate</a></li>
+<li class="chapter" data-level="6.1.2" data-path="alcune-funzioni-di-r-per-la-statistica-descrittiva.html"><a href="alcune-funzioni-di-r-per-la-statistica-descrittiva.html#analisi-descrittive-bivariate-1"><i class="fa fa-check"></i><b>6.1.2</b> Analisi descrittive bivariate</a></li>
+<li class="chapter" data-level="6.1.3" data-path="alcune-funzioni-di-r-per-la-statistica-descrittiva.html"><a href="alcune-funzioni-di-r-per-la-statistica-descrittiva.html#ulteriori-rappresentazioni-grafiche"><i class="fa fa-check"></i><b>6.1.3</b> Ulteriori rappresentazioni grafiche</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="alcune-funzioni-r-per-la-statistica-inferenziale.html"><a href="alcune-funzioni-r-per-la-statistica-inferenziale.html"><i class="fa fa-check"></i><b>6.2</b> Alcune funzioni <tt>R</tt> per la statistica inferenziale</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="alcune-funzioni-r-per-la-statistica-inferenziale.html"><a href="alcune-funzioni-r-per-la-statistica-inferenziale.html#inferenza-sulla-media-di-una-popolazione-normale-1"><i class="fa fa-check"></i><b>6.2.1</b> Inferenza sulla media di una popolazione normale</a></li>
+<li class="chapter" data-level="6.2.2" data-path="alcune-funzioni-r-per-la-statistica-inferenziale.html"><a href="alcune-funzioni-r-per-la-statistica-inferenziale.html#inferenza-sulla-proporzione-di-successi-in-una-popolazione-bernoulliana-1"><i class="fa fa-check"></i><b>6.2.2</b> Inferenza sulla proporzione di successi in una popolazione bernoulliana</a></li>
+<li class="chapter" data-level="6.2.3" data-path="alcune-funzioni-r-per-la-statistica-inferenziale.html"><a href="alcune-funzioni-r-per-la-statistica-inferenziale.html#inferenza-sul-confronto-tra-le-medie-di-due-popolazioni-normali-1"><i class="fa fa-check"></i><b>6.2.3</b> Inferenza sul confronto tra le medie di due popolazioni normali</a></li>
+<li class="chapter" data-level="6.2.4" data-path="alcune-funzioni-r-per-la-statistica-inferenziale.html"><a href="alcune-funzioni-r-per-la-statistica-inferenziale.html#inferenza-sullindice-di-correlazione-lineare-1"><i class="fa fa-check"></i><b>6.2.4</b> Inferenza sull’indice di correlazione lineare</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="_blank">Pubblicato con bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><strong>Elementi di <tt>R</tt> e <tt>Radiant</tt> per un primo corso di Statistica</strong></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="inferenza-sul-confronto-tra-le-medie-di-due-popolazioni-normali" class="section level2">
+<h2><span class="header-section-number">4.3</span> Inferenza sul confronto tra le medie di due popolazioni normali</h2>
+<p>Il caso della differenza tra due medie è uno di quelli più utilizzati nelle applicazioni e nel corso ne sono state presentate alcune varianti, in particolare:</p>
+<ul>
+<li>confronto tra le medie di due popolazioni normali con varianze note, campioni indipendenti</li>
+<li>confronto tra le medie di due popolazioni normali con varianze non note ma assunte uguali, campioni indipendenti</li>
+<li>confronto tra le medie di due popolazioni normali con varianze non note, campioni dipendenti</li>
+</ul>
+<p>In <tt>Radiant</tt> non sono disponibili strumenti per il primo caso, che quindi non presenteremo qui, mentre per il secondo offre solo la possibilità di confrontare due medie nel caso in cui le varianze siano non note e diverse. Questa situazione non è stata presentata nel corso perché i calcoli richiesti sono impegnativi, ma dal momento che ora sarà <tt>Radiant</tt> a fare i conti, ne discuteremo comunque l’applicazione.</p>
+<div id="campioni-indipendenti" class="section level3">
+<h3><span class="header-section-number">4.3.1</span> Campioni indipendenti</h3>
+<p>Per confrontare le medie di due popolazioni normali con varianze non note in <tt>Radiant</tt> possiamo utilizzare il menu <strong>Basics <span class="math inline">\(\rightarrow\)</span> Compare means</strong>, ma rispetto al caso di una singola media dovremo ora fornire i seguenti input:</p>
+<ul>
+<li>nel box <tt>Select a factor or numeric variable</tt> dobbiamo indicare la variabile (tipicamente di tipo factor) che identifica i gruppi di cui vogliamo confrontare le medie</li>
+<li>nel successivo box <tt>Numeric variable</tt> dobbiamo selezionare la variabile numerica di cui vogliamo confrontare le medie</li>
+<li>nel box <tt>Alternative hypothesis</tt> indichiamo il tipo di ipotesi alternativa che vogliamo testare; i valori possibili sono <tt>Two sided</tt> per il test bilaterale e <tt>Less than</tt> o <tt>Greater than</tt> per i test unilaterali</li>
+<li>lo slider <tt>Confidence level</tt> ci permette di scegliere il livello di confidenza</li>
+<li>il checkbox <tt>Show additional statistics</tt> permette di visualizzare altri risultati (ad esempio gli intervalli di confidenza, che quindi non sono proposti in automatico)</li>
+<li>dobbiamo verificare che sia selezionato il pulsante <tt>independent</tt> nella sezione <tt>Sample type</tt></li>
+<li>dobbiamo infine verificare che sia selezionato il pulsante <tt>t-test</tt> nella sezione <tt>Test type</tt></li>
+</ul>
+<p>Vediamo subito un esempio in cui confrontiamo la media della variabile <tt>ROS</tt> nei due gruppi identificati dalla variabile <tt>MasterPhd</tt>, che indica i CEO che nel 1994 possedevano un titolo di Master o di PhD. Calcoliamo l’intervallo di confidenza al 95% e effettuiamo il test per verificare se le medie delle rispettive popolazioni siano uguali, ovvero</p>
+<span class="math display">\[\begin{equation*}
+H_0: \mu_{(\mbox{MasterPhd}=0)} = \mu_{(\mbox{MasterPhd}=1)} \quad \mbox{vs.} \quad H_1: \mu_{(\mbox{MasterPhd}=0)} \ne \mu_{(\mbox{MasterPhd}=1)}.
+\end{equation*}\]</span>
+<p>I risultati sono riportati in Figura <a href="inferenza-sul-confronto-tra-le-medie-di-due-popolazioni-normali.html#fig:Radiant-twomeans">4.3</a>.</p>
+<div class="figure" style="text-align: center"><span id="fig:Radiant-twomeans"></span>
+<img src="images/Radiant_twomeans.png" alt="Schermata &lt;tt&gt;Radiant&lt;/tt&gt; per il test sul confronto tra due medie (campioni indipendenti)." width="90%" />
+<p class="caption">
+Figura 4.3: Schermata <tt>Radiant</tt> per il test sul confronto tra due medie (campioni indipendenti).
+</p>
+</div>
+<p>La media campionaria nel secondo campione (<tt>MasterPhd = 1</tt>) risulta essere maggiore che nel primo (<tt>MasterPhd = 0</tt>) e i risultati del test suggeriscono che sembrano esserci differenze significative tra le medie del ROS nelle due popolazioni di aziende, quelle il cui CEO non ha un Master o un Phd e quelle in cui il CEO ha un Master o un Phd, ma solo se decidiamo di usare un livello di significatività del 10% (il p-value del test risulta infatti pari a 0.08<a href="#fn38" class="footnoteRef" id="fnref38"><sup>38</sup></a>).</p>
+<p>Il tab <tt>Plot</tt> dello stesso menu consente di visualizzare i risultati in forma grafica attravero diversi tipi di grafici (<tt>Scatter</tt>, <tt>Box</tt>, <tt>Density</tt>, <tt>Bar</tt>). La Figura <a href="inferenza-sul-confronto-tra-le-medie-di-due-popolazioni-normali.html#fig:Radiant-twomeans2">4.4</a> mostra alcuni di questi grafici per l’esempio precedente.</p>
+<div class="figure" style="text-align: center"><span id="fig:Radiant-twomeans2"></span>
+<img src="images/Radiant_twomeans2.png" alt="Schermata &lt;tt&gt;Radiant&lt;/tt&gt; per il test sul confronto tra due medie (campioni indipendenti)." width="90%" />
+<p class="caption">
+Figura 4.4: Schermata <tt>Radiant</tt> per il test sul confronto tra due medie (campioni indipendenti).
+</p>
+</div>
+</div>
+<div id="paired-ttest" class="section level3">
+<h3><span class="header-section-number">4.3.2</span> Campioni dipendenti</h3>
+<p>Un’ulteriore situazione che si può incontrare in pratica è quella in cui le medie da confrontare riguardano la stessa popolazione che però è stata osservata in due momenti o, più in generale, sotto due condizioni diverse. Questo è il caso di campioni dipendenti, poiché in tale contesto il medesimo campione viene osservato due volte. Nello stesso ambito è compreso anche il caso in cui i due campioni, pur essendo diversi, sono stati “appaiati” in modo da approssimare il più precisamente possibile la situazione di un singolo campione osservato ripetutamente. In entrambi i contesti (stesso campione osservato due volte o due campioni appaiati), i campioni devono contenere lo stesso numero di osservazioni.</p>
+<p>Anche questo caso può essere gestito in <tt>Radiant</tt> attraverso il comando <strong>Basics <span class="math inline">\(\rightarrow\)</span> Compare means</strong> descritto nella sezione precedente, salvo che ora dovremo selezionare il checkbox denominato <tt>paired</tt>.</p>
+<p>Vediamo un esempio usando i dati contenuti nel data frame <tt>supermarket</tt> nell’omonimo file. Il data frame contiene il numero di clienti che hanno visitato un campione di 10 negozi di una catena di supermercati in due giorni diversi, in uno solo dei quali era attiva una promozione. In particolare, il data frame contiene le seguenti variabili:</p>
+<ul>
+<li><tt>store</tt>, che indica il negozio a cui l’osservazione si riferisce</li>
+<li><tt>customers</tt>, che indica il numero di clienti che hanno visitato ognuno dei negozi nei due giorni</li>
+<li><tt>program</tt>, che indica invece il giorno in cui la promozione era attiva</li>
+</ul>
+<p>L’obiettivo di questo esempio è valutare se la promozione sia stata efficace in termini di aumento del numero medio di clienti che hanno visitato i negozi. Calcoleremo sia l’intervallo di confidenza al 90% sia il seguente test</p>
+<span class="math display">\[\begin{equation*}
+H_0: \mu_X - \mu_Y \ge 0 \qquad \mbox{vs.} \qquad H_1: \mu_X - \mu_Y &lt; 0,
+\end{equation*}\]</span>
+<p>dove <span class="math inline">\(X\)</span> indica la popolazione di negozi in cui la promozione non è attiva, mentre <span class="math inline">\(Y\)</span> denota la popolazione di negozi in cui la promozione è attiva.</p>
+<p>Dopo aver caricato i dati e scelto il comando <strong>Basics <span class="math inline">\(\rightarrow\)</span> Compare means</strong>:</p>
+<ul>
+<li>nel box <tt>Select a factor or numeric variable</tt> scegliamo <tt>program</tt> come variabile che identifica i due campioni</li>
+<li>nel successivo box <tt>Numeric variable</tt> selezionamo la variabile numerica <tt>customers</tt></li>
+<li>nel box <tt>Alternative hypothesis</tt> indichiamo il tipo di ipotesi alternativa che vogliamo testare; in particolare in questo esempio scegliamo <tt>Less than</tt> perché ci interessa verificare se i dati suggeriscono che la promozione ha permesso di aumentare il numero medio di visite ai negozi</li>
+<li>lo slider <tt>Confidence level</tt> ci permette di indicare il livello di confidenza che ci interessa usare</li>
+<li>il checkbox <tt>Show additional statistics</tt> permette di visualizzare ulteriori risultati</li>
+<li>dobbiamo verificare che sia selezionato il pulsante <tt>paired</tt> nella sezione <tt>Sample type</tt></li>
+<li>dobbiamo infine verificare che sia selezionato il pulsante <tt>t-test</tt> nella sezione <tt>Test type</tt></li>
+</ul>
+<p>La Figura <a href="inferenza-sul-confronto-tra-le-medie-di-due-popolazioni-normali.html#fig:Radiant-paired">4.5</a> mostra i risultati dell’analisi:</p>
+<div class="figure" style="text-align: center"><span id="fig:Radiant-paired"></span>
+<img src="images/Radiant_paired.png" alt="Schermata &lt;tt&gt;Radiant&lt;/tt&gt; per il test sul confronto tra due medie (campioni dipendenti)." width="90%" />
+<p class="caption">
+Figura 4.5: Schermata <tt>Radiant</tt> per il test sul confronto tra due medie (campioni dipendenti).
+</p>
+</div>
+<p>I risultati indicano che, assumendo di usare un livello di significatività del 5%, la promozione sembra avere avuto un effetto significativo sulla media del numero di visite poiché il p-value del test (0.033) è inferiore a 0.05.</p>
+<p>Concludiamo questa sezione evidenziando che in questi risultati l’intervallo di confidenza che viene restituito da <tt>Radiant</tt> è quello unilaterale, che non consideriamo in questo manuale.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="38">
+<li id="fn38"><p>Ricordiamo che <tt>Radiant</tt> include solo il caso di varianza non note e diverse.<a href="inferenza-sul-confronto-tra-le-medie-di-due-popolazioni-normali.html#fnref38">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="inferenza-sulla-proporzione-di-successi-in-una-popolazione-bernoulliana.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="inferenza-sullindice-di-correlazione-lineare.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook/js/app.min.js"></script>
+<script src="libs/gitbook/js/lunr.js"></script>
+<script src="libs/gitbook/js/plugin-search.js"></script>
+<script src="libs/gitbook/js/plugin-sharing.js"></script>
+<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

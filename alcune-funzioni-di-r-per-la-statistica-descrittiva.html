@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html  lang="it">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Elementi di R e Radiant per un primo corso di Statistica</title>
+  <meta name="description" content="Breve manuale per l’apprendimento di alcuni elementi di R e Radiant. Materiale di supporto per il Corso 30001 (Statistica) dell’Università Bocconi.">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Elementi di R e Radiant per un primo corso di Statistica" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Breve manuale per l’apprendimento di alcuni elementi di R e Radiant. Materiale di supporto per il Corso 30001 (Statistica) dell’Università Bocconi." />
+  <meta name="github-repo" content="sergioventurini/manuale_R" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Elementi di R e Radiant per un primo corso di Statistica" />
+  
+  <meta name="twitter:description" content="Breve manuale per l’apprendimento di alcuni elementi di R e Radiant. Materiale di supporto per il Corso 30001 (Statistica) dell’Università Bocconi." />
+  
+
+<meta name="author" content="Sergio Venturini">
+
+
+<meta name="date" content="2018-07-16">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="appendix.html">
+<link rel="next" href="alcune-funzioni-r-per-la-statistica-inferenziale.html">
+<script src="libs/jquery/jquery.min.js"></script>
+<link href="libs/gitbook/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Elementi di <tt>R</tt> e <tt>Radiant</tt></a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Premessa</a></li>
+<li class="chapter" data-level="1" data-path="introduzione.html"><a href="introduzione.html"><i class="fa fa-check"></i><b>1</b> Introduzione</a><ul>
+<li class="chapter" data-level="1.1" data-path="installazione-dei-software.html"><a href="installazione-dei-software.html"><i class="fa fa-check"></i><b>1.1</b> Installazione dei software</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="installazione-dei-software.html"><a href="installazione-dei-software.html#installazione-su-windows"><i class="fa fa-check"></i><b>1.1.1</b> Installazione su Windows</a></li>
+<li class="chapter" data-level="1.1.2" data-path="installazione-dei-software.html"><a href="installazione-dei-software.html#installazione-su-mac"><i class="fa fa-check"></i><b>1.1.2</b> Installazione su Mac</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="lapproccio-al-calcolo-statistico-di-r.html"><a href="lapproccio-al-calcolo-statistico-di-r.html"><i class="fa fa-check"></i><b>1.2</b> L’approccio al calcolo statistico di <tt>R</tt></a></li>
+<li class="chapter" data-level="1.3" data-path="le-principali-strutture-di-dati-disponibili-in-r.html"><a href="le-principali-strutture-di-dati-disponibili-in-r.html"><i class="fa fa-check"></i><b>1.3</b> Le principali strutture di dati disponibili in <tt>R</tt></a><ul>
+<li class="chapter" data-level="1.3.1" data-path="le-principali-strutture-di-dati-disponibili-in-r.html"><a href="le-principali-strutture-di-dati-disponibili-in-r.html#tipi-di-dati-di-base"><i class="fa fa-check"></i><b>1.3.1</b> Tipi di dati di base</a></li>
+<li class="chapter" data-level="1.3.2" data-path="le-principali-strutture-di-dati-disponibili-in-r.html"><a href="le-principali-strutture-di-dati-disponibili-in-r.html#vettori"><i class="fa fa-check"></i><b>1.3.2</b> Vettori</a></li>
+<li class="chapter" data-level="1.3.3" data-path="le-principali-strutture-di-dati-disponibili-in-r.html"><a href="le-principali-strutture-di-dati-disponibili-in-r.html#matrix"><i class="fa fa-check"></i><b>1.3.3</b> Matrici</a></li>
+<li class="chapter" data-level="1.3.4" data-path="le-principali-strutture-di-dati-disponibili-in-r.html"><a href="le-principali-strutture-di-dati-disponibili-in-r.html#factor-vector"><i class="fa fa-check"></i><b>1.3.4</b> Vettori factor</a></li>
+<li class="chapter" data-level="1.3.5" data-path="le-principali-strutture-di-dati-disponibili-in-r.html"><a href="le-principali-strutture-di-dati-disponibili-in-r.html#data-frame"><i class="fa fa-check"></i><b>1.3.5</b> Data frame</a></li>
+<li class="chapter" data-level="1.3.6" data-path="le-principali-strutture-di-dati-disponibili-in-r.html"><a href="le-principali-strutture-di-dati-disponibili-in-r.html#lists"><i class="fa fa-check"></i><b>1.3.6</b> Liste</a></li>
+<li class="chapter" data-level="1.3.7" data-path="le-principali-strutture-di-dati-disponibili-in-r.html"><a href="le-principali-strutture-di-dati-disponibili-in-r.html#funzioni"><i class="fa fa-check"></i><b>1.3.7</b> Funzioni</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="howtogethelp.html"><a href="howtogethelp.html"><i class="fa fa-check"></i><b>1.4</b> Come reperire informazioni sui comandi di <tt>R</tt></a></li>
+<li class="chapter" data-level="1.5" data-path="packages.html"><a href="packages.html"><i class="fa fa-check"></i><b>1.5</b> I pacchetti di <tt>R</tt></a></li>
+<li class="chapter" data-level="1.6" data-path="lapplicazione-rstudio.html"><a href="lapplicazione-rstudio.html"><i class="fa fa-check"></i><b>1.6</b> L’applicazione <tt>RStudio</tt></a></li>
+<li class="chapter" data-level="1.7" data-path="il-pacchetto-radiant.html"><a href="il-pacchetto-radiant.html"><i class="fa fa-check"></i><b>1.7</b> Il pacchetto <tt>Radiant</tt></a></li>
+<li class="chapter" data-level="1.8" data-path="file-loading.html"><a href="file-loading.html"><i class="fa fa-check"></i><b>1.8</b> Come caricare e salvare un file in <tt>R</tt> e <tt>Radiant</tt></a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="statistica-descrittiva.html"><a href="statistica-descrittiva.html"><i class="fa fa-check"></i><b>2</b> Statistica descrittiva</a><ul>
+<li class="chapter" data-level="2.1" data-path="descriptive-R.html"><a href="descriptive-R.html"><i class="fa fa-check"></i><b>2.1</b> Primi esempi con <tt>R</tt></a></li>
+<li class="chapter" data-level="2.2" data-path="analisi-descrittive-univariate.html"><a href="analisi-descrittive-univariate.html"><i class="fa fa-check"></i><b>2.2</b> Analisi descrittive univariate</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="analisi-descrittive-univariate.html"><a href="analisi-descrittive-univariate.html#una-singola-variabile-categorica"><i class="fa fa-check"></i><b>2.2.1</b> Una singola variabile categorica</a></li>
+<li class="chapter" data-level="2.2.2" data-path="analisi-descrittive-univariate.html"><a href="analisi-descrittive-univariate.html#una-singola-variabile-numerica"><i class="fa fa-check"></i><b>2.2.2</b> Una singola variabile numerica</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="analisi-descrittive-bivariate.html"><a href="analisi-descrittive-bivariate.html"><i class="fa fa-check"></i><b>2.3</b> Analisi descrittive bivariate</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="analisi-descrittive-bivariate.html"><a href="analisi-descrittive-bivariate.html#due-variabili-categoriche"><i class="fa fa-check"></i><b>2.3.1</b> Due variabili categoriche</a></li>
+<li class="chapter" data-level="2.3.2" data-path="analisi-descrittive-bivariate.html"><a href="analisi-descrittive-bivariate.html#lincorr"><i class="fa fa-check"></i><b>2.3.2</b> Due variabili numeriche</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="calcolo-delle-probabilita.html"><a href="calcolo-delle-probabilita.html"><i class="fa fa-check"></i><b>3</b> Calcolo delle probabilità</a><ul>
+<li class="chapter" data-level="3.1" data-path="variabili-aleatorie-binomiali.html"><a href="variabili-aleatorie-binomiali.html"><i class="fa fa-check"></i><b>3.1</b> Variabili aleatorie binomiali</a></li>
+<li class="chapter" data-level="3.2" data-path="variabili-aleatorie-normali-o-gaussiane.html"><a href="variabili-aleatorie-normali-o-gaussiane.html"><i class="fa fa-check"></i><b>3.2</b> Variabili aleatorie normali (o gaussiane)</a></li>
+<li class="chapter" data-level="3.3" data-path="altre-variabili-aleatorie.html"><a href="altre-variabili-aleatorie.html"><i class="fa fa-check"></i><b>3.3</b> Altre variabili aleatorie</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="statistica-inferenziale.html"><a href="statistica-inferenziale.html"><i class="fa fa-check"></i><b>4</b> Statistica inferenziale</a><ul>
+<li class="chapter" data-level="4.1" data-path="inferenza-sulla-media-di-una-popolazione-normale.html"><a href="inferenza-sulla-media-di-una-popolazione-normale.html"><i class="fa fa-check"></i><b>4.1</b> Inferenza sulla media di una popolazione normale</a></li>
+<li class="chapter" data-level="4.2" data-path="inferenza-sulla-proporzione-di-successi-in-una-popolazione-bernoulliana.html"><a href="inferenza-sulla-proporzione-di-successi-in-una-popolazione-bernoulliana.html"><i class="fa fa-check"></i><b>4.2</b> Inferenza sulla proporzione di successi in una popolazione bernoulliana</a></li>
+<li class="chapter" data-level="4.3" data-path="inferenza-sul-confronto-tra-le-medie-di-due-popolazioni-normali.html"><a href="inferenza-sul-confronto-tra-le-medie-di-due-popolazioni-normali.html"><i class="fa fa-check"></i><b>4.3</b> Inferenza sul confronto tra le medie di due popolazioni normali</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="inferenza-sul-confronto-tra-le-medie-di-due-popolazioni-normali.html"><a href="inferenza-sul-confronto-tra-le-medie-di-due-popolazioni-normali.html#campioni-indipendenti"><i class="fa fa-check"></i><b>4.3.1</b> Campioni indipendenti</a></li>
+<li class="chapter" data-level="4.3.2" data-path="inferenza-sul-confronto-tra-le-medie-di-due-popolazioni-normali.html"><a href="inferenza-sul-confronto-tra-le-medie-di-due-popolazioni-normali.html#paired-ttest"><i class="fa fa-check"></i><b>4.3.2</b> Campioni dipendenti</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="inferenza-sullindice-di-correlazione-lineare.html"><a href="inferenza-sullindice-di-correlazione-lineare.html"><i class="fa fa-check"></i><b>4.4</b> Inferenza sull’indice di correlazione lineare</a></li>
+<li class="chapter" data-level="4.5" data-path="test-sulla-bonta-di-adattamento-probabilita-completamente-specificate.html"><a href="test-sulla-bonta-di-adattamento-probabilita-completamente-specificate.html"><i class="fa fa-check"></i><b>4.5</b> Test sulla bontà di adattamento (probabilità completamente specificate)</a></li>
+<li class="chapter" data-level="4.6" data-path="test-di-indipendenza-in-una-tabella-a-doppia-entrata.html"><a href="test-di-indipendenza-in-una-tabella-a-doppia-entrata.html"><i class="fa fa-check"></i><b>4.6</b> Test di indipendenza in una tabella a doppia entrata</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="chapter5.html"><a href="chapter5.html"><i class="fa fa-check"></i><b>5</b> Il modello di regressione lineare</a><ul>
+<li class="chapter" data-level="5.1" data-path="simple-reg.html"><a href="simple-reg.html"><i class="fa fa-check"></i><b>5.1</b> Il modello di regressione lineare semplice</a></li>
+<li class="chapter" data-level="5.2" data-path="il-modello-di-regressione-lineare-multipla.html"><a href="il-modello-di-regressione-lineare-multipla.html"><i class="fa fa-check"></i><b>5.2</b> Il modello di regressione lineare multipla</a></li>
+<li class="chapter" data-level="5.3" data-path="come-calcolare-le-previsioni-per-un-modello-di-regressione-lineare.html"><a href="come-calcolare-le-previsioni-per-un-modello-di-regressione-lineare.html"><i class="fa fa-check"></i><b>5.3</b> Come calcolare le previsioni per un modello di regressione lineare</a></li>
+<li class="chapter" data-level="5.4" data-path="le-osservazioni-influenti.html"><a href="le-osservazioni-influenti.html"><i class="fa fa-check"></i><b>5.4</b> Le osservazioni influenti</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="appendix.html"><a href="appendix.html"><i class="fa fa-check"></i><b>6</b> Appendice</a><ul>
+<li class="chapter" data-level="6.1" data-path="alcune-funzioni-di-r-per-la-statistica-descrittiva.html"><a href="alcune-funzioni-di-r-per-la-statistica-descrittiva.html"><i class="fa fa-check"></i><b>6.1</b> Alcune funzioni di <tt>R</tt> per la statistica descrittiva</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="alcune-funzioni-di-r-per-la-statistica-descrittiva.html"><a href="alcune-funzioni-di-r-per-la-statistica-descrittiva.html#analisi-descrittive-univariate-1"><i class="fa fa-check"></i><b>6.1.1</b> Analisi descrittive univariate</a></li>
+<li class="chapter" data-level="6.1.2" data-path="alcune-funzioni-di-r-per-la-statistica-descrittiva.html"><a href="alcune-funzioni-di-r-per-la-statistica-descrittiva.html#analisi-descrittive-bivariate-1"><i class="fa fa-check"></i><b>6.1.2</b> Analisi descrittive bivariate</a></li>
+<li class="chapter" data-level="6.1.3" data-path="alcune-funzioni-di-r-per-la-statistica-descrittiva.html"><a href="alcune-funzioni-di-r-per-la-statistica-descrittiva.html#ulteriori-rappresentazioni-grafiche"><i class="fa fa-check"></i><b>6.1.3</b> Ulteriori rappresentazioni grafiche</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="alcune-funzioni-r-per-la-statistica-inferenziale.html"><a href="alcune-funzioni-r-per-la-statistica-inferenziale.html"><i class="fa fa-check"></i><b>6.2</b> Alcune funzioni <tt>R</tt> per la statistica inferenziale</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="alcune-funzioni-r-per-la-statistica-inferenziale.html"><a href="alcune-funzioni-r-per-la-statistica-inferenziale.html#inferenza-sulla-media-di-una-popolazione-normale-1"><i class="fa fa-check"></i><b>6.2.1</b> Inferenza sulla media di una popolazione normale</a></li>
+<li class="chapter" data-level="6.2.2" data-path="alcune-funzioni-r-per-la-statistica-inferenziale.html"><a href="alcune-funzioni-r-per-la-statistica-inferenziale.html#inferenza-sulla-proporzione-di-successi-in-una-popolazione-bernoulliana-1"><i class="fa fa-check"></i><b>6.2.2</b> Inferenza sulla proporzione di successi in una popolazione bernoulliana</a></li>
+<li class="chapter" data-level="6.2.3" data-path="alcune-funzioni-r-per-la-statistica-inferenziale.html"><a href="alcune-funzioni-r-per-la-statistica-inferenziale.html#inferenza-sul-confronto-tra-le-medie-di-due-popolazioni-normali-1"><i class="fa fa-check"></i><b>6.2.3</b> Inferenza sul confronto tra le medie di due popolazioni normali</a></li>
+<li class="chapter" data-level="6.2.4" data-path="alcune-funzioni-r-per-la-statistica-inferenziale.html"><a href="alcune-funzioni-r-per-la-statistica-inferenziale.html#inferenza-sullindice-di-correlazione-lineare-1"><i class="fa fa-check"></i><b>6.2.4</b> Inferenza sull’indice di correlazione lineare</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="_blank">Pubblicato con bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><strong>Elementi di <tt>R</tt> e <tt>Radiant</tt> per un primo corso di Statistica</strong></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="alcune-funzioni-di-r-per-la-statistica-descrittiva" class="section level2">
+<h2><span class="header-section-number">6.1</span> Alcune funzioni di <tt>R</tt> per la statistica descrittiva</h2>
+<div id="analisi-descrittive-univariate-1" class="section level3">
+<h3><span class="header-section-number">6.1.1</span> Analisi descrittive univariate</h3>
+<div id="una-singola-variabile-categorica-1" class="section level4">
+<h4><span class="header-section-number">6.1.1.1</span> Una singola variabile categorica</h4>
+<p>Nel caso ci interessi sintetizzare le informazioni relative ad una variabile categorica, gli strumenti che possiamo utilizzare sono la distribuzione di frequenze insieme ad una rappresentazione grafica della stessa.</p>
+<p>Prima di mostrare alcuni esempi, vi ricordiamo che in <tt>R</tt> le variabili categoriche corrispondono a vettori di tipo factor, che abbiamo presentato nella Sezione <a href="le-principali-strutture-di-dati-disponibili-in-r.html#factor-vector">1.3.4</a>. Se la variabile che intendete analizzare non fosse codificata come factor, dovete prima convertirla in quel formato usando la funzione <tt>as.factor()</tt>. Ad esempio, per convertire la variabile numerica <tt>IndustryCode</tt> nel data frame <tt>forbes94</tt> dobbiamo eseguire il codice seguente:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">load</span>(<span class="st">&quot;Forbes94.RData&quot;</span>)
+<span class="op">&gt;</span><span class="st"> </span>forbes94<span class="op">$</span>IndustryCode &lt;-<span class="st"> </span><span class="kw">as.factor</span>(forbes94<span class="op">$</span>IndustryCode)
+<span class="op">&gt;</span><span class="st"> </span><span class="kw">str</span>(forbes94<span class="op">$</span>IndustryCode)</code></pre></div>
+<pre><code> Factor w/ 20 levels &quot;0&quot;,&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,..: 12 12 12 12 12 12 12 12 12 12 ...</code></pre>
+<p>Ricordate che l’operatore <tt>$</tt> serve per riferirsi ad una colonna di un data frame.</p>
+<p>Per costruire la distribuzione di frequenze di una variabile categorica in <tt>R</tt> dobbiamo usare la funzione <tt>table()</tt>, già descritta nella Sezione <a href="descriptive-R.html#descriptive-R">2.1</a>. Ad esempio, la distribuzione di frequenze della variabile categorica <tt>WideIndustry</tt> si ottiene con il codice seguente:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">table</span>(forbes94<span class="op">$</span>WideIndustry)</code></pre></div>
+<pre><code>
+Aerospacedefense         Business    Capital goods 
+              19               27               19 
+       Chemicals    ComputersComm     Construction 
+              25               67               11 
+        Consumer           Energy    Entertainment 
+              54               42               27 
+       Financial             Food           Forest 
+             168               62               19 
+          Health        Insurance           Metals 
+              49               54               18 
+       Retailing        Transport           Travel 
+              46               15               15 
+         Utility 
+              63 </code></pre>
+<p>Come sempre, è possibile memorizzare il risultato della funzione <tt>table()</tt> in un oggetto (si tratterebbe di un semplice vettore numerico contenente le frequenze assolute e i cui elementi sarebbero chiamati come i livelli, ovvero le modalità, della variabile) e utilizzarlo successivamente per ulteriori analisi.</p>
+<p>Per produrre la distribuzione di frequenze relative possiamo usare la funzione <tt>prop.table()</tt>, la quale richiede in input la tabella con le frequenze assolute:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span>absfreq &lt;-<span class="st"> </span><span class="kw">table</span>(forbes94<span class="op">$</span>WideIndustry)
+<span class="op">&gt;</span><span class="st"> </span><span class="kw">prop.table</span>(absfreq)</code></pre></div>
+<pre><code>
+Aerospacedefense         Business    Capital goods 
+         0.02375          0.03375          0.02375 
+       Chemicals    ComputersComm     Construction 
+         0.03125          0.08375          0.01375 
+        Consumer           Energy    Entertainment 
+         0.06750          0.05250          0.03375 
+       Financial             Food           Forest 
+         0.21000          0.07750          0.02375 
+          Health        Insurance           Metals 
+         0.06125          0.06750          0.02250 
+       Retailing        Transport           Travel 
+         0.05750          0.01875          0.01875 
+         Utility 
+         0.07875 </code></pre>
+<p>Una volta creata la distribuzione di frequenze, possiamo rappresentarla graficamente con un diagramma a torta o a barre. In <tt>R</tt> questi si ottengono rispettivamente con le funzioni <tt>pie()</tt> (già descritta nella Sezione <a href="descriptive-R.html#descriptive-R">2.1</a>) e <tt>barplot()</tt>, le quali richiedono in input la distribuzione di frequenze (assolute o relative):</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">pie</span>(absfreq, <span class="dt">main =</span> <span class="st">&quot;Distribuzione di WideIndustry&quot;</span>)      <span class="co"># diagramma a torta</span>
+<span class="op">&gt;</span><span class="st"> </span><span class="kw">barplot</span>(absfreq, <span class="dt">main =</span> <span class="st">&quot;Distribuzione di WideIndustry&quot;</span>)  <span class="co"># diagramma a barre</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:pie-barplot-main2"></span>
+<img src="manuale_R_files/figure-html/pie-barplot-main2-1.pdf" alt="Diagramma a torta e a barre con &lt;tt&gt;R&lt;/tt&gt;." width="45%" /><img src="manuale_R_files/figure-html/pie-barplot-main2-2.pdf" alt="Diagramma a torta e a barre con &lt;tt&gt;R&lt;/tt&gt;." width="45%" />
+<p class="caption">
+Figura 6.1: Diagramma a torta e a barre con <tt>R</tt>.
+</p>
+</div>
+</div>
+<div id="una-singola-variabile-numerica-1" class="section level4">
+<h4><span class="header-section-number">6.1.1.2</span> Una singola variabile numerica</h4>
+<p><strong>Distribuzione di frequenze</strong> La distribuzione di una variabile numerica è rappresentata da una tabella che riporta le frequenze con cui sono stati osservati i diversi valori, nel caso la variabile sia discreta, o le classi in cui è stata divisa, nel caso in cui la variabile sia continua. In entrambi i casi è possibile utilizzare ancora la funzione <tt>table()</tt>, ma nel caso di variabili continue sarà prima necessario dividere i valori osservati in classi. Una funzione utile per generare tali classi è <tt>cut()</tt>, che genera un vettore factor con le classi specificate e che include i seguenti argomenti:</p>
+<ul>
+<li><tt>x</tt>, il vettore numerico con i valori di cui vogliamo costruire le classi</li>
+<li><tt>breaks</tt>, che consente di specificare quali classi intendiamo usare; può essere specificato nei seguenti modi alternativi
+<ul>
+<li>un singolo valore numerico che indica il numero di classi di uguale ampiezza che vogliamo usare</li>
+<li>un vettore di valori numerici che identificano gli estremi delle classi (eventualmente di diversa ampiezza) da usare</li>
+</ul></li>
+<li><tt>right</tt>, un valore logico che indica se le classi devono essere chiuse a sinistra (<tt>FALSE</tt>) o a destra (<tt>TRUE</tt>)</li>
+<li><tt>labels</tt>, un vettore di etichette da utilizzare per identificare le classi; se fissato pari a <tt>FALSE</tt>, le classi saranno identificate da dei numeri interi</li>
+</ul>
+<p>Per esempio, supponiamo di voler costruire la distribuzione di frequenze della variabile <tt>Salary</tt>, che fornisce lo stipendio pagato ai CEO inclusi nel data set nel 1994, usando 5 classi di uguale ampiezza chiuse a sinistra. Il seguente codice permette di creare una nuova variabile, che decidiamo di chiamare <tt>Salary_c</tt> e che aggiungiamo al data frame esistente:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span>forbes94<span class="op">$</span>Salary_c &lt;-<span class="st"> </span><span class="kw">cut</span>(forbes94<span class="op">$</span>Salary, <span class="dt">breaks =</span> <span class="dv">5</span>, <span class="dt">right =</span> <span class="ot">FALSE</span>)
+<span class="op">&gt;</span><span class="st"> </span><span class="kw">table</span>(forbes94<span class="op">$</span>Salary_c)</code></pre></div>
+<pre><code>
+[1.59e+04,5.55e+05) [5.55e+05,1.09e+06) 
+                382                 376 
+[1.09e+06,1.63e+06) [1.63e+06,2.16e+06) 
+                 24                   4 
+ [2.16e+06,2.7e+06) 
+                  3 </code></pre>
+<p>da cui si vede chiaramente che la distribuzione dei salari per questi CEO è decisamente asimmetrica a destra.</p>
+<p>Se invece volessimo utilizzare le classi <span class="math inline">\([0, 200000)\)</span>, <span class="math inline">\([200000, 500000)\)</span>, <span class="math inline">\([500000, 800000)\)</span>, <span class="math inline">\([800000, 1500000)\)</span> e <span class="math inline">\([1500000, 3000000]\)</span>, allora dovremmo utilizzare la funzione <tt>cut()</tt> nel modo seguente:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span>forbes94<span class="op">$</span>Salary_c &lt;-<span class="st"> </span><span class="kw">cut</span>(forbes94<span class="op">$</span>Salary,
+<span class="op">+</span><span class="st">   </span><span class="dt">breaks =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">200000</span>, <span class="dv">500000</span>, <span class="dv">800000</span>, <span class="dv">1500000</span>, <span class="dv">3000000</span>), <span class="dt">right =</span> <span class="ot">FALSE</span>)
+<span class="op">&gt;</span><span class="st"> </span><span class="kw">table</span>(forbes94<span class="op">$</span>Salary_c)</code></pre></div>
+<pre><code>
+      [0,2e+05)   [2e+05,5e+05)   [5e+05,8e+05) 
+             13             268             351 
+[8e+05,1.5e+06) [1.5e+06,3e+06) 
+            147              10 </code></pre>
+<p>Per rappresentare graficamente la distribuzione di una variabile numerica sono disponibili vari tipi di grafici tra cui il diagramma ad aste, l’istogramma e il box-plot.</p>
+<p><strong>Diagramma ad aste</strong> Possiamo creare un diagramma ad aste usando la funzione <tt>plot()</tt> direttamente sul risultato fornito da <tt>table()</tt> e fissando l’argomento <tt>type</tt> al valore <tt>“h”</tt>. Ad esempio, il diagramma ad aste per la variabile <tt>Age</tt> è ottenuto come segue:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">plot</span>(<span class="kw">table</span>(forbes94<span class="op">$</span>Age), <span class="dt">type =</span> <span class="st">&quot;h&quot;</span>)</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:aste"></span>
+<img src="manuale_R_files/figure-html/aste-1.pdf" alt="Diagramma ad aste per la variabile &lt;tt&gt;Age&lt;/tt&gt;." width="480" />
+<p class="caption">
+Figura 6.2: Diagramma ad aste per la variabile <tt>Age</tt>.
+</p>
+</div>
+<p>L’aspetto finale del grafico può essere modificato attraverso gli argomenti della funzione <tt>plot()</tt>. Se ad esempio volessimo aggiungere le etichette agli assi dovremmo usare gli argomenti <tt>xlab</tt> e <tt>ylab</tt>, ovvero</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">plot</span>(<span class="kw">table</span>(forbes94<span class="op">$</span>Age), <span class="dt">type =</span> <span class="st">&quot;h&quot;</span>,
+<span class="op">+</span><span class="st">   </span><span class="dt">xlab =</span> <span class="st">&quot;Age&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Frequenza assoluta&quot;</span>,
+<span class="op">+</span><span class="st">   </span><span class="dt">main =</span> <span class="st">&quot;Diagramma ad aste della variabile Age&quot;</span>)</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:aste2"></span>
+<img src="manuale_R_files/figure-html/aste2-1.pdf" alt="Diagramma ad aste per la variabile &lt;tt&gt;Age&lt;/tt&gt;." width="480" />
+<p class="caption">
+Figura 6.3: Diagramma ad aste per la variabile <tt>Age</tt>.
+</p>
+</div>
+<p><strong>Istogramma</strong> Gli istogrammi sono rappresentazioni grafiche della distribuzione di frequenze di una variabile divisa per classi. In <tt>R</tt> è possibile creare un istogramma con la funzione <tt>hist()</tt>. Come è noto, è possibile creare un istogramma usando classi di uguale o diversa ampiezza. La funzione <tt>hist()</tt> permette di specificare tale scelta attraverso l’argomento <tt>breaks</tt>, il cui funzionamento è identico al medesimo argomento descritto per la funzione <tt>cut()</tt>, ovvero:</p>
+<ul>
+<li>se non specifichiamo il valore di <tt>breaks</tt>, <tt>R</tt> utilizza alcune regole interne per sceglierne un valore ragionevole; consigliamo di usare questa opzione, perché funziona bene nella maggioranza dei casi, a meno che non ci siano motivi particolari per usare una regola diversa</li>
+<li><tt>breaks</tt> può essere specificato come singolo valore numerico (intero positivo), il quale indicherà il numero (indicativo<a href="#fn46" class="footnoteRef" id="fnref46"><sup>46</sup></a>) di classi di uguale ampiezza che vogliamo usare</li>
+<li><tt>breaks</tt> può anche essere specificato come vettore numerico, i cui elementi corrisponderanno agli estremi delle classi che intendiamo usare</li>
+</ul>
+<p>In aggiunta a <tt>breaks</tt>, la funzione <tt>hist()</tt> contiene molti altri argomenti con cui è possibile modificare l’aspetto finale del grafico, tra cui <tt>main</tt>, <tt>xlab</tt> e <tt>ylab</tt>, che funzionano in modo analogo a quanto visto finora.</p>
+<p>Vediamo ora alcuni esempi di istogrammi per la variabile <tt>Salary</tt>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">hist</span>(forbes94<span class="op">$</span>Salary, <span class="dt">main =</span> <span class="st">&quot;Istogramma di Salary&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Salary (in $)&quot;</span>,
+<span class="op">+</span><span class="st">   </span><span class="dt">ylab =</span> <span class="st">&quot;Frequenza assoluta&quot;</span>)</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:hist"></span>
+<img src="manuale_R_files/figure-html/hist-1.pdf" alt="Esempio di istogramma per la variabile &lt;tt&gt;Salary&lt;/tt&gt; (classi di uguale ampiezza)." width="480" />
+<p class="caption">
+Figura 6.4: Esempio di istogramma per la variabile <tt>Salary</tt> (classi di uguale ampiezza).
+</p>
+</div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">hist</span>(forbes94<span class="op">$</span>Salary, <span class="dt">main =</span> <span class="st">&quot;Istogramma di Salary&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Salary (in $)&quot;</span>,
+<span class="op">+</span><span class="st">   </span><span class="dt">ylab =</span> <span class="st">&quot;Frequenza assoluta&quot;</span>, <span class="dt">breaks =</span> <span class="dv">50</span>)</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:hist2"></span>
+<img src="manuale_R_files/figure-html/hist2-1.pdf" alt="Esempio di istogramma per la variabile &lt;tt&gt;Salary&lt;/tt&gt; (classi di uguale ampiezza)." width="480" />
+<p class="caption">
+Figura 6.5: Esempio di istogramma per la variabile <tt>Salary</tt> (classi di uguale ampiezza).
+</p>
+</div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">hist</span>(forbes94<span class="op">$</span>Salary, <span class="dt">main =</span> <span class="st">&quot;Istogramma di Salary&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Salary (in $)&quot;</span>,
+<span class="op">+</span><span class="st">   </span><span class="dt">ylab =</span> <span class="st">&quot;Densità di frequenze&quot;</span>,
+<span class="op">+</span><span class="st">   </span><span class="dt">breaks =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">100000</span>, <span class="dv">300000</span>, <span class="dv">350000</span>, <span class="dv">500000</span>, <span class="dv">800000</span>, <span class="dv">1000000</span>, <span class="dv">3000000</span>))</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:hist3"></span>
+<img src="manuale_R_files/figure-html/hist3-1.pdf" alt="Esempio di istogramma per la variabile &lt;tt&gt;Salary&lt;/tt&gt; (classi di diversa ampiezza)." width="480" />
+<p class="caption">
+Figura 6.6: Esempio di istogramma per la variabile <tt>Salary</tt> (classi di diversa ampiezza).
+</p>
+</div>
+<p>Questi esempi mostrano chiaramente che la distribuzione di <tt>Salary</tt> è asimmetrica a destra. Vi facciamo inoltre notare che nell’ultimo esempio, in cui abbiamo utilizzato 7 classi di diversa ampiezza, <tt>R</tt> ha automaticamente (e correttamente!) deciso di riportare sull’asse verticale la densità di frequenze, mentre nei due esempi precedenti sull’asse verticale ha riportato le frequenze assolute delle classi. Anche nel caso di classi di uguale ampiezza è possibile costruire l’istogramma con le densità fissando a <tt>FALSE</tt> il valore dell’argomento <tt>freq</tt><a href="#fn47" class="footnoteRef" id="fnref47"><sup>47</sup></a>.</p>
+<p><strong>Box-plot</strong> In aggiunta al diagramma ad aste e all’istogramma, è utile produrre anche il box-plot, che consente di integrare le informazioni fornite dagli altri grafici. Come abbiamo già visto nella Sezione <a href="descriptive-R.html#descriptive-R">2.1</a>, in <tt>R</tt> è possibile costruire un box-plot attraverso la funzione <tt>boxplot()</tt>. Ricordiamo che il box-plot della variabile <tt>Salary</tt> si ottiene come segue:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">boxplot</span>(forbes94<span class="op">$</span>Salary)</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:boxplot-bis"></span>
+<img src="manuale_R_files/figure-html/boxplot-bis-1.pdf" alt="Esempio di box-plot con &lt;tt&gt;R&lt;/tt&gt;." width="480" />
+<p class="caption">
+Figura 6.7: Esempio di box-plot con <tt>R</tt>.
+</p>
+</div>
+<p>Un utile commento finale su <tt>boxplot()</tt> riguarda la possibilità di salvare output aggiuntivo rispetto al grafico. In particolare, <tt>boxplot()</tt> consente di salvare in una lista (vedi la Sezione <a href="le-principali-strutture-di-dati-disponibili-in-r.html#lists">1.3.6</a>) i valori degli indici che servono per costruire il grafico. Per esempio, per la variabile <tt>Salary</tt> otteniamo</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span>bp_out &lt;-<span class="st"> </span><span class="kw">boxplot</span>(forbes94<span class="op">$</span>Salary)
+<span class="op">&gt;</span><span class="st"> </span><span class="kw">str</span>(bp_out)</code></pre></div>
+<pre><code>List of 6
+ $ stats: &#39;integer&#39; num [1:5, 1] 18600 433333 569231 750000 1200000
+ $ n    : num 789
+ $ conf : num [1:2, 1] 551419 587043
+ $ out  : num [1:18] 1750000 1400000 1500000 1375000 2000000 ...
+ $ group: num [1:18] 1 1 1 1 1 1 1 1 1 1 ...
+ $ names: chr &quot;1&quot;</code></pre>
+<p>Come vedete, <tt>bp_out</tt> è una lista che contiene 6 elementi (ovvero altri oggetti), tra cui <tt>stats</tt>, che contiene i valori dei 5 indici necessari per costruire il box-plot (minimo, primo quartile, mediana, terzo quartile e massimo), e <tt>out</tt>, il vettore delle osservazioni outlier. Concludiamo quindi che nella distribuzione di <tt>Salary</tt> risultano essere presenti 18 outlier:</p>
+<pre><code> [1] 1750000 1400000 1500000 1375000 2000000 1900000
+ [7] 1250000 1483500 1454000 2633570 1240000 1841000
+[13] 1231730 2667730 2700000 1525000 1397810 1504940</code></pre>
+<p><strong>Indici di sintesi</strong> {#summary_stats} Le principali funzioni disponibili in <tt>R</tt> per il calcolo di indici di sintesi per una variabile numerica sono:</p>
+<ul>
+<li><tt>min()</tt>, per il calcolo del minimo valore osservato di una variabile</li>
+<li><tt>max()</tt>, per il calcolo del massimo valore osservato di una variabile</li>
+<li><tt>mean()</tt>, per il calcolo della media campionaria</li>
+<li><tt>median()</tt>, per il calcolo della mediana campionaria</li>
+<li><tt>var()</tt>, per il calcolo della varianza campionaria</li>
+<li><tt>sd()</tt>, per il calcolo della deviazione standard campionaria</li>
+<li><tt>quantile()</tt>, per il calcolo dei quantili campionari</li>
+<li><tt>summary()</tt>, la quale fornisce in automatico una lista con alcuni degli indici sopra citati</li>
+</ul>
+<p>Nel caso la variabile contenesse dei valori mancanti (ovvero <tt>NA</tt>), queste funzioni ad eccezione di <tt>summary()</tt> richiedono venga fissato a <tt>TRUE</tt> il valore dell’argomento <tt>na.rm</tt>, tramite il quale indichiamo ad <tt>R</tt> di rimuovere internamente (ma non dal data set) i dati mancanti prima di effettuare il calcolo. Vediamo un esempio usando sempre la variabile <tt>Salary</tt>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">min</span>(forbes94<span class="op">$</span>Salary, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<pre><code>[1] 18600</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">max</span>(forbes94<span class="op">$</span>Salary, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<pre><code>[1] 2700000</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">mean</span>(forbes94<span class="op">$</span>Salary, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<pre><code>[1] 613458</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">median</span>(forbes94<span class="op">$</span>Salary, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<pre><code>[1] 569231</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">var</span>(forbes94<span class="op">$</span>Salary, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<pre><code>[1] 7.858e+10</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">sd</span>(forbes94<span class="op">$</span>Salary, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<pre><code>[1] 280319</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">quantile</span>(forbes94<span class="op">$</span>Salary, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<pre><code>     0%     25%     50%     75%    100% 
+  18600  433333  569231  750000 2700000 </code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">summary</span>(forbes94<span class="op">$</span>Salary)</code></pre></div>
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  18600  433333  569231  613458  750000 2700000 
+   NA&#39;s 
+     11 </code></pre>
+<p>La funzione <tt>quantile()</tt> consente di calcolare i percentili di un set di dati numerici. L’ordine dei percentili che vogliamo calcolare viene specificato attraverso l’argomento <tt>probs</tt>. Per esempio, i percentili di ordine 10 e 95 per la variabile <tt>Salary</tt> sono calcolati come segue:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">quantile</span>(forbes94<span class="op">$</span>Salary, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>, <span class="dt">probs =</span> <span class="kw">c</span>(<span class="fl">0.10</span>, <span class="fl">0.95</span>))</code></pre></div>
+<pre><code>    10%     95% 
+ 325149 1025640 </code></pre>
+</div>
+</div>
+<div id="analisi-descrittive-bivariate-1" class="section level3">
+<h3><span class="header-section-number">6.1.2</span> Analisi descrittive bivariate</h3>
+<div id="due-variabili-categoriche-1" class="section level4">
+<h4><span class="header-section-number">6.1.2.1</span> Due variabili categoriche</h4>
+<p>Nel caso volessimo analizzare congiuntamente due variabili categoriche, lo strumento principale da utilizzare consiste nella tabella a doppia entrata. In <tt>R</tt> possiamo costruire una tabella a doppia entrata con la funzione <tt>table()</tt>, che abbiamo già incontrato in varie occasioni. Per ottenere una tabella a doppia entrata bisogna però specificare due variabili, rispettivamente la variabile di riga e quella di colonna (in quest’ordine). Il codice seguente permette di costruire la tabella a doppia entrata per la variabile <tt>MBA</tt> contro <tt>WideIndustry</tt>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">table</span>(forbes94<span class="op">$</span>WideIndustry, forbes94<span class="op">$</span>MBA)</code></pre></div>
+<pre><code>                  
+                     0   1
+  Aerospacedefense  15   4
+  Business          22   5
+  Capital goods     13   6
+  Chemicals         17   8
+  ComputersComm     46  21
+  Construction       7   4
+  Consumer          36  18
+  Energy            32  10
+  Entertainment     23   4
+  Financial        112  56
+  Food              45  17
+  Forest            12   7
+  Health            37  12
+  Insurance         43  11
+  Metals            14   4
+  Retailing         43   3
+  Transport         11   4
+  Travel            13   2
+  Utility           48  15</code></pre>
+<p>La rappresentazione grafica di una tabella a doppia entrata tramite un diagramma a barre sovrapposte si ottiene con la funzione <tt>plot()</tt> in cui le variabili devono essere specificate attraverso una formula:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">plot</span>(MBA <span class="op">~</span><span class="st"> </span>WideIndustry, <span class="dt">data =</span> forbes94)</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:mosaic-plot"></span>
+<img src="manuale_R_files/figure-html/mosaic-plot-1.pdf" alt="Grafico a barre sovrapposte per la variabile &lt;tt&gt;MBA&lt;/tt&gt; rispetto a &lt;tt&gt;WideIndustry&lt;/tt&gt;." width="480" />
+<p class="caption">
+Figura 6.8: Grafico a barre sovrapposte per la variabile <tt>MBA</tt> rispetto a <tt>WideIndustry</tt>.
+</p>
+</div>
+</div>
+<div id="due-variabili-numeriche" class="section level4">
+<h4><span class="header-section-number">6.1.2.2</span> Due variabili numeriche</h4>
+<p>In <tt>R</tt> è possibile creare un diagramma di dispersione con la funzione <tt>plot()</tt> in cui specifichiamo come prima la variabile <span class="math inline">\(x\)</span> e come seconda la <span class="math inline">\(y\)</span><a href="#fn48" class="footnoteRef" id="fnref48"><sup>48</sup></a>. Come per le altre funzioni grafiche, possiamo aggiungere anche altri argomenti con i quali possiamo modificare l’aspetto finale del grafico. Il codice che segue crea il diagramma di dispersione per la variabile <tt>Salary</tt> contro la variabile <tt>Age</tt>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">plot</span>(forbes94<span class="op">$</span>Age, forbes94<span class="op">$</span>Salary, <span class="dt">xlab =</span> <span class="st">&quot;Age (in years)&quot;</span>,
+<span class="op">+</span><span class="st">   </span><span class="dt">ylab =</span> <span class="st">&quot;Salary (in $)&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;Diagramma di dispersione&quot;</span>)</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:scatter"></span>
+<img src="manuale_R_files/figure-html/scatter-1.pdf" alt="Diagramma di dispersione per la variabile &lt;tt&gt;Salary&lt;/tt&gt; rispetto a &lt;tt&gt;Age&lt;/tt&gt;." width="480" />
+<p class="caption">
+Figura 6.9: Diagramma di dispersione per la variabile <tt>Salary</tt> rispetto a <tt>Age</tt>.
+</p>
+</div>
+<p>Per il calcolo della covarianza e dell’indice di correlazione lineare campionari possiamo usare rispettivamente le funzioni <tt>cov()</tt> e <tt>cor()</tt>. Nel caso includessimo in queste funzioni più di due variabili, queste restituirebbero in output rispettivamente le matrici delle covarianze e delle correlazioni lineari campionarie. Se alcune delle variabili contengono dei dati mancanti, è opportuno includere in queste funzioni anche l’argomento <tt>use</tt> fissandolo al valore <tt>“complete.obs”</tt><a href="#fn49" class="footnoteRef" id="fnref49"><sup>49</sup></a>. Per calcolare le covarianze e le correlazioni tra le variabili <tt>Age</tt>, <tt>Salary</tt>, <tt>Bonus</tt> e <tt>Other</tt> possiamo eseguire il codice che segue:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">cov</span>(forbes94[, <span class="kw">c</span>(<span class="st">&quot;Age&quot;</span>, <span class="st">&quot;Salary&quot;</span>, <span class="st">&quot;Bonus&quot;</span>, <span class="st">&quot;Other&quot;</span>)],
+<span class="op">+</span><span class="st">   </span><span class="dt">use =</span> <span class="st">&quot;complete.obs&quot;</span>)</code></pre></div>
+<pre><code>             Age    Salary     Bonus     Other
+Age        41.59 4.059e+05 7.083e+05 4.465e+05
+Salary 405931.80 6.886e+10 6.194e+10 9.696e+10
+Bonus  708346.61 6.194e+10 8.676e+11 4.023e+11
+Other  446454.17 9.696e+10 4.023e+11 1.671e+12</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">cor</span>(forbes94[, <span class="kw">c</span>(<span class="st">&quot;Age&quot;</span>, <span class="st">&quot;Salary&quot;</span>, <span class="st">&quot;Bonus&quot;</span>, <span class="st">&quot;Other&quot;</span>)],
+<span class="op">+</span><span class="st">   </span><span class="dt">use =</span> <span class="st">&quot;complete.obs&quot;</span>)</code></pre></div>
+<pre><code>           Age Salary  Bonus   Other
+Age    1.00000 0.2399 0.1179 0.05356
+Salary 0.23987 1.0000 0.2534 0.28583
+Bonus  0.11792 0.2534 1.0000 0.33416
+Other  0.05356 0.2858 0.3342 1.00000</code></pre>
+<p>Le correlazioni tra queste variabili sono tutte positive, ma comunque deboli o molto deboli. Ciò è dovuto principalmente alla presenza di numerosi outlier e all’eterogeneità dei valori osservati.</p>
+</div>
+</div>
+<div id="ulteriori-rappresentazioni-grafiche" class="section level3">
+<h3><span class="header-section-number">6.1.3</span> Ulteriori rappresentazioni grafiche</h3>
+<div id="il-diagramma-di-pareto" class="section level4">
+<h4><span class="header-section-number">6.1.3.1</span> Il diagramma di Pareto</h4>
+<p>Il diagramma di Pareto è una rappresentazione grafica utile per separare le modalità di una variabile categorica che sono state osservate più frequentemente da quelle meno frequenti. Purtroppo non c’è nessuna funzione nei pacchetti base di <tt>R</tt> che consente di produrre un diagramma di Pareto. Tuttavia, è possibile scaricare e installare un pacchetto aggiuntivo, chiamato <tt>qcc</tt>, che contiene alcune funzioni dedicate al controllo statistico della qualità in produzione, tra cui anche una funzione per disegnare il diagramma di Pareto. Possiamo installare il pacchetto seguendo le istruzioni riportate in Sezione <a href="packages.html#packages">1.5</a> o in alternativa eseguendo il codice seguente:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">install.packages</span>(<span class="st">&quot;qcc&quot;</span>)   <span class="co"># scarica il pacchetto qcc</span>
+<span class="op">&gt;</span><span class="st"> </span><span class="kw">library</span>(qcc)              <span class="co"># carica il pacchetto qcc</span></code></pre></div>
+<p>Il pacchetto <tt>qcc</tt> contiene una funzione chiamata <tt>pareto.chart()</tt> che consente di produrre direttamente il diagramma di Pareto. Questa funzione richiede che venga fornito in input un vettore numerico con le frequenze assolute con cui si sono osservate le varie modalità. Per ottenere un grafico più informativo, consigliamo anche di assegnare dei nomi agli elementi del vettore, i quali saranno riportati sull’asse orizzontale del grafico. Il seguente codice dapprima carica alcuni dati contenuti nel data frame <tt>pareto_dat</tt> e relativi al numero di pezzi difettosi rilevati in un’azienda (colonna <tt>Total</tt>), insieme alla corrispondente causa di difettosità (colonna <tt>Cause</tt>), e successivamente utilizza questi dati per costruire il diagramma di Pareto:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">load</span>(<span class="st">&quot;pareto_data.RData&quot;</span>)
+<span class="op">&gt;</span><span class="st"> </span>pdat &lt;-<span class="st"> </span>pareto_dat<span class="op">$</span>Total
+<span class="op">&gt;</span><span class="st"> </span><span class="kw">names</span>(pdat) &lt;-<span class="st"> </span>pareto_dat<span class="op">$</span>Cause
+<span class="op">&gt;</span><span class="st"> </span><span class="kw">pareto.chart</span>(<span class="dt">data =</span> pdat, <span class="dt">main =</span> <span class="st">&quot;Diagramma di Pareto&quot;</span>)</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:pareto-chart2"></span>
+<img src="manuale_R_files/figure-html/pareto-chart2-1.pdf" alt="Esempio di diagramma di Pareto ottenuto con la funzione &lt;tt&gt;pareto.chart()&lt;/tt&gt; del pacchetto &lt;tt&gt;qcc&lt;/tt&gt;." width="576" />
+<p class="caption">
+Figura 6.10: Esempio di diagramma di Pareto ottenuto con la funzione <tt>pareto.chart()</tt> del pacchetto <tt>qcc</tt>.
+</p>
+</div>
+<pre><code>                         
+Pareto chart analysis for pdat
+                          Frequency Cum.Freq.
+  Compressor                 15.000    15.000
+  Machine adjustment         11.000    26.000
+  Packing                    10.000    36.000
+  Supplier                    9.000    45.000
+  Operation conditions        8.000    53.000
+  Transport agency            3.000    56.000
+  Measurement apparatus       3.000    59.000
+  Receptionist                2.000    61.000
+  Transport method            2.000    63.000
+  Recording method            2.000    65.000
+  Recording Operator          1.000    66.000
+  Storage operators           1.000    67.000
+  Raw materials reception     1.000    68.000
+                         
+Pareto chart analysis for pdat
+                          Percentage Cum.Percent.
+  Compressor                  22.059       22.059
+  Machine adjustment          16.176       38.235
+  Packing                     14.706       52.941
+  Supplier                    13.235       66.176
+  Operation conditions        11.765       77.941
+  Transport agency             4.412       82.353
+  Measurement apparatus        4.412       86.765
+  Receptionist                 2.941       89.706
+  Transport method             2.941       92.647
+  Recording method             2.941       95.588
+  Recording Operator           1.471       97.059
+  Storage operators            1.471       98.529
+  Raw materials reception      1.471      100.000</code></pre>
+</div>
+<div id="rappresentazione-grafica-di-una-serie-storica" class="section level4">
+<h4><span class="header-section-number">6.1.3.2</span> Rappresentazione grafica di una serie storica</h4>
+<p>Un’altra situazione che si incontra di frequente quando si analizzano dei dati è quella in cui le osservazioni sono ordinate temporalmente. Questo tipo di dati vengono chiamati serie storiche. La funzione <tt>ts()</tt> consente di creare una serie storica e di definirne le caratteristiche in termini di numero di osservazioni per anno, data di inizio e data di fine. A titolo di esempio, carichiamo il file <tt>advertising_sales.RData</tt>, che contiene il data frame <tt>advertising_sales</tt> con le serie storiche mensili delle vendite e delle spese in pubblicità (entrambe in migliaia di dollari) di un prodotto per il fitness. I dati disponibili sono stati raccolti a partire dal mese di gennaio 2012. Il seguente codice permette di definire i dati come serie storiche applicando la funzione <tt>ts()</tt> con l’argomento <tt>frequency</tt> fissato a 12 (ovvero 12 osservazioni in un anno) e l’argomento <tt>start</tt> al vettore <tt>c(2012, 1)</tt>, che indicano rispettivamente l’anno e il mese a cui fa riferimento la prima osservazione. Infine, con la funzione <tt>plot()</tt> creiamo il grafico temporale delle due serie, che rappresentiamo con colori e tipo di linee (argomenti <tt>col</tt> e <tt>lty</tt>) diversi<a href="#fn50" class="footnoteRef" id="fnref50"><sup>50</sup></a>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">load</span>(<span class="st">&quot;advertising_sales.RData&quot;</span>)
+<span class="op">&gt;</span><span class="st"> </span>adv_sales &lt;-<span class="st"> </span><span class="kw">ts</span>(advertising_sales[, <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">3</span>)], <span class="dt">frequency =</span> <span class="dv">12</span>, <span class="dt">start =</span> <span class="kw">c</span>(<span class="dv">2012</span>, <span class="dv">1</span>))
+<span class="op">&gt;</span><span class="st"> </span><span class="kw">plot</span>(adv_sales, <span class="dt">plot.type =</span> <span class="st">&quot;single&quot;</span>, <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>),
+<span class="op">+</span><span class="st">   </span><span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">lty =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="dt">ylab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;Grafico per serie storiche&quot;</span>,
+<span class="op">+</span><span class="st">   </span><span class="dt">sub =</span> <span class="st">&quot;(linea continua = vendite, linea tratteggiata = spese in pubblicità)&quot;</span>)</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:time-series"></span>
+<img src="manuale_R_files/figure-html/time-series-1.pdf" alt="Esempio di grafico per serie storiche." width="576" />
+<p class="caption">
+Figura 6.11: Esempio di grafico per serie storiche.
+</p>
+</div>
+</div>
+<div id="come-verificare-se-una-variabile-e-distribuita-in-modo-normale" class="section level4">
+<h4><span class="header-section-number">6.1.3.3</span> Come verificare se una variabile è distribuita in modo normale</h4>
+<p>Molti modelli statistici richiedono che le popolazioni di riferimento siano distribuite seconda una normale. Pertanto, è necessario verificare che questa ipotesi sia almeno approssimativamente soddisfatta dai dati campionari che stiamo analizzando. In caso contrario, i risultati che otterremo dalle analisi potrebbero essere distorti e non attendibili.</p>
+<p>Uno strumento semplice ma efficace per verificare la normalità di una distribuzione di un set di dati numerici è il <em>normal probability plot</em>, che si può creare in <tt>R</tt> attraverso la funzione <tt>qqnorm()</tt>. Questa funzione richiede solo l’indicazione della variabile da usare, oltre eventualmente ad altri argomenti per migliorare l’aspetto del grafico (<tt>main</tt>, <tt>xlab</tt>, <tt>ylab</tt>, <tt>col</tt>, ecc.).</p>
+<p>Dopo aver eseguito <tt>qqnorm()</tt>, la funzione <tt>qqline()</tt> consente di aggiungere al grafico una retta che aiuta a valutare la vicinanza della distribuzione empirica dei dati alla distribuzione normale. Anche questa funzione richiede obbligatoriamente di indicare solamente il nome della variabile oggetto dell’analisi.</p>
+<p>Il seguente codice genera il normal probability plot per la variabile <tt>Salary</tt>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">qqnorm</span>(forbes94<span class="op">$</span>Salary, <span class="dt">main =</span> <span class="st">&quot;Normal probability plot di Salary&quot;</span>)
+<span class="op">&gt;</span><span class="st"> </span><span class="kw">qqline</span>(forbes94<span class="op">$</span>Salary)</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:qqnorm"></span>
+<img src="manuale_R_files/figure-html/qqnorm-1.pdf" alt="Esempio di normal probability plot per la variabile &lt;tt&gt;Salary&lt;/tt&gt;." width="480" />
+<p class="caption">
+Figura 6.12: Esempio di normal probability plot per la variabile <tt>Salary</tt>.
+</p>
+</div>
+<p>Dal grafico si conclude che la distribuzione di <tt>Salary</tt> è asimmetrica a destra e pertanto non si può ritenere distribuita come una normale.</p>
+<p>Come secondo esempio consideriamo la variabile <tt>Age</tt>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">qqnorm</span>(forbes94<span class="op">$</span>Age, <span class="dt">main =</span> <span class="st">&quot;Normal probability plot di Age&quot;</span>)
+<span class="op">&gt;</span><span class="st"> </span><span class="kw">qqline</span>(forbes94<span class="op">$</span>Age)</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:qqnorm2"></span>
+<img src="manuale_R_files/figure-html/qqnorm2-1.pdf" alt="Esempio di normal probability plot per la variabile &lt;tt&gt;Salary&lt;/tt&gt;." width="480" />
+<p class="caption">
+Figura 6.13: Esempio di normal probability plot per la variabile <tt>Salary</tt>.
+</p>
+</div>
+<p>In questo caso la distribuzione empirica di <tt>Age</tt> è molto più vicina, anche se non perfettamente, ad una distribuzione normale<a href="#fn51" class="footnoteRef" id="fnref51"><sup>51</sup></a>.</p>
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="46">
+<li id="fn46"><p>Come è indicato anche nell’help della funzione <tt>hist()</tt>, infatti, il valore che forniamo per il numero di classi di uguale ampiezza è solo un “suggerimento”, ma internamente tale valore viene rivisto in funzione di alcune regole, che non è nostro obiettivo descrivere ora.<a href="alcune-funzioni-di-r-per-la-statistica-descrittiva.html#fnref46">↩</a></p></li>
+<li id="fn47"><p>Se provaste a fissare <tt>freq = TRUE</tt> nel caso di classi di diversa ampiezza, otterreste un istruttivo messaggio di errore.<a href="alcune-funzioni-di-r-per-la-statistica-descrittiva.html#fnref47">↩</a></p></li>
+<li id="fn48"><p>In alternativa, è possibile specificare le variabili attraverso una formula, ad esempio <tt>plot(Salary <span class="math inline">\(\sim\)</span> Age, data = forbes94)</tt>.<a href="alcune-funzioni-di-r-per-la-statistica-descrittiva.html#fnref48">↩</a></p></li>
+<li id="fn49"><p>Sono disponibili altre scelte per l’argomento <tt>use</tt>, ma non le presentiamo in questo manuale. Vi invitiamo comunque a leggere l’help di queste funzioni.<a href="alcune-funzioni-di-r-per-la-statistica-descrittiva.html#fnref49">↩</a></p></li>
+<li id="fn50"><p>Gli argomenti <tt>lwd</tt>, <tt>lty</tt> e <tt>sub</tt> servono per definire lo spessore della linea (<tt>2</tt> significa linee spesse il doppio del normale), il tipo di linea (<tt>1</tt> significa una linea continua, mentre 2 una linea tratteggiata) e un sottotitolo, riportato nella parte bassa del grafico.<a href="alcune-funzioni-di-r-per-la-statistica-descrittiva.html#fnref50">↩</a></p></li>
+<li id="fn51"><p>Ricordiamo che il normal probability plot è uno strumento grafico e pertanto aiuta a discriminare bene se ci troviamo vicino alla situazione di normalità o meno solo nei casi più evidenti. In molte situazioni il grafico non consente di arrivare ad una conclusione univoca sulla normalità. In questi casi è necessario utilizzare strumenti più elaborati che non sono oggetto di discussione né qui né nel corso.<a href="alcune-funzioni-di-r-per-la-statistica-descrittiva.html#fnref51">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="appendix.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="alcune-funzioni-r-per-la-statistica-inferenziale.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook/js/app.min.js"></script>
+<script src="libs/gitbook/js/lunr.js"></script>
+<script src="libs/gitbook/js/plugin-search.js"></script>
+<script src="libs/gitbook/js/plugin-sharing.js"></script>
+<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

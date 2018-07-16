@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html  lang="it">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Elementi di R e Radiant per un primo corso di Statistica</title>
+  <meta name="description" content="Breve manuale per l’apprendimento di alcuni elementi di R e Radiant. Materiale di supporto per il Corso 30001 (Statistica) dell’Università Bocconi.">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Elementi di R e Radiant per un primo corso di Statistica" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Breve manuale per l’apprendimento di alcuni elementi di R e Radiant. Materiale di supporto per il Corso 30001 (Statistica) dell’Università Bocconi." />
+  <meta name="github-repo" content="sergioventurini/manuale_R" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Elementi di R e Radiant per un primo corso di Statistica" />
+  
+  <meta name="twitter:description" content="Breve manuale per l’apprendimento di alcuni elementi di R e Radiant. Materiale di supporto per il Corso 30001 (Statistica) dell’Università Bocconi." />
+  
+
+<meta name="author" content="Sergio Venturini">
+
+
+<meta name="date" content="2018-07-16">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="lapproccio-al-calcolo-statistico-di-r.html">
+<link rel="next" href="howtogethelp.html">
+<script src="libs/jquery/jquery.min.js"></script>
+<link href="libs/gitbook/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Elementi di <tt>R</tt> e <tt>Radiant</tt></a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Premessa</a></li>
+<li class="chapter" data-level="1" data-path="introduzione.html"><a href="introduzione.html"><i class="fa fa-check"></i><b>1</b> Introduzione</a><ul>
+<li class="chapter" data-level="1.1" data-path="installazione-dei-software.html"><a href="installazione-dei-software.html"><i class="fa fa-check"></i><b>1.1</b> Installazione dei software</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="installazione-dei-software.html"><a href="installazione-dei-software.html#installazione-su-windows"><i class="fa fa-check"></i><b>1.1.1</b> Installazione su Windows</a></li>
+<li class="chapter" data-level="1.1.2" data-path="installazione-dei-software.html"><a href="installazione-dei-software.html#installazione-su-mac"><i class="fa fa-check"></i><b>1.1.2</b> Installazione su Mac</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="lapproccio-al-calcolo-statistico-di-r.html"><a href="lapproccio-al-calcolo-statistico-di-r.html"><i class="fa fa-check"></i><b>1.2</b> L’approccio al calcolo statistico di <tt>R</tt></a></li>
+<li class="chapter" data-level="1.3" data-path="le-principali-strutture-di-dati-disponibili-in-r.html"><a href="le-principali-strutture-di-dati-disponibili-in-r.html"><i class="fa fa-check"></i><b>1.3</b> Le principali strutture di dati disponibili in <tt>R</tt></a><ul>
+<li class="chapter" data-level="1.3.1" data-path="le-principali-strutture-di-dati-disponibili-in-r.html"><a href="le-principali-strutture-di-dati-disponibili-in-r.html#tipi-di-dati-di-base"><i class="fa fa-check"></i><b>1.3.1</b> Tipi di dati di base</a></li>
+<li class="chapter" data-level="1.3.2" data-path="le-principali-strutture-di-dati-disponibili-in-r.html"><a href="le-principali-strutture-di-dati-disponibili-in-r.html#vettori"><i class="fa fa-check"></i><b>1.3.2</b> Vettori</a></li>
+<li class="chapter" data-level="1.3.3" data-path="le-principali-strutture-di-dati-disponibili-in-r.html"><a href="le-principali-strutture-di-dati-disponibili-in-r.html#matrix"><i class="fa fa-check"></i><b>1.3.3</b> Matrici</a></li>
+<li class="chapter" data-level="1.3.4" data-path="le-principali-strutture-di-dati-disponibili-in-r.html"><a href="le-principali-strutture-di-dati-disponibili-in-r.html#factor-vector"><i class="fa fa-check"></i><b>1.3.4</b> Vettori factor</a></li>
+<li class="chapter" data-level="1.3.5" data-path="le-principali-strutture-di-dati-disponibili-in-r.html"><a href="le-principali-strutture-di-dati-disponibili-in-r.html#data-frame"><i class="fa fa-check"></i><b>1.3.5</b> Data frame</a></li>
+<li class="chapter" data-level="1.3.6" data-path="le-principali-strutture-di-dati-disponibili-in-r.html"><a href="le-principali-strutture-di-dati-disponibili-in-r.html#lists"><i class="fa fa-check"></i><b>1.3.6</b> Liste</a></li>
+<li class="chapter" data-level="1.3.7" data-path="le-principali-strutture-di-dati-disponibili-in-r.html"><a href="le-principali-strutture-di-dati-disponibili-in-r.html#funzioni"><i class="fa fa-check"></i><b>1.3.7</b> Funzioni</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="howtogethelp.html"><a href="howtogethelp.html"><i class="fa fa-check"></i><b>1.4</b> Come reperire informazioni sui comandi di <tt>R</tt></a></li>
+<li class="chapter" data-level="1.5" data-path="packages.html"><a href="packages.html"><i class="fa fa-check"></i><b>1.5</b> I pacchetti di <tt>R</tt></a></li>
+<li class="chapter" data-level="1.6" data-path="lapplicazione-rstudio.html"><a href="lapplicazione-rstudio.html"><i class="fa fa-check"></i><b>1.6</b> L’applicazione <tt>RStudio</tt></a></li>
+<li class="chapter" data-level="1.7" data-path="il-pacchetto-radiant.html"><a href="il-pacchetto-radiant.html"><i class="fa fa-check"></i><b>1.7</b> Il pacchetto <tt>Radiant</tt></a></li>
+<li class="chapter" data-level="1.8" data-path="file-loading.html"><a href="file-loading.html"><i class="fa fa-check"></i><b>1.8</b> Come caricare e salvare un file in <tt>R</tt> e <tt>Radiant</tt></a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="statistica-descrittiva.html"><a href="statistica-descrittiva.html"><i class="fa fa-check"></i><b>2</b> Statistica descrittiva</a><ul>
+<li class="chapter" data-level="2.1" data-path="descriptive-R.html"><a href="descriptive-R.html"><i class="fa fa-check"></i><b>2.1</b> Primi esempi con <tt>R</tt></a></li>
+<li class="chapter" data-level="2.2" data-path="analisi-descrittive-univariate.html"><a href="analisi-descrittive-univariate.html"><i class="fa fa-check"></i><b>2.2</b> Analisi descrittive univariate</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="analisi-descrittive-univariate.html"><a href="analisi-descrittive-univariate.html#una-singola-variabile-categorica"><i class="fa fa-check"></i><b>2.2.1</b> Una singola variabile categorica</a></li>
+<li class="chapter" data-level="2.2.2" data-path="analisi-descrittive-univariate.html"><a href="analisi-descrittive-univariate.html#una-singola-variabile-numerica"><i class="fa fa-check"></i><b>2.2.2</b> Una singola variabile numerica</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="analisi-descrittive-bivariate.html"><a href="analisi-descrittive-bivariate.html"><i class="fa fa-check"></i><b>2.3</b> Analisi descrittive bivariate</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="analisi-descrittive-bivariate.html"><a href="analisi-descrittive-bivariate.html#due-variabili-categoriche"><i class="fa fa-check"></i><b>2.3.1</b> Due variabili categoriche</a></li>
+<li class="chapter" data-level="2.3.2" data-path="analisi-descrittive-bivariate.html"><a href="analisi-descrittive-bivariate.html#lincorr"><i class="fa fa-check"></i><b>2.3.2</b> Due variabili numeriche</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="calcolo-delle-probabilita.html"><a href="calcolo-delle-probabilita.html"><i class="fa fa-check"></i><b>3</b> Calcolo delle probabilità</a><ul>
+<li class="chapter" data-level="3.1" data-path="variabili-aleatorie-binomiali.html"><a href="variabili-aleatorie-binomiali.html"><i class="fa fa-check"></i><b>3.1</b> Variabili aleatorie binomiali</a></li>
+<li class="chapter" data-level="3.2" data-path="variabili-aleatorie-normali-o-gaussiane.html"><a href="variabili-aleatorie-normali-o-gaussiane.html"><i class="fa fa-check"></i><b>3.2</b> Variabili aleatorie normali (o gaussiane)</a></li>
+<li class="chapter" data-level="3.3" data-path="altre-variabili-aleatorie.html"><a href="altre-variabili-aleatorie.html"><i class="fa fa-check"></i><b>3.3</b> Altre variabili aleatorie</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="statistica-inferenziale.html"><a href="statistica-inferenziale.html"><i class="fa fa-check"></i><b>4</b> Statistica inferenziale</a><ul>
+<li class="chapter" data-level="4.1" data-path="inferenza-sulla-media-di-una-popolazione-normale.html"><a href="inferenza-sulla-media-di-una-popolazione-normale.html"><i class="fa fa-check"></i><b>4.1</b> Inferenza sulla media di una popolazione normale</a></li>
+<li class="chapter" data-level="4.2" data-path="inferenza-sulla-proporzione-di-successi-in-una-popolazione-bernoulliana.html"><a href="inferenza-sulla-proporzione-di-successi-in-una-popolazione-bernoulliana.html"><i class="fa fa-check"></i><b>4.2</b> Inferenza sulla proporzione di successi in una popolazione bernoulliana</a></li>
+<li class="chapter" data-level="4.3" data-path="inferenza-sul-confronto-tra-le-medie-di-due-popolazioni-normali.html"><a href="inferenza-sul-confronto-tra-le-medie-di-due-popolazioni-normali.html"><i class="fa fa-check"></i><b>4.3</b> Inferenza sul confronto tra le medie di due popolazioni normali</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="inferenza-sul-confronto-tra-le-medie-di-due-popolazioni-normali.html"><a href="inferenza-sul-confronto-tra-le-medie-di-due-popolazioni-normali.html#campioni-indipendenti"><i class="fa fa-check"></i><b>4.3.1</b> Campioni indipendenti</a></li>
+<li class="chapter" data-level="4.3.2" data-path="inferenza-sul-confronto-tra-le-medie-di-due-popolazioni-normali.html"><a href="inferenza-sul-confronto-tra-le-medie-di-due-popolazioni-normali.html#paired-ttest"><i class="fa fa-check"></i><b>4.3.2</b> Campioni dipendenti</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="inferenza-sullindice-di-correlazione-lineare.html"><a href="inferenza-sullindice-di-correlazione-lineare.html"><i class="fa fa-check"></i><b>4.4</b> Inferenza sull’indice di correlazione lineare</a></li>
+<li class="chapter" data-level="4.5" data-path="test-sulla-bonta-di-adattamento-probabilita-completamente-specificate.html"><a href="test-sulla-bonta-di-adattamento-probabilita-completamente-specificate.html"><i class="fa fa-check"></i><b>4.5</b> Test sulla bontà di adattamento (probabilità completamente specificate)</a></li>
+<li class="chapter" data-level="4.6" data-path="test-di-indipendenza-in-una-tabella-a-doppia-entrata.html"><a href="test-di-indipendenza-in-una-tabella-a-doppia-entrata.html"><i class="fa fa-check"></i><b>4.6</b> Test di indipendenza in una tabella a doppia entrata</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="chapter5.html"><a href="chapter5.html"><i class="fa fa-check"></i><b>5</b> Il modello di regressione lineare</a><ul>
+<li class="chapter" data-level="5.1" data-path="simple-reg.html"><a href="simple-reg.html"><i class="fa fa-check"></i><b>5.1</b> Il modello di regressione lineare semplice</a></li>
+<li class="chapter" data-level="5.2" data-path="il-modello-di-regressione-lineare-multipla.html"><a href="il-modello-di-regressione-lineare-multipla.html"><i class="fa fa-check"></i><b>5.2</b> Il modello di regressione lineare multipla</a></li>
+<li class="chapter" data-level="5.3" data-path="come-calcolare-le-previsioni-per-un-modello-di-regressione-lineare.html"><a href="come-calcolare-le-previsioni-per-un-modello-di-regressione-lineare.html"><i class="fa fa-check"></i><b>5.3</b> Come calcolare le previsioni per un modello di regressione lineare</a></li>
+<li class="chapter" data-level="5.4" data-path="le-osservazioni-influenti.html"><a href="le-osservazioni-influenti.html"><i class="fa fa-check"></i><b>5.4</b> Le osservazioni influenti</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="appendix.html"><a href="appendix.html"><i class="fa fa-check"></i><b>6</b> Appendice</a><ul>
+<li class="chapter" data-level="6.1" data-path="alcune-funzioni-di-r-per-la-statistica-descrittiva.html"><a href="alcune-funzioni-di-r-per-la-statistica-descrittiva.html"><i class="fa fa-check"></i><b>6.1</b> Alcune funzioni di <tt>R</tt> per la statistica descrittiva</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="alcune-funzioni-di-r-per-la-statistica-descrittiva.html"><a href="alcune-funzioni-di-r-per-la-statistica-descrittiva.html#analisi-descrittive-univariate-1"><i class="fa fa-check"></i><b>6.1.1</b> Analisi descrittive univariate</a></li>
+<li class="chapter" data-level="6.1.2" data-path="alcune-funzioni-di-r-per-la-statistica-descrittiva.html"><a href="alcune-funzioni-di-r-per-la-statistica-descrittiva.html#analisi-descrittive-bivariate-1"><i class="fa fa-check"></i><b>6.1.2</b> Analisi descrittive bivariate</a></li>
+<li class="chapter" data-level="6.1.3" data-path="alcune-funzioni-di-r-per-la-statistica-descrittiva.html"><a href="alcune-funzioni-di-r-per-la-statistica-descrittiva.html#ulteriori-rappresentazioni-grafiche"><i class="fa fa-check"></i><b>6.1.3</b> Ulteriori rappresentazioni grafiche</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="alcune-funzioni-r-per-la-statistica-inferenziale.html"><a href="alcune-funzioni-r-per-la-statistica-inferenziale.html"><i class="fa fa-check"></i><b>6.2</b> Alcune funzioni <tt>R</tt> per la statistica inferenziale</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="alcune-funzioni-r-per-la-statistica-inferenziale.html"><a href="alcune-funzioni-r-per-la-statistica-inferenziale.html#inferenza-sulla-media-di-una-popolazione-normale-1"><i class="fa fa-check"></i><b>6.2.1</b> Inferenza sulla media di una popolazione normale</a></li>
+<li class="chapter" data-level="6.2.2" data-path="alcune-funzioni-r-per-la-statistica-inferenziale.html"><a href="alcune-funzioni-r-per-la-statistica-inferenziale.html#inferenza-sulla-proporzione-di-successi-in-una-popolazione-bernoulliana-1"><i class="fa fa-check"></i><b>6.2.2</b> Inferenza sulla proporzione di successi in una popolazione bernoulliana</a></li>
+<li class="chapter" data-level="6.2.3" data-path="alcune-funzioni-r-per-la-statistica-inferenziale.html"><a href="alcune-funzioni-r-per-la-statistica-inferenziale.html#inferenza-sul-confronto-tra-le-medie-di-due-popolazioni-normali-1"><i class="fa fa-check"></i><b>6.2.3</b> Inferenza sul confronto tra le medie di due popolazioni normali</a></li>
+<li class="chapter" data-level="6.2.4" data-path="alcune-funzioni-r-per-la-statistica-inferenziale.html"><a href="alcune-funzioni-r-per-la-statistica-inferenziale.html#inferenza-sullindice-di-correlazione-lineare-1"><i class="fa fa-check"></i><b>6.2.4</b> Inferenza sull’indice di correlazione lineare</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="_blank">Pubblicato con bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><strong>Elementi di <tt>R</tt> e <tt>Radiant</tt> per un primo corso di Statistica</strong></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="le-principali-strutture-di-dati-disponibili-in-r" class="section level2">
+<h2><span class="header-section-number">1.3</span> Le principali strutture di dati disponibili in <tt>R</tt></h2>
+<p>Come abbiamo già detto, in <tt>R</tt> esistono tipi diversi di oggetti e in questa sezione daremo una breve descrizione di quelli che ci serviranno nel resto del manuale.</p>
+<div id="tipi-di-dati-di-base" class="section level3">
+<h3><span class="header-section-number">1.3.1</span> Tipi di dati di base</h3>
+<p>In <tt>R</tt> è possibile creare oggetti contenenti dati numerici, testuali o logici, che in <tt>R</tt> sono indicati rispettivamente come <tt>num</tt>, <tt>chr</tt> e <tt>logical</tt><a href="#fn12" class="footnoteRef" id="fnref12"><sup>12</sup></a>.</p>
+<p>Abbiamo già visto esempi di dati numerici e testuali, mentre i dati di tipo logico sono di solito ottenuti come risultato della verifica di una o più condizioni logiche. Ad esempio, dopo aver definito il vettore <span class="math inline">\(x = (10, -2, 0.3, -1, 5)\)</span>, ovvero</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span>x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">10</span>, <span class="op">-</span><span class="dv">2</span>, <span class="fl">0.3</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">5</span>)</code></pre></div>
+<p>supponiamo di voler verificare quali dei suoi elementi siano positivi e quali no. Per farlo è sufficiente eseguire il seguente codice, in cui il risultato della verifica viene memorizzato nel nuovo oggetto <tt>z</tt>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span>z &lt;-<span class="st"> </span>(x <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>)
+<span class="op">&gt;</span><span class="st"> </span>z</code></pre></div>
+<pre><code>[1]  TRUE FALSE  TRUE FALSE  TRUE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">str</span>(z)</code></pre></div>
+<pre><code> logi [1:5] TRUE FALSE TRUE FALSE TRUE</code></pre>
+<p>Come vediamo, <tt>z</tt> contiene la risposta alla nostra domanda, risposta che viene data sotto forma di un vettore di valori <tt>TRUE</tt> e <tt>FALSE</tt> a seconda che i vari elementi di <tt>x</tt> siano positivi o negativi.</p>
+</div>
+<div id="vettori" class="section level3">
+<h3><span class="header-section-number">1.3.2</span> Vettori</h3>
+<p>Si tratta della struttura di dati più importante in <tt>R</tt> rappresentata da un insieme di elementi tutti dello stesso tipo, ovvero numeri, stringhe di testo o valori logici.</p>
+<p>Abbiamo già visto nei precedenti esempi che possiamo creare un vettore con la funzione <tt>c()</tt>, la quale consente di concatenare più elementi in un unico oggetto. Molte funzioni di <tt>R</tt> restituiscono in output dei vettori, pertanto è importante imparare bene a manipolare questo tipo di oggetti.</p>
+<p>La funzione <tt>length()</tt> restituisce la dimensione di un vettore, ovvero il numero di elementi che lo compongono:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">length</span>(z)</code></pre></div>
+<pre><code>[1] 5</code></pre>
+<p>Per selezionare uno o più elementi di un vettore dobbiamo usare l’operatore <tt>[]</tt> (parentesi quadre). Ad esempio, possiamo estrarre il terzo elemento del vettore <tt>x</tt> con il codice</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span>x[<span class="dv">3</span>]</code></pre></div>
+<pre><code>[1] 0.3</code></pre>
+<p>dove il numero <tt>3</tt> nelle parentesi quadre sta ad indicare la posizione dell’elemento che vogliamo estrarre. Allo stesso modo possiamo selezionare un sottoinsieme qualsiasi di elementi usando la funzione <tt>c()</tt>. Per estrarre da <tt>x</tt> gli elementi con posizione 1, 4 e 5 possiamo eseguire il codice</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span>w &lt;-<span class="st"> </span>x[<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">5</span>)]
+<span class="op">&gt;</span><span class="st"> </span>w</code></pre></div>
+<pre><code>[1] 10 -1  5</code></pre>
+<p>Notate come in questo caso abbiamo estratto un sottoinsieme di elementi, il cui risultato è stato immediatamente memorizzato in un nuovo oggetto che abbiamo chiamato <tt>w</tt>. In <tt>R</tt> è piuttosto comune, infatti, creare nuovi oggetti come risultato di una qualche operazione su oggetti già esistenti.</p>
+<p>Possiamo indicare quali elementi estrarre anche attraverso la verifica di condizioni logiche. Ad esempio, il codice seguente consente di estrarre da <tt>x</tt> solo gli elementi pari:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span>x[(x <span class="op">%%</span><span class="st"> </span><span class="dv">2</span>) <span class="op">==</span><span class="st"> </span><span class="dv">0</span>]</code></pre></div>
+<pre><code>[1] 10 -2</code></pre>
+<p>Notate che in questo esempio abbiamo usato due operatori nuovi, l’operatore <tt>%%</tt> che restituisce il resto della divisione per il numero che si trova a destra dell’operatore (in questo caso, il resto della divisione di ognuno degli elementi di <tt>x</tt> per 2), e l’operatore logico <tt>==</tt>, il quale invece verifica se il lato di sinistra è uguale a quello di destra e restituisce i valori logici <tt>TRUE</tt> o <tt>FALSE</tt> a seconda dei casi<a href="#fn13" class="footnoteRef" id="fnref13"><sup>13</sup></a>. Ne approfittiamo anche per sottolineare che <tt>R</tt> applica automaticamente le varie operazioni a tutti gli elementi di un vettore.</p>
+<p>E’ possibile assegnare dei nomi agli elementi di un vettore attraverso la funzione <tt>names()</tt>. Ciò consente di riferirsi agli elementi del vettore attraverso i loro nomi invece che le loro posizioni:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span>x</code></pre></div>
+<pre><code>[1] 10.0 -2.0  0.3 -1.0  5.0</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">names</span>(x) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;C&quot;</span>, <span class="st">&quot;D&quot;</span>, <span class="st">&quot;E&quot;</span>)
+<span class="op">&gt;</span><span class="st"> </span>x</code></pre></div>
+<pre><code>   A    B    C    D    E 
+10.0 -2.0  0.3 -1.0  5.0 </code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span>x[<span class="kw">c</span>(<span class="st">&quot;B&quot;</span>, <span class="st">&quot;E&quot;</span>, <span class="st">&quot;A&quot;</span>)]</code></pre></div>
+<pre><code> B  E  A 
+-2  5 10 </code></pre>
+<p>La funzione <tt>names()</tt> può essere usata sia per ottenere i nomi degli elementi di un vettore, ma anche, come abbiamo fatto sopra, per assegnare i nomi agli elementi stessi.</p>
+<p>Concludiamo questa parte sui vettori aggiungendo che quando si lavora con data set veri è molto frequente che alcuni dei dati siano mancanti. Il codice che in <tt>R</tt> indica i dati mancanti è <tt>NA</tt>, acronimo di <em>not available</em> (corrisponde a una cella vuota in Excel). Supponiamo ad esempio che in una ricerca di mercato abbiamo raccolto i seguenti dati sul reddito annuo (in migliaia di euro) per un campione di 10 individui:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span>income &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">40</span>, <span class="dv">55</span>, <span class="dv">60</span>, <span class="ot">NA</span>, <span class="dv">34</span>, <span class="dv">89</span>, <span class="ot">NA</span>, <span class="ot">NA</span>, <span class="dv">121</span>, <span class="dv">73</span>)</code></pre></div>
+<p>Tre degli individui intervistati non hanno comunicato il proprio reddito e pertanto sono riportati come <tt>NA</tt>. Per sapere quali dati sono mancanti possiamo usare la funzione <tt>is.na()</tt>, che restituisce un vettore logico di lunghezza pari a quella del vettore a cui è applicata:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">is.na</span>(income)</code></pre></div>
+<pre><code> [1] FALSE FALSE FALSE  TRUE FALSE FALSE  TRUE  TRUE
+ [9] FALSE FALSE</code></pre>
+<p>Per contare quanti dati sono mancanti possiamo usare la funzione <tt>sum()</tt>, la quale in generale consente di calcolare la somma degli elementi di un vettore. In questo caso <tt>sum()</tt> converte prima i valori logici <tt>TRUE</tt> e <tt>FALSE</tt> restituiti da <tt>is.na()</tt> rispettivamente in 1 e 0, e quindi ne calcola la somma:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">sum</span>(<span class="kw">is.na</span>(income))</code></pre></div>
+<pre><code>[1] 3</code></pre>
+</div>
+<div id="matrix" class="section level3">
+<h3><span class="header-section-number">1.3.3</span> Matrici</h3>
+<p>Altre strutture di dati utili in <tt>R</tt> sono le matrici, ovvero insiemi di elementi dello stesso tipo (numeri, testo, valori logici) disposti lungo due dimensioni, righe e colonne, invece che lungo una sola dimensione come per i vettori.</p>
+<p>Per creare una matrice usiamo la funzione <tt>matrix()</tt>, la quale è più articolata rispetto alle funzioni che abbiamo usato finora, perché richiede diversi argomenti (per una discussione più dettagliata sulle caratteristiche di un oggetto di tipo funzione e una descrizione del tipo di argomenti che è possibile passare ad una funzione, si veda la Sezione <a href="le-principali-strutture-di-dati-disponibili-in-r.html#funzioni">1.3.7</a><a href="#fn14" class="footnoteRef" id="fnref14"><sup>14</sup></a>). Il primo argomento richiesto, denominato <tt>data</tt>, corrisponde al vettore di elementi della matrice riportati indifferentemente per riga o per colonna. Il secondo e terzo argomento, denominati rispettivamente <tt>nrow</tt> e <tt>ncol</tt>, indicano il numero di righe e di colonne in cui gli elementi in <tt>data</tt> vogliamo vengano disposti. Il quarto argomento, denominato <tt>byrow</tt>, serve per indicare ad <tt>R</tt> se la matrice deve essere riempita per righe (<tt>TRUE</tt>) o per colonne (<tt>FALSE</tt>). Nell’esempio che segue creiamo una matrice <span class="math inline">\((3 \times 2)\)</span> procedendo per righe:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span>A &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dt">data =</span> <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="op">-</span><span class="dv">3</span>, <span class="fl">0.9</span>), <span class="dt">nrow =</span> <span class="dv">3</span>, <span class="dt">ncol =</span> <span class="dv">2</span>, <span class="dt">byrow =</span> <span class="ot">TRUE</span>)
+<span class="op">&gt;</span><span class="st"> </span>A</code></pre></div>
+<pre><code>     [,1] [,2]
+[1,]    4  2.0
+[2,]    0  1.0
+[3,]   -3  0.9</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">str</span>(A)</code></pre></div>
+<pre><code> num [1:3, 1:2] 4 0 -3 2 1 0.9</code></pre>
+<p>La funzione <tt>dim()</tt> restituisce un vettore con le dimensioni della matrice.</p>
+<p>Per estrarre un sottoinsieme di elementi da una matrice abbiamo a disposizione le stesse modalità che abbiamo descritto per i vettori, salvo che ora all’interno delle parentesi quadre sarà necessario indicare sia gli indici di riga sia quelli di colonna degli elementi da estrarre. Nel caso si intenda estrarre tutte le righe o tutte le colonne di una matrice, è sufficiente non indicare il rispettivo vettore di indici. Il seguente codice mostra due esempi usando la matrice <tt>A</tt> definita sopra<a href="#fn15" class="footnoteRef" id="fnref15"><sup>15</sup></a>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span>A[<span class="dv">2</span>, <span class="dv">1</span>]           <span class="co"># elemento in riga 2 e colonna 1</span></code></pre></div>
+<pre><code>[1] 0</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span>A[<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>), <span class="dv">2</span>]     <span class="co"># elementi in riga 1 o 3 e in colonna 2</span></code></pre></div>
+<pre><code>[1] 2.0 0.9</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span>A[, <span class="dv">1</span>]            <span class="co"># tutti gli elementi della prima colonna</span></code></pre></div>
+<pre><code>[1]  4  0 -3</code></pre>
+<p>Provate ora un piccolo esercizio (verificate poi la risposta eseguendo il codice): quali sono gli elementi della matrice <tt>A</tt> selezionati dal seguente codice?</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span>A[A[, <span class="dv">2</span>] <span class="op">&gt;=</span><span class="st"> </span><span class="dv">1</span>, A[<span class="dv">3</span>, ] <span class="op">&lt;</span><span class="st"> </span><span class="dv">0</span>]</code></pre></div>
+<p>E’ possibile attribuire dei nomi anche agli elementi di una matrice. Visto che ora ci sono due dimensioni, esistono due funzioni, chiamate <tt>rownames</tt> e <tt>colnames</tt>, per assegnare dei nomi rispettivamente alle righe o alle colonne della matrice:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">rownames</span>(A) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>)
+<span class="op">&gt;</span><span class="st"> </span><span class="kw">colnames</span>(A) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;d&quot;</span>, <span class="st">&quot;e&quot;</span>)
+<span class="op">&gt;</span><span class="st"> </span>A</code></pre></div>
+<pre><code>   d   e
+a  4 2.0
+b  0 1.0
+c -3 0.9</code></pre>
+<p>Dopo aver assegnato i nomi a righe e colonne, possiamo ad esempio selezionare la terza riga della matrice <tt>A</tt> come segue</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span>A[<span class="st">&quot;c&quot;</span>, ]</code></pre></div>
+<pre><code>   d    e 
+-3.0  0.9 </code></pre>
+<p>E’ possibile unire matrici e vettori affiancandone i rispettivi elementi lungo una delle due dimensioni (righe o colonne) attraverso le funzioni <tt>rbind()</tt> (per affiancare le righe) e <tt>cbind()</tt> (per affiancare le colonne):</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span>D &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>), <span class="dt">nrow =</span> <span class="dv">2</span>, <span class="dt">ncol =</span> <span class="dv">2</span>, <span class="dt">byrow =</span> <span class="ot">TRUE</span>)
+<span class="op">&gt;</span><span class="st"> </span>b &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="op">-</span><span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">0</span>)
+<span class="op">&gt;</span><span class="st"> </span>
+<span class="er">&gt;</span><span class="st"> </span><span class="kw">rbind</span>(A, D)</code></pre></div>
+<pre><code>   d   e
+a  4 2.0
+b  0 1.0
+c -3 0.9
+   1 0.0
+   0 1.0</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">cbind</span>(A, b)</code></pre></div>
+<pre><code>   d   e  b
+a  4 2.0 -3
+b  0 1.0  4
+c -3 0.9  0</code></pre>
+</div>
+<div id="factor-vector" class="section level3">
+<h3><span class="header-section-number">1.3.4</span> Vettori factor</h3>
+<p>Un vettore <em>factor</em> è un vettore che contiene solo valori predefiniti ed è utilizzato per rappresentare delle variabili qualitative/categoriche. I vettori factor sono definiti internamente da <tt>R</tt> a partire da numeri interi a cui vengono poi “appiccicate” delle etichette di testo.</p>
+<p>Per creare un vettore factor si usa la funzione <tt>factor()</tt>. Supponiamo per esempio che nell’ipotetico sondaggio che abbiamo descritto nella Sezione <a href="le-principali-strutture-di-dati-disponibili-in-r.html#vettori">1.3.2</a>, oltre al reddito annuo abbiamo raccolto anche il genere degli intervistati, riportati rispettivamente come <tt>“m”</tt> e <tt>“f”</tt>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span>gender &lt;-<span class="st"> </span><span class="kw">factor</span>(<span class="kw">c</span>(<span class="st">&quot;f&quot;</span>, <span class="st">&quot;f&quot;</span>, <span class="st">&quot;f&quot;</span>, <span class="st">&quot;m&quot;</span>, <span class="st">&quot;m&quot;</span>, <span class="st">&quot;f&quot;</span>, <span class="st">&quot;m&quot;</span>, <span class="st">&quot;f&quot;</span>, <span class="st">&quot;f&quot;</span>, <span class="st">&quot;m&quot;</span>))
+<span class="op">&gt;</span><span class="st"> </span>gender</code></pre></div>
+<pre><code> [1] f f f m m f m f f m
+Levels: f m</code></pre>
+<p>Per conoscere i livelli di un vettore factor si usa la funzione <tt>levels()</tt>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">levels</span>(gender)</code></pre></div>
+<pre><code>[1] &quot;f&quot; &quot;m&quot;</code></pre>
+<p>I vettori factor si riveleranno di fondamentale importanza per l’analisi di dati categorici.</p>
+</div>
+<div id="data-frame" class="section level3">
+<h3><span class="header-section-number">1.3.5</span> Data frame</h3>
+<p>I <em>data frame</em> sono le strutture di dati tipicamente utilizzate in <tt>R</tt> per contenere un data set. Non sono da confondere con le matrici, poiché quest’ultime richiedono che i dati in esse contenute siano tutti dello stesso tipo, mentre i data frame possono contenere un misto di colonne numeriche, categoriche o testuali.</p>
+<p>Possiamo creare un data frame ex-novo attraverso la funzione <tt>data.frame()</tt>, anche se il sistema più comune per crearne uno consiste nell’importare dei dati già salvati precedentemente in un file (si veda la Sezione <a href="file-loading.html#file-loading">1.8</a>). A titolo di esempio, il codice seguente crea un data frame a partire dai vettori <tt>income</tt> e <tt>gender</tt> creati precedentemente, i quali diventeranno rispettivamente la prima e la seconda colonna del data frame:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span>dat &lt;-<span class="st"> </span><span class="kw">data.frame</span>(income, gender)
+<span class="op">&gt;</span><span class="st"> </span><span class="kw">str</span>(dat)</code></pre></div>
+<pre><code>&#39;data.frame&#39;:   10 obs. of  2 variables:
+ $ income: num  40 55 60 NA 34 89 NA NA 121 73
+ $ gender: Factor w/ 2 levels &quot;f&quot;,&quot;m&quot;: 1 1 1 2 2 1 2 1 1 2</code></pre>
+<p>Notate che la funzione <tt>str()</tt> restituisce una sintesi delle informazioni contenute nelle colonne del data frame, indicando per ognuna la corrispondente tipologia di dati, ovvero <tt>num</tt> e <tt>Factor</tt> con 2 livelli, <tt>“f”</tt> e <tt>“m”</tt>.</p>
+<p>Come per le matrici, la funzione <tt>dim()</tt> restituisce le dimensioni di un data frame (numero di osservazioni e numero di variabili), così come funziona allo stesso modo anche la selezione di un sottoinsieme di dati e l’assegnazione di nomi a righe e colonne:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span>dat[<span class="dv">5</span>, <span class="dv">1</span>]</code></pre></div>
+<pre><code>[1] 34</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span>dat[, <span class="dv">2</span>]</code></pre></div>
+<pre><code> [1] f f f m m f m f f m
+Levels: f m</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span>dat[<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">7</span>), ]</code></pre></div>
+<pre><code>  income gender
+1     40      f
+3     60      f
+4     NA      m
+7     NA      m</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">rownames</span>(dat)</code></pre></div>
+<pre><code> [1] &quot;1&quot;  &quot;2&quot;  &quot;3&quot;  &quot;4&quot;  &quot;5&quot;  &quot;6&quot;  &quot;7&quot;  &quot;8&quot;  &quot;9&quot;  &quot;10&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">colnames</span>(dat)</code></pre></div>
+<pre><code>[1] &quot;income&quot; &quot;gender&quot;</code></pre>
+<p>In aggiunta, possiamo selezionare una colonna di un data frame utilizzando l’operatore <tt>$</tt> (simbolo di dollaro)<a href="#fn16" class="footnoteRef" id="fnref16"><sup>16</sup></a>. Ad esempio, per calcolare la media dei redditi annui per gli individui inclusi nel data set possiamo eseguire il codice seguente:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">mean</span>(dat<span class="op">$</span>income, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<pre><code>[1] 67.43</code></pre>
+<p>Facciamo notare che nel codice precedente abbiamo specificato due argomenti, il primo corrisponde alla variabile di cui vogliamo calcolare la media, mentre il secondo argomento (<tt>na.rm</tt>, opzionale) indica che, prima di calcolare la media, vogliamo rimuovere gli eventuali dati mancanti<a href="#fn17" class="footnoteRef" id="fnref17"><sup>17</sup></a>.</p>
+<p>Nel caso in cui il data set fosse troppo grande e non fosse quindi agevole stamparne l’intero contenuto nella <tt>Console</tt>, possiamo visualizzarlo con la funzione <tt>View()</tt>.</p>
+<p>Per combinare tra loro diversi data frame è consigliabile usare la funzione <tt>data.frame()</tt> invece che <tt>cbind()</tt>. I data frame che vengono combinati devono avere lo stesso numero di righe.</p>
+</div>
+<div id="lists" class="section level3">
+<h3><span class="header-section-number">1.3.6</span> Liste</h3>
+<p>Le liste sono oggetti molto generali i cui elementi possono essere altri oggetti di qualsiasi tipo, incluse altre liste. Possiamo creare una lista con la funzione <tt>list()</tt>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span>X &lt;-<span class="st"> </span><span class="kw">list</span>(y, txt, A)
+<span class="op">&gt;</span><span class="st"> </span>X</code></pre></div>
+<pre><code>[[1]]
+[1] &quot;Viva la Statistica!&quot;
+
+[[2]]
+[1] &quot;R&quot;        &quot;è&quot;        &quot;un&quot;       &quot;software&quot;
+[5] &quot;per&quot;      &quot;il&quot;       &quot;data&quot;     &quot;science&quot; 
+
+[[3]]
+   d   e
+a  4 2.0
+b  0 1.0
+c -3 0.9</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">str</span>(X)</code></pre></div>
+<pre><code>List of 3
+ $ : chr &quot;Viva la Statistica!&quot;
+ $ : chr [1:8] &quot;R&quot; &quot;è&quot; &quot;un&quot; &quot;software&quot; ...
+ $ : num [1:3, 1:2] 4 0 -3 2 1 0.9
+  ..- attr(*, &quot;dimnames&quot;)=List of 2
+  .. ..$ : chr [1:3] &quot;a&quot; &quot;b&quot; &quot;c&quot;
+  .. ..$ : chr [1:2] &quot;d&quot; &quot;e&quot;</code></pre>
+<p>Vi suggeriamo di pensare alle liste come a una generalizzazione dei vettori i cui elementi non sono vincolati ad essere dello stesso tipo.</p>
+<p>Per recuperare il numero di elementi inclusi in una lista dobbiamo usare la funzione <tt>length()</tt>, mentre per accedere ad uno dei suoi elementi è necessario usare l’operatore <tt>[[]]</tt> (doppia parentesi quadra)<a href="#fn18" class="footnoteRef" id="fnref18"><sup>18</sup></a>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span>X[[<span class="dv">1</span>]]            <span class="co"># primo elemento della lista X</span></code></pre></div>
+<pre><code>[1] &quot;Viva la Statistica!&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span>X[[<span class="dv">3</span>]]            <span class="co"># terzo elemento della lista X</span></code></pre></div>
+<pre><code>   d   e
+a  4 2.0
+b  0 1.0
+c -3 0.9</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span>X[[<span class="dv">3</span>]][<span class="dv">3</span>, <span class="dv">2</span>]      <span class="co"># elemento in riga 3 e colonna 2 per il terzo elemento di X</span></code></pre></div>
+<pre><code>[1] 0.9</code></pre>
+<p>Le liste sono molto importanti in <tt>R</tt>, perché sono spesso usate per memorizzare e organizzare i risultati di un’analisi, come ad esempio quelli restituiti dalla funzione <tt>lm()</tt>, che sarà discussa nel Capitolo <a href="chapter5.html#chapter5">5</a>.</p>
+</div>
+<div id="funzioni" class="section level3">
+<h3><span class="header-section-number">1.3.7</span> Funzioni</h3>
+<p>L’ultima tipologia di oggetti che consideriamo sono le funzioni. In quanto oggetti, anche le funzioni possono essere manipolate come tutti gli altri oggetti disponibili in <tt>R</tt>. Tuttavia, la manipolazione di funzioni rappresenta un argomento di programmazione avanzata che quindi non discuteremo in questa sede. Qui ci limiteremo a descrivere alcune caratteristiche delle funzioni che ci torneranno utili nel resto del manuale.</p>
+<p>Ogni funzione in <tt>R</tt> è caratterizzata da tre elementi:</p>
+<ul>
+<li>il corpo della funzione, ovvero il codice contenuto nella stessa</li>
+<li>l’ambiente in cui la funzione viene valutata</li>
+<li>la lista di argomenti, ovvero gli input della funzione</li>
+</ul>
+<p>Tralasciamo i dettagli sui primi due elementi, poiché non ci serviranno nel resto del corso, mentre diamo qualche informazione sulla lista di argomenti.</p>
+<!-- Per visualizzare il corpo di una funzione è sufficiente digitarne il nome senza aggiungere le parentesi e premere INVIO. Per esempio, la funzione <tt>var()</tt>, che calcola la varianza di un set di dati numerici, contiene il seguente codice: -->
+<!-- ```{r function_body} -->
+<!-- var -->
+<!-- ``` -->
+<!-- Non è un nostro obiettivo in questa sede entrare nei dettagli di questo complicato codice, per cui procediamo oltre. -->
+<p>Come abbiamo già detto, il compito di ogni funzione è quello di prendere in carico un elenco di argomenti (input), di utilizzare tali input per svolgere una serie di calcoli/operazioni e quindi di restituire un output. Alcune funzioni restituiscono un ouput numerico, altre un output grafico, altre ancora non restituiscono nulla ma producono degli effetti secondari. Ad esempio, le funzioni <tt>rownames()</tt> e <tt>colnames()</tt> non producono alcun risultato visibile, ma modificano i nomi delle righe e delle colonne di una matrice o di un data frame. Come abbiamo già avuto modo di verificare concretamente in alcuni esempi, l’output di una funzione può essere memorizzato in un nuovo oggetto, in modo da poterlo recuperare in un secondo momento senza dover eseguire nuovamente i calcoli contenuti nella funzione.</p>
+<p>Dei tre elementi sopra elencati, quello sicuramente più importante ai nostri fini è l’elenco di argomenti. Ad eccezione di pochi casi, come ad esempio la funzione <tt>str()</tt>, praticamente tutte le funzioni richiedono uno o più argomenti. Nel caso sia necessario indicare più argomenti, questi devono essere separati da una virgola (vedi l’esempio sulla funzione <tt>matrix()</tt> nella Sezione <a href="le-principali-strutture-di-dati-disponibili-in-r.html#matrix">1.3.3</a>).</p>
+<p>Possiamo recuperare la lista completa di argomenti di una funzione con <tt>args()</tt>. Ad esempio, per la funzione <tt>var()</tt>, che calcola la varianza campionaria di un insieme di dati numerici, otteniamo</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">args</span>(var)</code></pre></div>
+<pre><code>function (x, y = NULL, na.rm = FALSE, use) 
+NULL</code></pre>
+<p>Questo esempio mostra che la funzione <tt>var()</tt> include 4 argomenti, <tt>x</tt>, <tt>y</tt>, <tt>na.rm</tt> e <tt>use</tt>, su cui per ora non forniamo ulteriori dettagli. Quindi, ogni argomento ha un nome (ad esempio, il terzo argomento di <tt>var()</tt> si chiama <tt>na.rm</tt>) e gli argomenti di una funzione sono presentati in un certo ordine (per <tt>var()</tt>, prima viene <tt>x</tt>, poi <tt>y</tt>, e così via). Quando vogliamo usare una funzione che richiede più argomenti, dobbiamo riuscire a far capire ad <tt>R</tt> i valori che devono essere usati per ognuno di essi. Per fare ciò abbiamo a disposizione le seguenti alternative:</p>
+<ol style="list-style-type: decimal">
+<li>fornire gli argomenti indicando per ognuno il rispettivo nome; in questo caso non dobbiamo preoccuparci di elencare gli argomenti nell’ordine in cui vengono mostrati da <tt>args()</tt>, ma possiamo scriverli in qualsiasi ordine</li>
+<li>fornire gli argomenti senza indicarne il nome, ma in questo caso <tt>R</tt> si aspetta che l’ordine sia quello riportato da <tt>args()</tt></li>
+<li>entrambe le modalità precedenti, fornendo alcuni argomenti con il loro nome e altri inserendoli con la loro posizione corretta; quest’ultima modalità è di solito quella più usata nella pratica</li>
+</ol>
+<p>Vediamo ora alcuni esempi attraverso il calcolo della varianza dei redditi annui dei 10 intervistati nell’ipotetico sondaggio descritto sopra:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">var</span>(<span class="dt">x =</span> income, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)     <span class="co"># modalità 1. --&gt; corretto</span></code></pre></div>
+<pre><code>[1] 907.6</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">var</span>(<span class="dt">na.rm =</span> <span class="ot">TRUE</span>, <span class="dt">x =</span> income)     <span class="co"># modalità 1. --&gt; corretto</span></code></pre></div>
+<pre><code>[1] 907.6</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">var</span>(income, <span class="ot">NULL</span>, <span class="ot">TRUE</span>)           <span class="co"># modalità 2. --&gt; corretto</span></code></pre></div>
+<pre><code>[1] 907.6</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">var</span>(income, <span class="ot">TRUE</span>)                 <span class="co"># modalità 2. --&gt; errore!</span></code></pre></div>
+<pre><code>Error in var(income, TRUE): incompatible dimensions</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">var</span>(income, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)         <span class="co"># modalità 3. --&gt; corretto</span></code></pre></div>
+<pre><code>[1] 907.6</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">var</span>(<span class="ot">TRUE</span>, <span class="dt">x =</span> income)             <span class="co"># modalità 3. --&gt; errore!</span></code></pre></div>
+<pre><code>Error in var(TRUE, x = income): incompatible dimensions</code></pre>
+<p>Concludiamo questa introduzione sulle funzioni notando che non è obbligatorio fornire tutti gli argomenti di una funzione. Ad esempio, negli esempi precedenti con <tt>var()</tt> non abbiamo mai indicato l’argomento <tt>use</tt>. Ciò deriva dal fatto che quasi tutte le funzioni hanno alcuni argomenti obbligatori e altri che sono invece facoltativi. L’argomento <tt>x</tt> della funzione <tt>var()</tt> è ad esempio obbligatorio: se provaste ad eseguire il codice <tt>var(na.rm = TRUE)</tt> otterreste infatti un errore. Qualora non indicassimo esplicitamente i valori degli argomenti facoltativi, <tt>R</tt> ultilizzerebbe per questi un valore di <em>default</em>, ovvero quello indicato da <tt>args()</tt>. Per esempio, la <tt>var()</tt> ha solo il primo argomento obbligatorio, mentre gli altri sono facoltativi, con <tt>na.rm</tt> che assume valore di default uguale a <tt>FALSE</tt><a href="#fn19" class="footnoteRef" id="fnref19"><sup>19</sup></a>. Gli argomenti facoltativi, quindi, vanno esplicitamente indicati solo quando vogliamo assegnarli un valore diverso da quello di default.</p>
+<p>L’output restituito da una funzione può essere un oggetto di qualsiasi tipo (vettore, matrice, data frame, lista, o un’altra funzione), anche se alcune funzioni, in particolare quelle che producono output grafico, non restituiscono direttamente nessun oggetto.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="12">
+<li id="fn12"><p>In realtà <tt>R</tt> distingue anche tra numeri interi (<tt>int</tt>) e numeri reali (<tt>num</tt>), ma questa distinzione non ha nessuna implicazione dal nostro punto di vista.<a href="le-principali-strutture-di-dati-disponibili-in-r.html#fnref12">↩</a></p></li>
+<li id="fn13"><p>L’operatore <tt>==</tt> non è da confondere con il segno di uguale (<tt>=</tt>).<a href="le-principali-strutture-di-dati-disponibili-in-r.html#fnref13">↩</a></p></li>
+<li id="fn14"><p>Per il momento anticipiamo solo che gli argomenti di una funzione si dividono in obbligatori e opzionali. Gli argomenti opzionali, come ad esempio <tt>byrow()</tt> nell’esempio che segue, assumono un valore di default nel caso non vengano esplicitamente indicati. I valori di default per gli argomenti opzionali di una funzione possono essere recuperati dall’help della funzione stessa (vedi la Sezione <a href="howtogethelp.html#howtogethelp">1.4</a>).<a href="le-principali-strutture-di-dati-disponibili-in-r.html#fnref14">↩</a></p></li>
+<li id="fn15"><p>Il carattere <tt>#</tt> consente di inserire un commento, ovvero un testo usato per descrivere una parte di codice, ma che non sarà eseguito da <tt>R</tt>.<a href="le-principali-strutture-di-dati-disponibili-in-r.html#fnref15">↩</a></p></li>
+<li id="fn16"><p>Un modo per potersi riferire direttamente alla colonna <tt>income</tt> senza dover specificare il data frame che la contiene consiste nell’uso della funzione <tt>attach()</tt>, che appunto rende disponibili le colonne di un data frame come oggetti indipendenti durante la sessione di lavoro corrente (la funzione <tt>detach()</tt> consente di ripristinare la situazione di partenza). Tuttavia, <tt>attach()</tt> va usata con estrema cautela perché è possibile che data frame diversi contengano variabili con lo stesso nome. Per questo motivo, non la useremo ulteriormente in questo manuale.<a href="le-principali-strutture-di-dati-disponibili-in-r.html#fnref16">↩</a></p></li>
+<li id="fn17"><p>Se non aggiungessimo l’argomento <tt>na.rm</tt> in presenza di dati mancanti otterremmo <tt>NA</tt> come risultato. Questo è il modo previsto in <tt>R</tt> per renderci consapevoli del fatto che una variabile contiene dei dati mancanti.<a href="le-principali-strutture-di-dati-disponibili-in-r.html#fnref17">↩</a></p></li>
+<li id="fn18"><p>Se usassimo le parentesi quadre singole, invece di estrarre direttamente il contenuto dell’elemento della lista selezionato otterremmo ancora una lista ma con un unico elemento corrispondente all’elemento selezionato. Se questa spiegazione non vi convince, provate ad eseguire il codice <tt>str(X[1])</tt>.<a href="le-principali-strutture-di-dati-disponibili-in-r.html#fnref18">↩</a></p></li>
+<li id="fn19"><p>L’argomento <tt>y</tt> di <tt>var()</tt> assume valore di default <tt>NULL</tt>, che in <tt>R</tt> indica un oggetto vuoto, che non contiene nulla.<a href="le-principali-strutture-di-dati-disponibili-in-r.html#fnref19">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="lapproccio-al-calcolo-statistico-di-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="howtogethelp.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook/js/app.min.js"></script>
+<script src="libs/gitbook/js/lunr.js"></script>
+<script src="libs/gitbook/js/plugin-search.js"></script>
+<script src="libs/gitbook/js/plugin-sharing.js"></script>
+<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

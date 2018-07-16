@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html  lang="it">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Elementi di R e Radiant per un primo corso di Statistica</title>
+  <meta name="description" content="Breve manuale per l’apprendimento di alcuni elementi di R e Radiant. Materiale di supporto per il Corso 30001 (Statistica) dell’Università Bocconi.">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Elementi di R e Radiant per un primo corso di Statistica" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Breve manuale per l’apprendimento di alcuni elementi di R e Radiant. Materiale di supporto per il Corso 30001 (Statistica) dell’Università Bocconi." />
+  <meta name="github-repo" content="sergioventurini/manuale_R" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Elementi di R e Radiant per un primo corso di Statistica" />
+  
+  <meta name="twitter:description" content="Breve manuale per l’apprendimento di alcuni elementi di R e Radiant. Materiale di supporto per il Corso 30001 (Statistica) dell’Università Bocconi." />
+  
+
+<meta name="author" content="Sergio Venturini">
+
+
+<meta name="date" content="2018-07-16">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="installazione-dei-software.html">
+<link rel="next" href="le-principali-strutture-di-dati-disponibili-in-r.html">
+<script src="libs/jquery/jquery.min.js"></script>
+<link href="libs/gitbook/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Elementi di <tt>R</tt> e <tt>Radiant</tt></a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Premessa</a></li>
+<li class="chapter" data-level="1" data-path="introduzione.html"><a href="introduzione.html"><i class="fa fa-check"></i><b>1</b> Introduzione</a><ul>
+<li class="chapter" data-level="1.1" data-path="installazione-dei-software.html"><a href="installazione-dei-software.html"><i class="fa fa-check"></i><b>1.1</b> Installazione dei software</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="installazione-dei-software.html"><a href="installazione-dei-software.html#installazione-su-windows"><i class="fa fa-check"></i><b>1.1.1</b> Installazione su Windows</a></li>
+<li class="chapter" data-level="1.1.2" data-path="installazione-dei-software.html"><a href="installazione-dei-software.html#installazione-su-mac"><i class="fa fa-check"></i><b>1.1.2</b> Installazione su Mac</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="lapproccio-al-calcolo-statistico-di-r.html"><a href="lapproccio-al-calcolo-statistico-di-r.html"><i class="fa fa-check"></i><b>1.2</b> L’approccio al calcolo statistico di <tt>R</tt></a></li>
+<li class="chapter" data-level="1.3" data-path="le-principali-strutture-di-dati-disponibili-in-r.html"><a href="le-principali-strutture-di-dati-disponibili-in-r.html"><i class="fa fa-check"></i><b>1.3</b> Le principali strutture di dati disponibili in <tt>R</tt></a><ul>
+<li class="chapter" data-level="1.3.1" data-path="le-principali-strutture-di-dati-disponibili-in-r.html"><a href="le-principali-strutture-di-dati-disponibili-in-r.html#tipi-di-dati-di-base"><i class="fa fa-check"></i><b>1.3.1</b> Tipi di dati di base</a></li>
+<li class="chapter" data-level="1.3.2" data-path="le-principali-strutture-di-dati-disponibili-in-r.html"><a href="le-principali-strutture-di-dati-disponibili-in-r.html#vettori"><i class="fa fa-check"></i><b>1.3.2</b> Vettori</a></li>
+<li class="chapter" data-level="1.3.3" data-path="le-principali-strutture-di-dati-disponibili-in-r.html"><a href="le-principali-strutture-di-dati-disponibili-in-r.html#matrix"><i class="fa fa-check"></i><b>1.3.3</b> Matrici</a></li>
+<li class="chapter" data-level="1.3.4" data-path="le-principali-strutture-di-dati-disponibili-in-r.html"><a href="le-principali-strutture-di-dati-disponibili-in-r.html#factor-vector"><i class="fa fa-check"></i><b>1.3.4</b> Vettori factor</a></li>
+<li class="chapter" data-level="1.3.5" data-path="le-principali-strutture-di-dati-disponibili-in-r.html"><a href="le-principali-strutture-di-dati-disponibili-in-r.html#data-frame"><i class="fa fa-check"></i><b>1.3.5</b> Data frame</a></li>
+<li class="chapter" data-level="1.3.6" data-path="le-principali-strutture-di-dati-disponibili-in-r.html"><a href="le-principali-strutture-di-dati-disponibili-in-r.html#lists"><i class="fa fa-check"></i><b>1.3.6</b> Liste</a></li>
+<li class="chapter" data-level="1.3.7" data-path="le-principali-strutture-di-dati-disponibili-in-r.html"><a href="le-principali-strutture-di-dati-disponibili-in-r.html#funzioni"><i class="fa fa-check"></i><b>1.3.7</b> Funzioni</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="howtogethelp.html"><a href="howtogethelp.html"><i class="fa fa-check"></i><b>1.4</b> Come reperire informazioni sui comandi di <tt>R</tt></a></li>
+<li class="chapter" data-level="1.5" data-path="packages.html"><a href="packages.html"><i class="fa fa-check"></i><b>1.5</b> I pacchetti di <tt>R</tt></a></li>
+<li class="chapter" data-level="1.6" data-path="lapplicazione-rstudio.html"><a href="lapplicazione-rstudio.html"><i class="fa fa-check"></i><b>1.6</b> L’applicazione <tt>RStudio</tt></a></li>
+<li class="chapter" data-level="1.7" data-path="il-pacchetto-radiant.html"><a href="il-pacchetto-radiant.html"><i class="fa fa-check"></i><b>1.7</b> Il pacchetto <tt>Radiant</tt></a></li>
+<li class="chapter" data-level="1.8" data-path="file-loading.html"><a href="file-loading.html"><i class="fa fa-check"></i><b>1.8</b> Come caricare e salvare un file in <tt>R</tt> e <tt>Radiant</tt></a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="statistica-descrittiva.html"><a href="statistica-descrittiva.html"><i class="fa fa-check"></i><b>2</b> Statistica descrittiva</a><ul>
+<li class="chapter" data-level="2.1" data-path="descriptive-R.html"><a href="descriptive-R.html"><i class="fa fa-check"></i><b>2.1</b> Primi esempi con <tt>R</tt></a></li>
+<li class="chapter" data-level="2.2" data-path="analisi-descrittive-univariate.html"><a href="analisi-descrittive-univariate.html"><i class="fa fa-check"></i><b>2.2</b> Analisi descrittive univariate</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="analisi-descrittive-univariate.html"><a href="analisi-descrittive-univariate.html#una-singola-variabile-categorica"><i class="fa fa-check"></i><b>2.2.1</b> Una singola variabile categorica</a></li>
+<li class="chapter" data-level="2.2.2" data-path="analisi-descrittive-univariate.html"><a href="analisi-descrittive-univariate.html#una-singola-variabile-numerica"><i class="fa fa-check"></i><b>2.2.2</b> Una singola variabile numerica</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="analisi-descrittive-bivariate.html"><a href="analisi-descrittive-bivariate.html"><i class="fa fa-check"></i><b>2.3</b> Analisi descrittive bivariate</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="analisi-descrittive-bivariate.html"><a href="analisi-descrittive-bivariate.html#due-variabili-categoriche"><i class="fa fa-check"></i><b>2.3.1</b> Due variabili categoriche</a></li>
+<li class="chapter" data-level="2.3.2" data-path="analisi-descrittive-bivariate.html"><a href="analisi-descrittive-bivariate.html#lincorr"><i class="fa fa-check"></i><b>2.3.2</b> Due variabili numeriche</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="calcolo-delle-probabilita.html"><a href="calcolo-delle-probabilita.html"><i class="fa fa-check"></i><b>3</b> Calcolo delle probabilità</a><ul>
+<li class="chapter" data-level="3.1" data-path="variabili-aleatorie-binomiali.html"><a href="variabili-aleatorie-binomiali.html"><i class="fa fa-check"></i><b>3.1</b> Variabili aleatorie binomiali</a></li>
+<li class="chapter" data-level="3.2" data-path="variabili-aleatorie-normali-o-gaussiane.html"><a href="variabili-aleatorie-normali-o-gaussiane.html"><i class="fa fa-check"></i><b>3.2</b> Variabili aleatorie normali (o gaussiane)</a></li>
+<li class="chapter" data-level="3.3" data-path="altre-variabili-aleatorie.html"><a href="altre-variabili-aleatorie.html"><i class="fa fa-check"></i><b>3.3</b> Altre variabili aleatorie</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="statistica-inferenziale.html"><a href="statistica-inferenziale.html"><i class="fa fa-check"></i><b>4</b> Statistica inferenziale</a><ul>
+<li class="chapter" data-level="4.1" data-path="inferenza-sulla-media-di-una-popolazione-normale.html"><a href="inferenza-sulla-media-di-una-popolazione-normale.html"><i class="fa fa-check"></i><b>4.1</b> Inferenza sulla media di una popolazione normale</a></li>
+<li class="chapter" data-level="4.2" data-path="inferenza-sulla-proporzione-di-successi-in-una-popolazione-bernoulliana.html"><a href="inferenza-sulla-proporzione-di-successi-in-una-popolazione-bernoulliana.html"><i class="fa fa-check"></i><b>4.2</b> Inferenza sulla proporzione di successi in una popolazione bernoulliana</a></li>
+<li class="chapter" data-level="4.3" data-path="inferenza-sul-confronto-tra-le-medie-di-due-popolazioni-normali.html"><a href="inferenza-sul-confronto-tra-le-medie-di-due-popolazioni-normali.html"><i class="fa fa-check"></i><b>4.3</b> Inferenza sul confronto tra le medie di due popolazioni normali</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="inferenza-sul-confronto-tra-le-medie-di-due-popolazioni-normali.html"><a href="inferenza-sul-confronto-tra-le-medie-di-due-popolazioni-normali.html#campioni-indipendenti"><i class="fa fa-check"></i><b>4.3.1</b> Campioni indipendenti</a></li>
+<li class="chapter" data-level="4.3.2" data-path="inferenza-sul-confronto-tra-le-medie-di-due-popolazioni-normali.html"><a href="inferenza-sul-confronto-tra-le-medie-di-due-popolazioni-normali.html#paired-ttest"><i class="fa fa-check"></i><b>4.3.2</b> Campioni dipendenti</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="inferenza-sullindice-di-correlazione-lineare.html"><a href="inferenza-sullindice-di-correlazione-lineare.html"><i class="fa fa-check"></i><b>4.4</b> Inferenza sull’indice di correlazione lineare</a></li>
+<li class="chapter" data-level="4.5" data-path="test-sulla-bonta-di-adattamento-probabilita-completamente-specificate.html"><a href="test-sulla-bonta-di-adattamento-probabilita-completamente-specificate.html"><i class="fa fa-check"></i><b>4.5</b> Test sulla bontà di adattamento (probabilità completamente specificate)</a></li>
+<li class="chapter" data-level="4.6" data-path="test-di-indipendenza-in-una-tabella-a-doppia-entrata.html"><a href="test-di-indipendenza-in-una-tabella-a-doppia-entrata.html"><i class="fa fa-check"></i><b>4.6</b> Test di indipendenza in una tabella a doppia entrata</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="chapter5.html"><a href="chapter5.html"><i class="fa fa-check"></i><b>5</b> Il modello di regressione lineare</a><ul>
+<li class="chapter" data-level="5.1" data-path="simple-reg.html"><a href="simple-reg.html"><i class="fa fa-check"></i><b>5.1</b> Il modello di regressione lineare semplice</a></li>
+<li class="chapter" data-level="5.2" data-path="il-modello-di-regressione-lineare-multipla.html"><a href="il-modello-di-regressione-lineare-multipla.html"><i class="fa fa-check"></i><b>5.2</b> Il modello di regressione lineare multipla</a></li>
+<li class="chapter" data-level="5.3" data-path="come-calcolare-le-previsioni-per-un-modello-di-regressione-lineare.html"><a href="come-calcolare-le-previsioni-per-un-modello-di-regressione-lineare.html"><i class="fa fa-check"></i><b>5.3</b> Come calcolare le previsioni per un modello di regressione lineare</a></li>
+<li class="chapter" data-level="5.4" data-path="le-osservazioni-influenti.html"><a href="le-osservazioni-influenti.html"><i class="fa fa-check"></i><b>5.4</b> Le osservazioni influenti</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="appendix.html"><a href="appendix.html"><i class="fa fa-check"></i><b>6</b> Appendice</a><ul>
+<li class="chapter" data-level="6.1" data-path="alcune-funzioni-di-r-per-la-statistica-descrittiva.html"><a href="alcune-funzioni-di-r-per-la-statistica-descrittiva.html"><i class="fa fa-check"></i><b>6.1</b> Alcune funzioni di <tt>R</tt> per la statistica descrittiva</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="alcune-funzioni-di-r-per-la-statistica-descrittiva.html"><a href="alcune-funzioni-di-r-per-la-statistica-descrittiva.html#analisi-descrittive-univariate-1"><i class="fa fa-check"></i><b>6.1.1</b> Analisi descrittive univariate</a></li>
+<li class="chapter" data-level="6.1.2" data-path="alcune-funzioni-di-r-per-la-statistica-descrittiva.html"><a href="alcune-funzioni-di-r-per-la-statistica-descrittiva.html#analisi-descrittive-bivariate-1"><i class="fa fa-check"></i><b>6.1.2</b> Analisi descrittive bivariate</a></li>
+<li class="chapter" data-level="6.1.3" data-path="alcune-funzioni-di-r-per-la-statistica-descrittiva.html"><a href="alcune-funzioni-di-r-per-la-statistica-descrittiva.html#ulteriori-rappresentazioni-grafiche"><i class="fa fa-check"></i><b>6.1.3</b> Ulteriori rappresentazioni grafiche</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="alcune-funzioni-r-per-la-statistica-inferenziale.html"><a href="alcune-funzioni-r-per-la-statistica-inferenziale.html"><i class="fa fa-check"></i><b>6.2</b> Alcune funzioni <tt>R</tt> per la statistica inferenziale</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="alcune-funzioni-r-per-la-statistica-inferenziale.html"><a href="alcune-funzioni-r-per-la-statistica-inferenziale.html#inferenza-sulla-media-di-una-popolazione-normale-1"><i class="fa fa-check"></i><b>6.2.1</b> Inferenza sulla media di una popolazione normale</a></li>
+<li class="chapter" data-level="6.2.2" data-path="alcune-funzioni-r-per-la-statistica-inferenziale.html"><a href="alcune-funzioni-r-per-la-statistica-inferenziale.html#inferenza-sulla-proporzione-di-successi-in-una-popolazione-bernoulliana-1"><i class="fa fa-check"></i><b>6.2.2</b> Inferenza sulla proporzione di successi in una popolazione bernoulliana</a></li>
+<li class="chapter" data-level="6.2.3" data-path="alcune-funzioni-r-per-la-statistica-inferenziale.html"><a href="alcune-funzioni-r-per-la-statistica-inferenziale.html#inferenza-sul-confronto-tra-le-medie-di-due-popolazioni-normali-1"><i class="fa fa-check"></i><b>6.2.3</b> Inferenza sul confronto tra le medie di due popolazioni normali</a></li>
+<li class="chapter" data-level="6.2.4" data-path="alcune-funzioni-r-per-la-statistica-inferenziale.html"><a href="alcune-funzioni-r-per-la-statistica-inferenziale.html#inferenza-sullindice-di-correlazione-lineare-1"><i class="fa fa-check"></i><b>6.2.4</b> Inferenza sull’indice di correlazione lineare</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="_blank">Pubblicato con bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><strong>Elementi di <tt>R</tt> e <tt>Radiant</tt> per un primo corso di Statistica</strong></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="lapproccio-al-calcolo-statistico-di-r" class="section level2">
+<h2><span class="header-section-number">1.2</span> L’approccio al calcolo statistico di <tt>R</tt></h2>
+<p><tt>R</tt> è un software open-source che fornisce un linguaggio di scripting per la statistica e il data science a 360°. Ad oggi è considerato lo strumento più completo e avanzato per svolgere tutte le analisi che il data science e i Big Data richiedono. Non a caso, infatti, tutti i software statistici commerciali disponibili sul mercato come SPSS, SAS, ecc., offrono oggi la possibilità di interfacciarsi con <tt>R</tt> per integrare le proprie funzionalità con quelle molto più ampie di <tt>R</tt>.</p>
+<p><tt>R</tt> è un linguaggio per la manipolazione di “oggetti”. Molto spesso si dice infatti che in <tt>R</tt> “tutto è un oggetto”. In senso lato, gli oggetti sono strumenti per l’organizzazione di diversi tipi di informazioni. Possiamo pensare agli oggetti come a dei contenitori la cui dimensione e tipo dipende dal suo contenuto. <tt>R</tt> fornisce molti strumenti per creare, visualizzare e manipolare gli oggetti che ci servono per effettuare le analisi.</p>
+<p>Per capire cosa intendiamo con tutto ciò, vi suggeriamo di aprire <tt>RStudio</tt> e di digitare la seguente riga di codice al prompt dei comandi:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span>x &lt;-<span class="st"> </span><span class="dv">5</span></code></pre></div>
+<p>Il simbolo <tt>&gt;</tt> rappresenta il prompt dei comandi e non deve essere copiato per l’esecuzione del codice. Una volta digitato, il comando viene eseguito premendo il pulsante INVIO.Il simbolo <tt>&lt;-</tt>, che corrisponde ai caratteri <tt>&lt;</tt> (minore di) e <tt>-</tt> (segno meno), rappresenta l’operatore di assegnazione, ovvero l’operatore con cui vengono creati nuovi oggetti<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a>. Nel precedente esempio abbiamo creato un nuovo oggetto, che abbiamo deciso di chiamare <tt>x</tt>, ma che avremmo potuto chiamare in qualsiasi altro modo, il quale contiene semplicemente il numero 5. Se la sintassi del comando che eseguiamo è corretta, <tt>R</tt> non produce messaggi, come nell’esempio sopra. Ciò significa che il comando digitato non presenta errori sintattici.</p>
+<p>Per poter visualizzare il contenuto di un oggetto è sufficiente scrivere il nome dell’oggetto e premere INVIO:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span>x</code></pre></div>
+<pre><code>[1] 5</code></pre>
+<p>Per avere informazioni sulla struttura (ovvero sulle caratteristiche) di un oggetto, ma senza visualizzarne completamente il contenuto, possiamo usare la funzione <tt>str()</tt>, ad esempio</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">str</span>(x)</code></pre></div>
+<pre><code> num 5</code></pre>
+<p>L’output restituito ci informa sul fatto che l’oggetto <tt>x</tt> contiene un numero (<tt>num</tt>). La funzione <tt>str()</tt> può essere usata per ottenere informazioni sulla struttura di qualsiasi oggetto creato in <tt>R</tt>. Come ulteriore esempio eseguiamo il codice seguente<a href="#fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span>txt &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;R&quot;</span>, <span class="st">&quot;è&quot;</span>, <span class="st">&quot;un&quot;</span>, <span class="st">&quot;software&quot;</span>, <span class="st">&quot;per&quot;</span>, <span class="st">&quot;il&quot;</span>, <span class="st">&quot;data&quot;</span>, <span class="st">&quot;science&quot;</span>)
+<span class="op">&gt;</span><span class="st"> </span><span class="kw">str</span>(txt)</code></pre></div>
+<pre><code> chr [1:8] &quot;R&quot; &quot;è&quot; &quot;un&quot; &quot;software&quot; &quot;per&quot; &quot;il&quot; ...</code></pre>
+<p>In questo caso abbiamo creato un nuovo oggetto chiamato <tt>txt</tt> che contiene un vettore di 8 stringhe di testo (il termine <tt>chr</tt> che appare all’inizio della riga in output indica che il contenuto dell’oggetto è di questo tipo). L’output della funzione <tt>str()</tt> ci informa proprio di queste caratteristiche. <tt>c()</tt> è la funzione per creare un vettore, ovvero un oggetto con una sola dimensione che può contenere elementi dello stesso tipo, in questo caso stringhe di testo<a href="#fn11" class="footnoteRef" id="fnref11"><sup>11</sup></a>.</p>
+<p>Se desiderate mostrare la lista degli oggetti creati finora, potete usare la funzione <tt>ls()</tt></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">ls</span>()</code></pre></div>
+<pre><code> [1] &quot;A&quot;                 &quot;absfreq&quot;          
+ [3] &quot;adv_sales&quot;         &quot;advertising_sales&quot;
+ [5] &quot;b&quot;                 &quot;bp_out&quot;           
+ [7] &quot;comp&quot;              &quot;comp_m1&quot;          
+ [9] &quot;comp_m1_fitted&quot;    &quot;comp_m1_resid&quot;    
+[11] &quot;comp_m2&quot;           &quot;comp_m2_fitted&quot;   
+[13] &quot;comp_m2_resid&quot;     &quot;D&quot;                
+[15] &quot;dat&quot;               &quot;data_for_predict&quot; 
+[17] &quot;forbes94&quot;          &quot;gender&quot;           
+[19] &quot;income&quot;            &quot;lev&quot;              
+[21] &quot;lev_thr&quot;           &quot;pareto_dat&quot;       
+[23] &quot;pdat&quot;              &quot;program_no&quot;       
+[25] &quot;program_yes&quot;       &quot;ROS_0&quot;            
+[27] &quot;ROS_1&quot;             &quot;stdres&quot;           
+[29] &quot;supermarket&quot;       &quot;txt&quot;              
+[31] &quot;w&quot;                 &quot;x&quot;                
+[33] &quot;X&quot;                 &quot;y&quot;                
+[35] &quot;z&quot;                </code></pre>
+<p>Ricordiamo che <tt>R</tt> è <em>case sensitive</em>, ovvero distingue tra caratteri maiuscoli e minuscoli. Infine, se create un nuovo oggetto usando il nome di un oggetto già esistente, chiaramente perderete il vecchio oggetto, il cui contenuto sarà sostituito con quello del nuovo oggetto, ad esempio:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span>y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">4</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>)
+<span class="op">&gt;</span><span class="st"> </span><span class="kw">str</span>(y)</code></pre></div>
+<pre><code> num [1:4] 3 4 -1 0</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span>y &lt;-<span class="st"> &quot;Viva la Statistica!&quot;</span>
+<span class="op">&gt;</span><span class="st"> </span><span class="kw">str</span>(y)</code></pre></div>
+<pre><code> chr &quot;Viva la Statistica!&quot;</code></pre>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="9">
+<li id="fn9"><p>Al posto del simbolo <tt>&lt;-</tt> è possibile usare il segno di uguale (<tt>=</tt>), ma per tradizione in <tt>R</tt> si tende ad utilizzare sempre il primo.<a href="lapproccio-al-calcolo-statistico-di-r.html#fnref9">↩</a></p></li>
+<li id="fn10"><p>Gli spazi prima e dopo le virgole o gli operatori non sono strettamente necessari, ma contribuiscono a rendere il codice più leggibile.<a href="lapproccio-al-calcolo-statistico-di-r.html#fnref10">↩</a></p></li>
+<li id="fn11"><p>Una stringa di testo è caratterizzata dal fatto di essere inclusa tra virgolette.<a href="lapproccio-al-calcolo-statistico-di-r.html#fnref11">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="installazione-dei-software.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="le-principali-strutture-di-dati-disponibili-in-r.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook/js/app.min.js"></script>
+<script src="libs/gitbook/js/lunr.js"></script>
+<script src="libs/gitbook/js/plugin-search.js"></script>
+<script src="libs/gitbook/js/plugin-sharing.js"></script>
+<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

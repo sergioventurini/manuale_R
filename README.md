@@ -1,1 +1,1 @@
-# manuale_R
+Questo repository contiene il manuale di R e Radiant sviluppato per il corso 30001 dell'Università Commerciale "L. Bocconi".
