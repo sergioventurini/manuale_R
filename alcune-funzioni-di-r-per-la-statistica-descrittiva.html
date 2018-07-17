@@ -22,10 +22,9 @@
   <meta name="twitter:description" content="Breve manuale per l’apprendimento di alcuni elementi di R e Radiant. Materiale di supporto per il Corso 30001 (Statistica) dell’Università Bocconi." />
   
 
-<meta name="author" content="Sergio Venturini">
 
 
-<meta name="date" content="2018-07-16">
+<meta name="date" content="2018-07-17">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -519,7 +518,7 @@ Pareto chart analysis for pdat
 <span class="op">&gt;</span><span class="st"> </span>adv_sales &lt;-<span class="st"> </span><span class="kw">ts</span>(advertising_sales[, <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">3</span>)], <span class="dt">frequency =</span> <span class="dv">12</span>, <span class="dt">start =</span> <span class="kw">c</span>(<span class="dv">2012</span>, <span class="dv">1</span>))
 <span class="op">&gt;</span><span class="st"> </span><span class="kw">plot</span>(adv_sales, <span class="dt">plot.type =</span> <span class="st">&quot;single&quot;</span>, <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>),
 <span class="op">+</span><span class="st">   </span><span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">lty =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="dt">ylab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;Grafico per serie storiche&quot;</span>,
-<span class="op">+</span><span class="st">   </span><span class="dt">sub =</span> <span class="st">&quot;(linea continua = vendite, linea tratteggiata = spese in pubblicità)&quot;</span>)</code></pre></div>
+<span class="op">+</span><span class="st">   </span><span class="dt">sub =</span> <span class="st">&quot;(linea continua = spese in pubblicità, linea tratteggiata = vendite)&quot;</span>)</code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:time-series"></span>
 <img src="manuale_R_files/figure-html/time-series-1.pdf" alt="Esempio di grafico per serie storiche." width="576" />
 <p class="caption">
