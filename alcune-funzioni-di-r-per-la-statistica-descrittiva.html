@@ -251,7 +251,9 @@ Figura 6.1: Diagramma a torta e a barre con <tt>R</tt>.
 </div>
 <div id="una-singola-variabile-numerica-1" class="section level4">
 <h4><span class="header-section-number">6.1.1.2</span> Una singola variabile numerica</h4>
-<p><strong>Distribuzione di frequenze</strong> La distribuzione di una variabile numerica è rappresentata da una tabella che riporta le frequenze con cui sono stati osservati i diversi valori, nel caso la variabile sia discreta, o le classi in cui è stata divisa, nel caso in cui la variabile sia continua. In entrambi i casi è possibile utilizzare ancora la funzione <tt>table()</tt>, ma nel caso di variabili continue sarà prima necessario dividere i valori osservati in classi. Una funzione utile per generare tali classi è <tt>cut()</tt>, che genera un vettore factor con le classi specificate e che include i seguenti argomenti:</p>
+<div id="distribuzione-di-frequenze" class="section level5">
+<h5><span class="header-section-number">6.1.1.2.1</span> Distribuzione di frequenze</h5>
+<p>La distribuzione di una variabile numerica è rappresentata da una tabella che riporta le frequenze con cui sono stati osservati i diversi valori, nel caso la variabile sia discreta, o le classi in cui è stata divisa, nel caso in cui la variabile sia continua. In entrambi i casi è possibile utilizzare ancora la funzione <tt>table()</tt>, ma nel caso di variabili continue sarà prima necessario dividere i valori osservati in classi. Una funzione utile per generare tali classi è <tt>cut()</tt>, che genera un vettore factor con le classi specificate e che include i seguenti argomenti:</p>
 <ul>
 <li><tt>x</tt>, il vettore numerico con i valori di cui vogliamo costruire le classi</li>
 <li><tt>breaks</tt>, che consente di specificare quali classi intendiamo usare; può essere specificato nei seguenti modi alternativi
@@ -283,7 +285,10 @@ Figura 6.1: Diagramma a torta e a barre con <tt>R</tt>.
 [8e+05,1.5e+06) [1.5e+06,3e+06) 
             147              10 </code></pre>
 <p>Per rappresentare graficamente la distribuzione di una variabile numerica sono disponibili vari tipi di grafici tra cui il diagramma ad aste, l’istogramma e il box-plot.</p>
-<p><strong>Diagramma ad aste</strong> Possiamo creare un diagramma ad aste usando la funzione <tt>plot()</tt> direttamente sul risultato fornito da <tt>table()</tt> e fissando l’argomento <tt>type</tt> al valore <tt>“h”</tt>. Ad esempio, il diagramma ad aste per la variabile <tt>Age</tt> è ottenuto come segue:</p>
+</div>
+<div id="diagramma-ad-aste" class="section level5">
+<h5><span class="header-section-number">6.1.1.2.2</span> Diagramma ad aste</h5>
+<p>Possiamo creare un diagramma ad aste usando la funzione <tt>plot()</tt> direttamente sul risultato fornito da <tt>table()</tt> e fissando l’argomento <tt>type</tt> al valore <tt>“h”</tt>. Ad esempio, il diagramma ad aste per la variabile <tt>Age</tt> è ottenuto come segue:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">plot</span>(<span class="kw">table</span>(forbes94<span class="op">$</span>Age), <span class="dt">type =</span> <span class="st">&quot;h&quot;</span>)</code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:aste"></span>
 <img src="manuale_R_files/figure-html/aste-1.pdf" alt="Diagramma ad aste per la variabile &lt;tt&gt;Age&lt;/tt&gt;." width="480" />
@@ -301,7 +306,10 @@ Figura 6.2: Diagramma ad aste per la variabile <tt>Age</tt>.
 Figura 6.3: Diagramma ad aste per la variabile <tt>Age</tt>.
 </p>
 </div>
-<p><strong>Istogramma</strong> Gli istogrammi sono rappresentazioni grafiche della distribuzione di frequenze di una variabile divisa per classi. In <tt>R</tt> è possibile creare un istogramma con la funzione <tt>hist()</tt>. Come è noto, è possibile creare un istogramma usando classi di uguale o diversa ampiezza. La funzione <tt>hist()</tt> permette di specificare tale scelta attraverso l’argomento <tt>breaks</tt>, il cui funzionamento è identico al medesimo argomento descritto per la funzione <tt>cut()</tt>, ovvero:</p>
+</div>
+<div id="istogramma" class="section level5">
+<h5><span class="header-section-number">6.1.1.2.3</span> Istogramma</h5>
+<p>Gli istogrammi sono rappresentazioni grafiche della distribuzione di frequenze di una variabile divisa per classi. In <tt>R</tt> è possibile creare un istogramma con la funzione <tt>hist()</tt>. Come è noto, è possibile creare un istogramma usando classi di uguale o diversa ampiezza. La funzione <tt>hist()</tt> permette di specificare tale scelta attraverso l’argomento <tt>breaks</tt>, il cui funzionamento è identico al medesimo argomento descritto per la funzione <tt>cut()</tt>, ovvero:</p>
 <ul>
 <li>se non specifichiamo il valore di <tt>breaks</tt>, <tt>R</tt> utilizza alcune regole interne per sceglierne un valore ragionevole; consigliamo di usare questa opzione, perché funziona bene nella maggioranza dei casi, a meno che non ci siano motivi particolari per usare una regola diversa</li>
 <li><tt>breaks</tt> può essere specificato come singolo valore numerico (intero positivo), il quale indicherà il numero (indicativo<a href="#fn46" class="footnoteRef" id="fnref46"><sup>46</sup></a>) di classi di uguale ampiezza che vogliamo usare</li>
@@ -335,7 +343,10 @@ Figura 6.6: Esempio di istogramma per la variabile <tt>Salary</tt> (classi di di
 </p>
 </div>
 <p>Questi esempi mostrano chiaramente che la distribuzione di <tt>Salary</tt> è asimmetrica a destra. Vi facciamo inoltre notare che nell’ultimo esempio, in cui abbiamo utilizzato 7 classi di diversa ampiezza, <tt>R</tt> ha automaticamente (e correttamente!) deciso di riportare sull’asse verticale la densità di frequenze, mentre nei due esempi precedenti sull’asse verticale ha riportato le frequenze assolute delle classi. Anche nel caso di classi di uguale ampiezza è possibile costruire l’istogramma con le densità fissando a <tt>FALSE</tt> il valore dell’argomento <tt>freq</tt><a href="#fn47" class="footnoteRef" id="fnref47"><sup>47</sup></a>.</p>
-<p><strong>Box-plot</strong> In aggiunta al diagramma ad aste e all’istogramma, è utile produrre anche il box-plot, che consente di integrare le informazioni fornite dagli altri grafici. Come abbiamo già visto nella Sezione <a href="descriptive-R.html#descriptive-R">2.1</a>, in <tt>R</tt> è possibile costruire un box-plot attraverso la funzione <tt>boxplot()</tt>. Ricordiamo che il box-plot della variabile <tt>Salary</tt> si ottiene come segue:</p>
+</div>
+<div id="box-plot" class="section level5">
+<h5><span class="header-section-number">6.1.1.2.4</span> Box-plot</h5>
+<p>In aggiunta al diagramma ad aste e all’istogramma, è utile produrre anche il box-plot, che consente di integrare le informazioni fornite dagli altri grafici. Come abbiamo già visto nella Sezione <a href="descriptive-R.html#descriptive-R">2.1</a>, in <tt>R</tt> è possibile costruire un box-plot attraverso la funzione <tt>boxplot()</tt>. Ricordiamo che il box-plot della variabile <tt>Salary</tt> si ottiene come segue:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">boxplot</span>(forbes94<span class="op">$</span>Salary)</code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:boxplot-bis"></span>
 <img src="manuale_R_files/figure-html/boxplot-bis-1.pdf" alt="Esempio di box-plot con &lt;tt&gt;R&lt;/tt&gt;." width="480" />
@@ -357,7 +368,10 @@ Figura 6.7: Esempio di box-plot con <tt>R</tt>.
 <pre><code> [1] 1750000 1400000 1500000 1375000 2000000 1900000
  [7] 1250000 1483500 1454000 2633570 1240000 1841000
 [13] 1231730 2667730 2700000 1525000 1397810 1504940</code></pre>
-<p><strong>Indici di sintesi</strong> {#summary_stats} Le principali funzioni disponibili in <tt>R</tt> per il calcolo di indici di sintesi per una variabile numerica sono:</p>
+</div>
+<div id="summary-stats" class="section level5">
+<h5><span class="header-section-number">6.1.1.2.5</span> Indici di sintesi</h5>
+<p>Le principali funzioni disponibili in <tt>R</tt> per il calcolo di indici di sintesi per una variabile numerica sono:</p>
 <ul>
 <li><tt>min()</tt>, per il calcolo del minimo valore osservato di una variabile</li>
 <li><tt>max()</tt>, per il calcolo del massimo valore osservato di una variabile</li>
@@ -393,6 +407,7 @@ Figura 6.7: Esempio di box-plot con <tt>R</tt>.
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">quantile</span>(forbes94<span class="op">$</span>Salary, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>, <span class="dt">probs =</span> <span class="kw">c</span>(<span class="fl">0.10</span>, <span class="fl">0.95</span>))</code></pre></div>
 <pre><code>    10%     95% 
  325149 1025640 </code></pre>
+</div>
 </div>
 </div>
 <div id="analisi-descrittive-bivariate-1" class="section level3">
@@ -545,9 +560,9 @@ Figura 6.12: Esempio di normal probability plot per la variabile <tt>Salary</tt>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">qqnorm</span>(forbes94<span class="op">$</span>Age, <span class="dt">main =</span> <span class="st">&quot;Normal probability plot di Age&quot;</span>)
 <span class="op">&gt;</span><span class="st"> </span><span class="kw">qqline</span>(forbes94<span class="op">$</span>Age)</code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:qqnorm2"></span>
-<img src="manuale_R_files/figure-html/qqnorm2-1.pdf" alt="Esempio di normal probability plot per la variabile &lt;tt&gt;Salary&lt;/tt&gt;." width="480" />
+<img src="manuale_R_files/figure-html/qqnorm2-1.pdf" alt="Esempio di normal probability plot per la variabile &lt;tt&gt;Age&lt;/tt&gt;." width="480" />
 <p class="caption">
-Figura 6.13: Esempio di normal probability plot per la variabile <tt>Salary</tt>.
+Figura 6.13: Esempio di normal probability plot per la variabile <tt>Age</tt>.
 </p>
 </div>
 <p>In questo caso la distribuzione empirica di <tt>Age</tt> è molto più vicina, anche se non perfettamente, ad una distribuzione normale<a href="#fn51" class="footnoteRef" id="fnref51"><sup>51</sup></a>.</p>

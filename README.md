@@ -1,1 +1,1 @@
-Questo repository contiene il manuale di R e Radiant sviluppato per il corso 30001 dell'Università Commerciale "L. Bocconi".
+Questo repository contiene il manuale di R e Radiant sviluppato per il corso 30001 (Statistica) dell'Università Commerciale "L. Bocconi".
