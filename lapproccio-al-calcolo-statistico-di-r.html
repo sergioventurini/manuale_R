@@ -24,7 +24,7 @@
 
 
 
-<meta name="date" content="2018-07-17">
+<meta name="date" content="2018-07-20">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -210,24 +210,22 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>In questo caso abbiamo creato un nuovo oggetto chiamato <tt>txt</tt> che contiene un vettore di 8 stringhe di testo (il termine <tt>chr</tt> che appare all’inizio della riga in output indica che il contenuto dell’oggetto è di questo tipo). L’output della funzione <tt>str()</tt> ci informa proprio di queste caratteristiche. <tt>c()</tt> è la funzione per creare un vettore, ovvero un oggetto con una sola dimensione che può contenere elementi dello stesso tipo, in questo caso stringhe di testo<a href="#fn11" class="footnoteRef" id="fnref11"><sup>11</sup></a>.</p>
 <p>Se desiderate mostrare la lista degli oggetti creati finora, potete usare la funzione <tt>ls()</tt></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">ls</span>()</code></pre></div>
-<pre><code> [1] &quot;A&quot;                 &quot;absfreq&quot;          
- [3] &quot;adv_sales&quot;         &quot;advertising_sales&quot;
- [5] &quot;b&quot;                 &quot;bp_out&quot;           
- [7] &quot;comp&quot;              &quot;comp_m1&quot;          
- [9] &quot;comp_m1_fitted&quot;    &quot;comp_m1_resid&quot;    
-[11] &quot;comp_m2&quot;           &quot;comp_m2_fitted&quot;   
-[13] &quot;comp_m2_resid&quot;     &quot;D&quot;                
-[15] &quot;dat&quot;               &quot;data_for_predict&quot; 
-[17] &quot;forbes94&quot;          &quot;gender&quot;           
-[19] &quot;income&quot;            &quot;lev&quot;              
-[21] &quot;lev_thr&quot;           &quot;pareto_dat&quot;       
-[23] &quot;pdat&quot;              &quot;program_no&quot;       
-[25] &quot;program_yes&quot;       &quot;ROS_0&quot;            
-[27] &quot;ROS_1&quot;             &quot;stdres&quot;           
-[29] &quot;supermarket&quot;       &quot;txt&quot;              
-[31] &quot;w&quot;                 &quot;x&quot;                
-[33] &quot;X&quot;                 &quot;y&quot;                
-[35] &quot;z&quot;                </code></pre>
+<pre><code> [1] &quot;A&quot;                &quot;absfreq&quot;         
+ [3] &quot;adv_sales&quot;        &quot;b&quot;               
+ [5] &quot;bp_out&quot;           &quot;comp_m1&quot;         
+ [7] &quot;comp_m1_fitted&quot;   &quot;comp_m1_resid&quot;   
+ [9] &quot;comp_m2&quot;          &quot;comp_m2_fitted&quot;  
+[11] &quot;comp_m2_resid&quot;    &quot;D&quot;               
+[13] &quot;dat&quot;              &quot;data_for_predict&quot;
+[15] &quot;forbes94&quot;         &quot;gender&quot;          
+[17] &quot;income&quot;           &quot;lev&quot;             
+[19] &quot;lev_thr&quot;          &quot;pdat&quot;            
+[21] &quot;program_no&quot;       &quot;program_yes&quot;     
+[23] &quot;ROS_0&quot;            &quot;ROS_1&quot;           
+[25] &quot;stdres&quot;           &quot;txt&quot;             
+[27] &quot;w&quot;                &quot;x&quot;               
+[29] &quot;X&quot;                &quot;y&quot;               
+[31] &quot;z&quot;               </code></pre>
 <p>Ricordiamo che <tt>R</tt> è <em>case sensitive</em>, ovvero distingue tra caratteri maiuscoli e minuscoli. Infine, se create un nuovo oggetto usando il nome di un oggetto già esistente, chiaramente perderete il vecchio oggetto, il cui contenuto sarà sostituito con quello del nuovo oggetto, ad esempio:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span>y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">4</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>)
 <span class="op">&gt;</span><span class="st"> </span><span class="kw">str</span>(y)</code></pre></div>
