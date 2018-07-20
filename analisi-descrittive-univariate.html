@@ -206,7 +206,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div class="figure" style="text-align: center"><span id="fig:Radiant-as-factor"></span>
 <img src="images/Radiant_as_factor.png" alt="Schermata &lt;tt&gt;Radiant&lt;/tt&gt; per la conversione di una colonna numerica in un vettore factor." width="90%" />
 <p class="caption">
-Figura 2.4: Schermata <tt>Radiant</tt> per la conversione di una colonna numerica in un vettore factor.
+Figure 2.4: Schermata <tt>Radiant</tt> per la conversione di una colonna numerica in un vettore factor.
 </p>
 </div>
 <p>Fate attenzione perché, a meno che non modifichiate prima il nome del data frame nel box <tt>Store changes in</tt>, premendo su <tt>+Store</tt> sovrascriverete il data frame originale<a href="#fn31" class="footnoteRef" id="fnref31"><sup>31</sup></a>.</p>
@@ -219,7 +219,7 @@ Figura 2.4: Schermata <tt>Radiant</tt> per la conversione di una colonna numeric
 <div class="figure" style="text-align: center"><span id="fig:Radiant-table"></span>
 <img src="images/Radiant_table.png" alt="Schermata &lt;tt&gt;Radiant&lt;/tt&gt; per la costruzione di una distribuzione di frequenze di un vettore di tipo factor (ovvero di una variabile categorica)." width="90%" />
 <p class="caption">
-Figura 2.5: Schermata <tt>Radiant</tt> per la costruzione di una distribuzione di frequenze di un vettore di tipo factor (ovvero di una variabile categorica).
+Figure 2.5: Schermata <tt>Radiant</tt> per la costruzione di una distribuzione di frequenze di un vettore di tipo factor (ovvero di una variabile categorica).
 </p>
 </div>
 <p>La tabella non sarà visualizzata completamente a meno che non scegliate <tt>All</tt> nel box <tt>Show … entries</tt> che trovate sopra la tabella stessa. Potete anche salvare la tabella in un file di testo CSV se cliccate sulla freccia rivolta verso il basso che si trova in alto a destra rispetto alla tabella. Infine, potete visualizzare il diagramma a barre corrispondente alla distribuzione di frequenze<a href="#fn32" class="footnoteRef" id="fnref32"><sup>32</sup></a> cliccando sul checkbox <tt>Show plot</tt>. Se il numero di livelli della variabile è elevato (più di 15-20), consigliamo di rendere il grafico più leggibile cliccando sul checkbox <tt>Flip</tt> nella parte denominata <tt>Plot type</tt>. Questa opzione consente di produrre il grafico in orizzontale.</p>
@@ -240,28 +240,28 @@ Figura 2.5: Schermata <tt>Radiant</tt> per la costruzione di una distribuzione d
 <div class="figure" style="text-align: center"><span id="fig:Radiant-hist"></span>
 <img src="images/Radiant_hist.png" alt="Schermata &lt;tt&gt;Radiant&lt;/tt&gt; per la costruzione di un istogramma." width="90%" />
 <p class="caption">
-Figura 2.6: Schermata <tt>Radiant</tt> per la costruzione di un istogramma.
+Figure 2.6: Schermata <tt>Radiant</tt> per la costruzione di un istogramma.
 </p>
 </div>
 <p>Purtroppo <tt>Radiant</tt> non consente di costruire istogrammi con classi di diversa ampiezza, ma permette invece di generare istogrammi per sottogruppi di dati (ovvero permette di rappresentare graficamente le distribuzioni condizionate di una variabile rispetto ai valori assunti da una seconda variabile). Se ad esempio volessimo costruire gli istogrammi di <tt>Salary</tt> condizionatamente ai valori assunti dalla variabile <tt>MBA</tt>, la quale indica se ognuno dei CEO possedeva il titolo di MBA (valore 1) nel 1994 oppure no (valore 0), in aggiunta alle selezioni precedenti è necessario scegliere <tt>MBA</tt> nel box denominato <tt>Facet column</tt> e cliccare sul pulsante verde <tt>Update plot</tt>. Il risultato è mostrato in Figura <a href="analisi-descrittive-univariate.html#fig:Radiant-hist2">2.7</a>.</p>
 <div class="figure" style="text-align: center"><span id="fig:Radiant-hist2"></span>
 <img src="images/Radiant_hist2.png" alt="Schermata &lt;tt&gt;Radiant&lt;/tt&gt; per la costruzione di un istogramma condizionatamente ai valori di una seconda variabile." width="90%" />
 <p class="caption">
-Figura 2.7: Schermata <tt>Radiant</tt> per la costruzione di un istogramma condizionatamente ai valori di una seconda variabile.
+Figure 2.7: Schermata <tt>Radiant</tt> per la costruzione di un istogramma condizionatamente ai valori di una seconda variabile.
 </p>
 </div>
 <p>Per quanto riguarda i box-plot, <tt>Radiant</tt> non dà la possibilità di costruire il box-plot per una singola variabile, ma permette di creare box-plot per sottogruppi di dati come abbiamo appena visto per gli istogrammi. L’unica differenza è che per ottenere i box-plot dobbiamo scegliere <tt>Box-plot</tt> nel box <tt>Plot-type</tt> (vedi Figura <a href="analisi-descrittive-univariate.html#fig:Radiant-boxplot">2.8</a>). Vi facciamo infine notare che, in presenza di outlier, <tt>Radiant</tt> costruisce i box-plot utilizzando una regola leggermente diversa rispetto a quella presentata nel corso. Per avere più dettagli sulla costruzione dei box-plot in <tt>Radiant</tt> vi invitiamo a consultare l’help, a cui si può accedere cliccando sul simbolo <tt>?</tt> in basso a sinistra nella schermata.</p>
 <div class="figure" style="text-align: center"><span id="fig:Radiant-boxplot"></span>
 <img src="images/Radiant_boxplot.png" alt="Schermata &lt;tt&gt;Radiant&lt;/tt&gt; per la costruzione di un box-plot condizionatamente ai valori di una seconda variabile." width="90%" />
 <p class="caption">
-Figura 2.8: Schermata <tt>Radiant</tt> per la costruzione di un box-plot condizionatamente ai valori di una seconda variabile.
+Figure 2.8: Schermata <tt>Radiant</tt> per la costruzione di un box-plot condizionatamente ai valori di una seconda variabile.
 </p>
 </div>
 <p>Il calcolo degli indici di sintesi in <tt>Radiant</tt> è effettuato nel tab <tt>Explore</tt>, in cui è necessario selezionare le variabili oggetto dell’analisi nel box denominato <tt>Numeric variable(s)</tt> e la lista di indici da calcolare nel box <tt>Apply function(s)</tt>. In particolare, cliccando su quest’ultimo apparirà una lista di indici disponibili tra cui scegliere. A titolo di esempio, calcoliamo il numero di dati mancanti (<tt>n_missing</tt>), la media campionaria (<tt>mean</tt>), la deviazione standard campionaria (<tt>sd</tt>), i quartili campionari (<tt>25%</tt> e <tt>75%</tt>) e il coefficiente di variazione campionario (<tt>cv</tt>) per le variabili <tt>Salary</tt>, <tt>Bonus</tt> e <tt>Other</tt>, le quali indicano rispettivamente lo stipendio, i bonus e altre compensazioni ricevute dai CEO nel 1994. Il risultato è mostrato in Figura <a href="analisi-descrittive-univariate.html#fig:Radiant-summary">2.9</a>.</p>
 <div class="figure" style="text-align: center"><span id="fig:Radiant-summary"></span>
 <img src="images/Radiant_summary.png" alt="Schermata &lt;tt&gt;Radiant&lt;/tt&gt; per il calcolo degli indici di sintesi." width="90%" />
 <p class="caption">
-Figura 2.9: Schermata <tt>Radiant</tt> per il calcolo degli indici di sintesi.
+Figure 2.9: Schermata <tt>Radiant</tt> per il calcolo degli indici di sintesi.
 </p>
 </div>
 <p>Tramite il box <tt>Group by</tt> è possibile richiedere il calcolo degli indici per sottogruppi di dati, in analogia a quanto visto per l’istogramma e il box-plot.</p>

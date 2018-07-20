@@ -202,7 +202,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div class="figure" style="text-align: center"><span id="fig:rstandard"></span>
 <img src="manuale_R_files/figure-html/rstandard-1.pdf" alt="Grafico dei residui standardizzati per il modello &lt;tt&gt;comp_m2&lt;/tt&gt;." width="480" />
 <p class="caption">
-Figura 5.4: Grafico dei residui standardizzati per il modello <tt>comp_m2</tt>.
+Figure 5.4: Grafico dei residui standardizzati per il modello <tt>comp_m2</tt>.
 </p>
 </div>
 <p>Notate che nella funzione <tt>plot()</tt> abbiamo utilizzato l’argomento <tt>type = “n”</tt> (che sta per “nothing”), il quale consente di preparare gli assi del grafico, ma di non disegnare i punti. Questi vengono aggiunti con la successiva riga di codice attraverso la funzione <tt>text()</tt>, che sovrappone un’etichetta di testo in corrispondenza delle coordinate dei punti (<tt>x = stdres</tt>). In questo esempio le etichette di testo usate sono i numeri di riga delle osservazioni (<tt>labels = 1:nrow(comp)</tt>). Ciò permette di identificare direttamente dal grafico quali sono le osservazioni con un residuo standardizzato particolarmente grande (in valore assoluto). Le soglie oltre le quali le osservazioni vengono di solito classificate come outlier sono -2 e +2 (aggiunte nel grafico per mezzo della funzione <tt>abline()</tt>). In questo caso ci sono 7 osservazioni outlier, ovvero la numero 2, 3, 45, 71, 89, 103 e 113.</p>
@@ -216,7 +216,7 @@ Figura 5.4: Grafico dei residui standardizzati per il modello <tt>comp_m2</tt>.
 <div class="figure" style="text-align: center"><span id="fig:leverages"></span>
 <img src="manuale_R_files/figure-html/leverages-1.pdf" alt="Grafico dei leverage per il modello &lt;tt&gt;comp_m2&lt;/tt&gt;." width="480" />
 <p class="caption">
-Figura 5.5: Grafico dei leverage per il modello <tt>comp_m2</tt>.
+Figure 5.5: Grafico dei leverage per il modello <tt>comp_m2</tt>.
 </p>
 </div>
 <p>Per i leverage la soglia comunemente utilizzata è pari a due volte la media dei leverage (che nel precedente codice è memorizzata nell’oggetto <tt>lev_thr</tt>). Per questo modello ci sono 7 osservazioni con elevato leverage, ovvero la numero 2, 88, 93, 94, 96, 104 e 108.</p>
