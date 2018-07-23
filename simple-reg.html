@@ -7,11 +7,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Elementi di R e Radiant per un primo corso di Statistica</title>
   <meta name="description" content="Breve manuale per l’apprendimento di alcuni elementi di R e Radiant. Materiale di supporto per il Corso 30001 (Statistica) dell’Università Bocconi.">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
   <meta property="og:title" content="Elementi di R e Radiant per un primo corso di Statistica" />
   <meta property="og:type" content="book" />
-  
+  <meta property="og:url" content="https://sergioventurini.github.io/manuale_R" />
   
   <meta property="og:description" content="Breve manuale per l’apprendimento di alcuni elementi di R e Radiant. Materiale di supporto per il Corso 30001 (Statistica) dell’Università Bocconi." />
   <meta name="github-repo" content="sergioventurini/manuale_R" />
@@ -24,7 +24,7 @@
 
 
 
-<meta name="date" content="2018-07-20">
+<meta name="date" content="2018-07-23">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -46,6 +46,11 @@
 
 
 
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { TagSide: "left" }
+});
+</script>
 
 
 <style type="text/css">
@@ -99,7 +104,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">Elementi di <tt>R</tt> e <tt>Radiant</tt></a></li>
+<li><a href="./">Elementi di R e Radiant</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Premessa</a></li>
@@ -108,8 +113,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="1.1.1" data-path="installazione-dei-software.html"><a href="installazione-dei-software.html#installazione-su-windows"><i class="fa fa-check"></i><b>1.1.1</b> Installazione su Windows</a></li>
 <li class="chapter" data-level="1.1.2" data-path="installazione-dei-software.html"><a href="installazione-dei-software.html#installazione-su-mac"><i class="fa fa-check"></i><b>1.1.2</b> Installazione su Mac</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="lapproccio-al-calcolo-statistico-di-r.html"><a href="lapproccio-al-calcolo-statistico-di-r.html"><i class="fa fa-check"></i><b>1.2</b> L’approccio al calcolo statistico di <tt>R</tt></a></li>
-<li class="chapter" data-level="1.3" data-path="le-principali-strutture-di-dati-disponibili-in-r.html"><a href="le-principali-strutture-di-dati-disponibili-in-r.html"><i class="fa fa-check"></i><b>1.3</b> Le principali strutture di dati disponibili in <tt>R</tt></a><ul>
+<li class="chapter" data-level="1.2" data-path="lapproccio-al-calcolo-statistico-di-r.html"><a href="lapproccio-al-calcolo-statistico-di-r.html"><i class="fa fa-check"></i><b>1.2</b> L’approccio al calcolo statistico di R</a></li>
+<li class="chapter" data-level="1.3" data-path="le-principali-strutture-di-dati-disponibili-in-r.html"><a href="le-principali-strutture-di-dati-disponibili-in-r.html"><i class="fa fa-check"></i><b>1.3</b> Le principali strutture di dati disponibili in R</a><ul>
 <li class="chapter" data-level="1.3.1" data-path="le-principali-strutture-di-dati-disponibili-in-r.html"><a href="le-principali-strutture-di-dati-disponibili-in-r.html#tipi-di-dati-di-base"><i class="fa fa-check"></i><b>1.3.1</b> Tipi di dati di base</a></li>
 <li class="chapter" data-level="1.3.2" data-path="le-principali-strutture-di-dati-disponibili-in-r.html"><a href="le-principali-strutture-di-dati-disponibili-in-r.html#vettori"><i class="fa fa-check"></i><b>1.3.2</b> Vettori</a></li>
 <li class="chapter" data-level="1.3.3" data-path="le-principali-strutture-di-dati-disponibili-in-r.html"><a href="le-principali-strutture-di-dati-disponibili-in-r.html#matrix"><i class="fa fa-check"></i><b>1.3.3</b> Matrici</a></li>
@@ -118,14 +123,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="1.3.6" data-path="le-principali-strutture-di-dati-disponibili-in-r.html"><a href="le-principali-strutture-di-dati-disponibili-in-r.html#lists"><i class="fa fa-check"></i><b>1.3.6</b> Liste</a></li>
 <li class="chapter" data-level="1.3.7" data-path="le-principali-strutture-di-dati-disponibili-in-r.html"><a href="le-principali-strutture-di-dati-disponibili-in-r.html#funzioni"><i class="fa fa-check"></i><b>1.3.7</b> Funzioni</a></li>
 </ul></li>
-<li class="chapter" data-level="1.4" data-path="howtogethelp.html"><a href="howtogethelp.html"><i class="fa fa-check"></i><b>1.4</b> Come reperire informazioni sui comandi di <tt>R</tt></a></li>
-<li class="chapter" data-level="1.5" data-path="packages.html"><a href="packages.html"><i class="fa fa-check"></i><b>1.5</b> I pacchetti di <tt>R</tt></a></li>
-<li class="chapter" data-level="1.6" data-path="lapplicazione-rstudio.html"><a href="lapplicazione-rstudio.html"><i class="fa fa-check"></i><b>1.6</b> L’applicazione <tt>RStudio</tt></a></li>
-<li class="chapter" data-level="1.7" data-path="il-pacchetto-radiant.html"><a href="il-pacchetto-radiant.html"><i class="fa fa-check"></i><b>1.7</b> Il pacchetto <tt>Radiant</tt></a></li>
-<li class="chapter" data-level="1.8" data-path="file-loading.html"><a href="file-loading.html"><i class="fa fa-check"></i><b>1.8</b> Come caricare e salvare un file in <tt>R</tt> e <tt>Radiant</tt></a></li>
+<li class="chapter" data-level="1.4" data-path="howtogethelp.html"><a href="howtogethelp.html"><i class="fa fa-check"></i><b>1.4</b> Come reperire informazioni sui comandi di R</a></li>
+<li class="chapter" data-level="1.5" data-path="packages.html"><a href="packages.html"><i class="fa fa-check"></i><b>1.5</b> I pacchetti di R</a></li>
+<li class="chapter" data-level="1.6" data-path="lapplicazione-rstudio.html"><a href="lapplicazione-rstudio.html"><i class="fa fa-check"></i><b>1.6</b> L’applicazione RStudio</a></li>
+<li class="chapter" data-level="1.7" data-path="il-pacchetto-radiant.html"><a href="il-pacchetto-radiant.html"><i class="fa fa-check"></i><b>1.7</b> Il pacchetto Radiant</a></li>
+<li class="chapter" data-level="1.8" data-path="file-loading.html"><a href="file-loading.html"><i class="fa fa-check"></i><b>1.8</b> Come caricare e salvare un file in R e Radiant</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="statistica-descrittiva.html"><a href="statistica-descrittiva.html"><i class="fa fa-check"></i><b>2</b> Statistica descrittiva</a><ul>
-<li class="chapter" data-level="2.1" data-path="descriptive-R.html"><a href="descriptive-R.html"><i class="fa fa-check"></i><b>2.1</b> Primi esempi con <tt>R</tt></a></li>
+<li class="chapter" data-level="2.1" data-path="descriptive-R.html"><a href="descriptive-R.html"><i class="fa fa-check"></i><b>2.1</b> Primi esempi con R</a></li>
 <li class="chapter" data-level="2.2" data-path="analisi-descrittive-univariate.html"><a href="analisi-descrittive-univariate.html"><i class="fa fa-check"></i><b>2.2</b> Analisi descrittive univariate</a><ul>
 <li class="chapter" data-level="2.2.1" data-path="analisi-descrittive-univariate.html"><a href="analisi-descrittive-univariate.html#una-singola-variabile-categorica"><i class="fa fa-check"></i><b>2.2.1</b> Una singola variabile categorica</a></li>
 <li class="chapter" data-level="2.2.2" data-path="analisi-descrittive-univariate.html"><a href="analisi-descrittive-univariate.html#una-singola-variabile-numerica"><i class="fa fa-check"></i><b>2.2.2</b> Una singola variabile numerica</a></li>
@@ -158,12 +163,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="5.4" data-path="le-osservazioni-influenti.html"><a href="le-osservazioni-influenti.html"><i class="fa fa-check"></i><b>5.4</b> Le osservazioni influenti</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="appendix.html"><a href="appendix.html"><i class="fa fa-check"></i><b>6</b> Appendice</a><ul>
-<li class="chapter" data-level="6.1" data-path="alcune-funzioni-di-r-per-la-statistica-descrittiva.html"><a href="alcune-funzioni-di-r-per-la-statistica-descrittiva.html"><i class="fa fa-check"></i><b>6.1</b> Alcune funzioni di <tt>R</tt> per la statistica descrittiva</a><ul>
+<li class="chapter" data-level="6.1" data-path="alcune-funzioni-di-r-per-la-statistica-descrittiva.html"><a href="alcune-funzioni-di-r-per-la-statistica-descrittiva.html"><i class="fa fa-check"></i><b>6.1</b> Alcune funzioni di R per la statistica descrittiva</a><ul>
 <li class="chapter" data-level="6.1.1" data-path="alcune-funzioni-di-r-per-la-statistica-descrittiva.html"><a href="alcune-funzioni-di-r-per-la-statistica-descrittiva.html#analisi-descrittive-univariate-1"><i class="fa fa-check"></i><b>6.1.1</b> Analisi descrittive univariate</a></li>
 <li class="chapter" data-level="6.1.2" data-path="alcune-funzioni-di-r-per-la-statistica-descrittiva.html"><a href="alcune-funzioni-di-r-per-la-statistica-descrittiva.html#analisi-descrittive-bivariate-1"><i class="fa fa-check"></i><b>6.1.2</b> Analisi descrittive bivariate</a></li>
 <li class="chapter" data-level="6.1.3" data-path="alcune-funzioni-di-r-per-la-statistica-descrittiva.html"><a href="alcune-funzioni-di-r-per-la-statistica-descrittiva.html#ulteriori-rappresentazioni-grafiche"><i class="fa fa-check"></i><b>6.1.3</b> Ulteriori rappresentazioni grafiche</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="alcune-funzioni-r-per-la-statistica-inferenziale.html"><a href="alcune-funzioni-r-per-la-statistica-inferenziale.html"><i class="fa fa-check"></i><b>6.2</b> Alcune funzioni <tt>R</tt> per la statistica inferenziale</a><ul>
+<li class="chapter" data-level="6.2" data-path="alcune-funzioni-r-per-la-statistica-inferenziale.html"><a href="alcune-funzioni-r-per-la-statistica-inferenziale.html"><i class="fa fa-check"></i><b>6.2</b> Alcune funzioni R per la statistica inferenziale</a><ul>
 <li class="chapter" data-level="6.2.1" data-path="alcune-funzioni-r-per-la-statistica-inferenziale.html"><a href="alcune-funzioni-r-per-la-statistica-inferenziale.html#inferenza-sulla-media-di-una-popolazione-normale-1"><i class="fa fa-check"></i><b>6.2.1</b> Inferenza sulla media di una popolazione normale</a></li>
 <li class="chapter" data-level="6.2.2" data-path="alcune-funzioni-r-per-la-statistica-inferenziale.html"><a href="alcune-funzioni-r-per-la-statistica-inferenziale.html#inferenza-sulla-proporzione-di-successi-in-una-popolazione-bernoulliana-1"><i class="fa fa-check"></i><b>6.2.2</b> Inferenza sulla proporzione di successi in una popolazione bernoulliana</a></li>
 <li class="chapter" data-level="6.2.3" data-path="alcune-funzioni-r-per-la-statistica-inferenziale.html"><a href="alcune-funzioni-r-per-la-statistica-inferenziale.html#inferenza-sul-confronto-tra-le-medie-di-due-popolazioni-normali-1"><i class="fa fa-check"></i><b>6.2.3</b> Inferenza sul confronto tra le medie di due popolazioni normali</a></li>
@@ -182,7 +187,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><strong>Elementi di <tt>R</tt> e <tt>Radiant</tt> per un primo corso di Statistica</strong></a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Elementi di R e Radiant per un primo corso di Statistica</a>
           </h1>
         </div>
 
@@ -204,24 +209,24 @@ Y_i = \beta_0 + \beta_1 x_i + \varepsilon_i, \quad i=1,\ldots,n,
 <li>gli errori aleatori, <span class="math inline">\(\varepsilon_i\)</span>, non sono correlati tra loro</li>
 <li>gli errori aleatori, <span class="math inline">\(\varepsilon_i\)</span>, sono distribuiti secondo una distribuzione normale</li>
 </ol>
-<p>La funzione principale per stimare un modello di regressione lineare in <tt>R</tt> è <tt>lm()</tt>, che sta per <em>linear model</em>. Il primo argomento di questa funzione è un tipo di oggetto che non abbiamo mai usato finora chiamato <em>formula</em>. Gli oggetti di tipo formula sono impiegati in <tt>R</tt> per specificare una relazione tra una variabile dipendente <tt>y</tt> e una (o più) variabili indipendenti <tt>x</tt>. Per specificare un oggetto di tipo formula è necessario utilizzare un simbolo particolare che non è sempre facile recuperare sulle tastiere italiane, ovvero il simbolo di tilde “<tt><span class="math inline">\(\sim\)</span></tt>”<a href="#fn41" class="footnoteRef" id="fnref41"><sup>41</sup></a>. La particolare combinazione di tasti che è necessario usare per ottenere tale simbolo dipende dal sistema operativo (Mac, Windows, ecc.), dal tipo di macchina che state usando (laptop, desktop, ecc.), oltre che dal particolare brand della vostra macchina. Per questo motivo, non è possibile indicare qui in modo univoco come ottenere la tilde sul vostro particolare computer, ma vi suggeriamo un modo poco elegante, ma molto semplice, per recuperarlo: eseguite il codice <tt>?tilde</tt>, copiate il carattere di tilde che trovate nella pagina di help e incollatelo dove vi serve<a href="#fn42" class="footnoteRef" id="fnref42"><sup>42</sup></a>.</p>
-<p>La sintassi generale della funzione <tt>lm()</tt> è</p>
+<p>La funzione principale per stimare un modello di regressione lineare in R è <code>lm()</code>, che sta per <em>linear model</em>. Il primo argomento di questa funzione è un tipo di oggetto che non abbiamo mai usato finora chiamato <em>formula</em>. Gli oggetti di tipo formula sono impiegati in R per specificare una relazione tra una variabile dipendente <code>y</code> e una (o più) variabili indipendenti <code>x</code>. Per specificare un oggetto di tipo formula è necessario utilizzare un simbolo particolare che non è sempre facile recuperare sulle tastiere italiane, ovvero il simbolo di tilde “<code>~</code>”<a href="#fn40" class="footnoteRef" id="fnref40"><sup>40</sup></a>. La particolare combinazione di tasti che è necessario usare per ottenere tale simbolo dipende dal sistema operativo (Mac, Windows, ecc.), dal tipo di macchina che state usando (laptop, desktop, ecc.), oltre che dal particolare brand della vostra macchina. Per questo motivo, non è possibile indicare qui in modo univoco come ottenere la tilde sul vostro particolare computer, ma vi suggeriamo un modo poco elegante, ma molto semplice, per recuperarlo: eseguite il codice <code>?tilde</code>, copiate il carattere di tilde che trovate nella pagina di help e incollatelo dove vi serve<a href="#fn41" class="footnoteRef" id="fnref41"><sup>41</sup></a>.</p>
+<p>La sintassi generale della funzione <code>lm()</code> è</p>
 <center>
-<tt>lm(y ~ x)</tt>,
+<code>lm(y ~ x)</code>,
 </center>
-<p>la quale restituisce una lista (si veda la Sezione <a href="le-principali-strutture-di-dati-disponibili-in-r.html#lists">1.3.6</a>) contenente un gran numero di risultati relativi alla stima del modello considerato. A titolo d’esempio, consideriamo il data frame <tt>comp</tt> disponibile nel file <tt>competitors.RData</tt>. Il data frame <tt>comp</tt> contiene i valori rilevati in 113 settimane successive per le seguenti variabili relative a un’azienda che produce un prodotto destinato al consumo alimentare:</p>
+<p>la quale restituisce una lista (si veda la Sezione <a href="le-principali-strutture-di-dati-disponibili-in-r.html#lists">1.3.6</a>) contenente un gran numero di risultati relativi alla stima del modello considerato. A titolo d’esempio, consideriamo il data frame <code>comp</code> disponibile nel file <code>competitors.RData</code>. Il data frame <code>comp</code> contiene i valori rilevati in 113 settimane successive per le seguenti variabili relative a un’azienda che produce un prodotto destinato al consumo alimentare:</p>
 <ul>
-<li><tt>mktshare</tt> indica la quota di mercato (in termini relativi) dell’azienda rilevata alla fine di ogni settimana</li>
-<li><tt>ownprice</tt> indica il prezzo (in $) alla fine di ogni settimana del prodotto offerto dall’azienda in questione</li>
-<li><tt>comp1price</tt> indica il prezzo (in $) alla fine di ogni settimana del medesimo prodotto offerto da un competitor dell’azienda</li>
-<li><tt>comp2price</tt> indica il prezzo (in $) alla fine di ogni settimana del medesimo prodotto offerto da un secondo competitor dell’azienda</li>
+<li><code>mktshare</code> indica la quota di mercato (in termini relativi) dell’azienda rilevata alla fine di ogni settimana</li>
+<li><code>ownprice</code> indica il prezzo (in $) alla fine di ogni settimana del prodotto offerto dall’azienda in questione</li>
+<li><code>comp1price</code> indica il prezzo (in $) alla fine di ogni settimana del medesimo prodotto offerto da un competitor dell’azienda</li>
+<li><code>comp2price</code> indica il prezzo (in $) alla fine di ogni settimana del medesimo prodotto offerto da un secondo competitor dell’azienda</li>
 </ul>
 <p>Vogliamo stimare la relazione lineare che intercorre tra la quota di mercato dell’azienda nelle varie settimane e il prezzo del proprio prodotto nelle medesime settimane, ovvero ci interessa stimare il modello</p>
 <span class="math display" id="eq:linreg-simple-comp">\[\begin{equation}
 \mbox{mktshare}_i = \beta_0 + \beta_1 \mbox{ownprice}_i + \varepsilon_i.
 \tag{5.2}
 \end{equation}\]</span>
-<p>Dopo aver caricato il file dei dati (vedi la Sezione <a href="file-loading.html#file-loading">1.8</a>), si può utilizzare la funzione <tt>View()</tt> per vederli. Il codice seguente utilizza la funzione <tt>lm()</tt> per stimare il modello, i cui risultati sono memorizzati nell’oggetto <tt>comp_m1</tt>, di cui si può ottenere una sintesi attraverso la funzione <tt>summary()</tt>:</p>
+<p>Dopo aver caricato il file dei dati (vedi la Sezione <a href="file-loading.html#file-loading">1.8</a>), si può utilizzare la funzione <code>View()</code> per vederli. Il codice seguente utilizza la funzione <code>lm()</code> per stimare il modello, i cui risultati sono memorizzati nell’oggetto <code>comp_m1</code>, di cui si può ottenere una sintesi attraverso la funzione <code>summary()</code>:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">load</span>(<span class="st">&quot;competitors.RData&quot;</span>)
 <span class="op">&gt;</span><span class="st"> </span>comp_m1 &lt;-<span class="st"> </span><span class="kw">lm</span>(mktshare <span class="op">~</span><span class="st"> </span>ownprice, <span class="dt">data =</span> comp)
 <span class="op">&gt;</span><span class="st"> </span><span class="kw">summary</span>(comp_m1)</code></pre></div>
@@ -244,45 +249,45 @@ Signif. codes:
 Residual standard error: 0.0129 on 111 degrees of freedom
 Multiple R-squared:  0.187, Adjusted R-squared:  0.18 
 F-statistic: 25.6 on 1 and 111 DF,  p-value: 1.67e-06</code></pre>
-<p>Vi facciamo notare che oltre all’argomento di tipo formula <tt>mktshare <span class="math inline">\(\sim\)</span> ownprice</tt>, che specifica il modello da stimare, nella funzione <tt>lm()</tt> abbiamo aggiunto anche un secondo argomento, denominato <tt>data</tt>. Questo argomento serve per indicare ad <tt>R</tt> il data frame in cui si trovano le variabili specificate nella formula<a href="#fn43" class="footnoteRef" id="fnref43"><sup>43</sup></a>.</p>
-<p>La funzione <tt>summary()</tt>, applicata alla lista restituita dalla funzione <tt>lm()</tt><!-- ^[Notate che avevamo già usato la funzione <tt>s</tt>mmary()} nella Sezione \@ref(summary_stats), ma in quel caso era applicata ad un vettore numerico, del quale restituiva una serie di statistiche di sintesi. Funzioni di questo tipo, che cioè si comportano in modo deiverso a seconda del tipo di oggetti a cui vengono applicate, vengono chiamate *generiche*.] -->, produce un output che consiste delle seguenti parti:</p>
+<p>Vi facciamo notare che oltre all’argomento di tipo formula <code>mktshare ~ ownprice</code>, che specifica il modello da stimare, nella funzione <code>lm()</code> abbiamo aggiunto anche un secondo argomento, denominato <code>data</code>. Questo argomento serve per indicare ad R il data frame in cui si trovano le variabili specificate nella formula<a href="#fn42" class="footnoteRef" id="fnref42"><sup>42</sup></a>.</p>
+<p>La funzione <code>summary()</code>, applicata alla lista restituita dalla funzione <code>lm()</code><!-- ^[Notate che avevamo già usato la funzione `s`mmary()} nella Sezione \@ref(summary_stats), ma in quel caso era applicata ad un vettore numerico, del quale restituiva una serie di statistiche di sintesi. Funzioni di questo tipo, che cioè si comportano in modo deiverso a seconda del tipo di oggetti a cui vengono applicate, vengono chiamate *generiche*.] -->, produce un output che consiste delle seguenti parti:</p>
 <ul>
-<li>la prima riga dell’output (<tt>Call</tt>) riporta il codice che è stato eseguito</li>
-<li>la seconda parte dell’output (<tt>Residuals</tt>) offre una sintesi dei residui del modello</li>
-<li>la terza parte (<tt>Coefficients</tt>) fornisce le stime dei coefficienti del modello insieme ai relativi p-value. Per l’esempio precedente, il modello stimato è quindi dato da</li>
+<li>la prima riga dell’output (<code>Call</code>) riporta il codice che è stato eseguito</li>
+<li>la seconda parte dell’output (<code>Residuals</code>) offre una sintesi dei residui del modello</li>
+<li>la terza parte (<code>Coefficients</code>) fornisce le stime dei coefficienti del modello insieme ai relativi p-value. Per l’esempio precedente, il modello stimato è quindi dato da</li>
 </ul>
 <span class="math display" id="eq:linreg-simple-comp-fit">\[\begin{equation}
 \widehat{\mbox{mktshare}}_i = 0.1104 -0.0453 \, \mbox{ownprice}_i.
 \tag{5.3}
 \end{equation}\]</span>
 <ul>
-<li>la quarta e ultima parte (ultime tre righe) contiene alcuni indici utili per valutare la bontà complessiva del modello, in particolare la stima di <span class="math inline">\(\sigma\)</span> (indicata come <tt>Residual standard error</tt>), l’indice <span class="math inline">\(R^2\)</span> (riportato come <tt>Multiple R-squared</tt>), e il test <span class="math inline">\(F\)</span> (ultima riga dell’output)</li>
+<li>la quarta e ultima parte (ultime tre righe) contiene alcuni indici utili per valutare la bontà complessiva del modello, in particolare la stima di <span class="math inline">\(\sigma\)</span> (indicata come <code>Residual standard error</code>), l’indice <span class="math inline">\(R^2\)</span> (riportato come <code>Multiple R-squared</code>), e il test <span class="math inline">\(F\)</span> (ultima riga dell’output)</li>
 </ul>
-<p>L’indice <span class="math inline">\(R^2\)</span> (<tt>0.1874</tt>) indica una limitata capacità predittiva del modello, anche se il basso p-value del coefficiente <span class="math inline">\(\beta_1\)</span> (<tt>1.67e-06</tt>) segnala che l’associazione lineare tra le due variabili è significativa da un punto di vista statistico.</p>
-<p>E’ possibile visualizzare la retta stimata direttamente sul diagramma di dispersione delle due variabili attraverso il seguente codice<a href="#fn44" class="footnoteRef" id="fnref44"><sup>44</sup></a>:</p>
+<p>L’indice <span class="math inline">\(R^2\)</span> (<code>0.1874</code>) indica una limitata capacità predittiva del modello, anche se il basso p-value del coefficiente <span class="math inline">\(\beta_1\)</span> (<code>1.67e-06</code>) segnala che l’associazione lineare tra le due variabili è significativa da un punto di vista statistico.</p>
+<p>E’ possibile visualizzare la retta stimata direttamente sul diagramma di dispersione delle due variabili attraverso il seguente codice<a href="#fn43" class="footnoteRef" id="fnref43"><sup>43</sup></a>:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">plot</span>(mktshare <span class="op">~</span><span class="st"> </span>ownprice, <span class="dt">data =</span> comp)
 <span class="op">&gt;</span><span class="st"> </span><span class="kw">abline</span>(comp_m1, <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>)</code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:lm-fitted-line"></span>
-<img src="manuale_R_files/figure-html/lm-fitted-line-1.pdf" alt="Diagramma di dispersione di &lt;tt&gt;mktshare&lt;/tt&gt; contro &lt;tt&gt;ownprice&lt;/tt&gt; e relativa retta stimata." width="480" />
+<img src="manuale_R_files/figure-html/lm-fitted-line-1.pdf" alt="Diagramma di dispersione di `mktshare` contro `ownprice` e relativa retta stimata." width="480" />
 <p class="caption">
-Figure 5.1: Diagramma di dispersione di <tt>mktshare</tt> contro <tt>ownprice</tt> e relativa retta stimata.
+Figura 5.1: Diagramma di dispersione di <code>mktshare</code> contro <code>ownprice</code> e relativa retta stimata.
 </p>
 </div>
-<p>La prima linea di codice usa la funzione <tt>plot()</tt>, ma a differenza di quanto abbiamo visto in precedenza, in questo caso abbiamo indicato le variabili da rappresentare nel grafico attraverso una formula. La seconda linea di codice utilizza invece la funzione <tt>abline()</tt>, la quale aggiunge al grafico attivo una linea, in questo caso la retta stimata.</p>
-<p>L’output fornito da <tt>R</tt> per un modello di regressione lineare include i p-value per i test sui due coefficienti, ma non include i rispettivi intervalli di confidenza. Per ottenere questi ultimi è necessario utilizzare la funzione <tt>confint()</tt> direttamente sul risultato di <tt>lm()</tt>. Per il precedente esempio otteniamo:</p>
+<p>La prima linea di codice usa la funzione <code>plot()</code>, ma a differenza di quanto abbiamo visto in precedenza, in questo caso abbiamo indicato le variabili da rappresentare nel grafico attraverso una formula. La seconda linea di codice utilizza invece la funzione <code>abline()</code>, la quale aggiunge al grafico attivo una linea, in questo caso la retta stimata.</p>
+<p>L’output fornito da R per un modello di regressione lineare include i p-value per i test sui due coefficienti, ma non include i rispettivi intervalli di confidenza. Per ottenere questi ultimi è necessario utilizzare la funzione <code>confint()</code> direttamente sul risultato di <code>lm()</code>. Per il precedente esempio otteniamo:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">confint</span>(comp_m1)</code></pre></div>
 <pre><code>               2.5 %   97.5 %
 (Intercept)  0.08074  0.14012
 ownprice    -0.06307 -0.02757</code></pre>
 <p>Altre funzioni utili per esaminare i risultati della stima di un modello di regressione lineare (non solo semplice) sono:</p>
 <ul>
-<li><tt>coef()</tt>, che stampa le stime dei coefficienti</li>
-<li><tt>residuals()</tt>, che calcola i residui del modello</li>
-<li><tt>fitted()</tt>, che calcola i valori previsti dal modello per le sole osservazioni incluse nel campione</li>
-<li><tt>anova()</tt>, che produce la scomposizione della devianza</li>
-<li><tt>predict()</tt>, che consente di calcolare le previsioni in modo più generale</li>
+<li><code>coef()</code>, che stampa le stime dei coefficienti</li>
+<li><code>residuals()</code>, che calcola i residui del modello</li>
+<li><code>fitted()</code>, che calcola i valori previsti dal modello per le sole osservazioni incluse nel campione</li>
+<li><code>anova()</code>, che produce la scomposizione della devianza</li>
+<li><code>predict()</code>, che consente di calcolare le previsioni in modo più generale</li>
 </ul>
-<p>Tralasciando per il momento <tt>predict()</tt>, alla quale dedicheremo una sezione successiva del capitolo, vediamo ora il tipo di output prodotto dalle altre:</p>
+<p>Tralasciando per il momento <code>predict()</code>, alla quale dedicheremo una sezione successiva del capitolo, vediamo ora il tipo di output prodotto dalle altre:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">coef</span>(comp_m1)</code></pre></div>
 <pre><code>(Intercept)    ownprice 
     0.11043    -0.04532 </code></pre>
@@ -302,20 +307,20 @@ Signif. codes:
 <span class="op">&gt;</span><span class="st"> </span><span class="kw">plot</span>(comp_m1_fitted, comp_m1_resid, <span class="dt">xlab =</span> <span class="st">&quot;Valori previsti&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Residui&quot;</span>)
 <span class="op">&gt;</span><span class="st"> </span><span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">0</span>, <span class="dt">lty =</span> <span class="dv">2</span>)</code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:lm-res-fit"></span>
-<img src="manuale_R_files/figure-html/lm-res-fit-1.pdf" alt="Grafico dei residui contro i valori previsti per il modello &lt;tt&gt;comp_m1&lt;/tt&gt;." width="480" />
+<img src="manuale_R_files/figure-html/lm-res-fit-1.pdf" alt="Grafico dei residui contro i valori previsti per il modello `comp_m1`." width="480" />
 <p class="caption">
-Figure 5.2: Grafico dei residui contro i valori previsti per il modello <tt>comp_m1</tt>.
+Figura 5.2: Grafico dei residui contro i valori previsti per il modello <code>comp_m1</code>.
 </p>
 </div>
-<p>Le opzioni <tt>h</tt> e <tt>lty</tt> nel codice precedente servono rispettivamente a disegnare una linea orizzontale (in corrispondenza del valore 0 sull’asse verticale) e a scegliere il tipo di linea (il valore 2 indica una linea tratteggiata).</p>
+<p>Le opzioni <code>h</code> e <code>lty</code> nel codice precedente servono rispettivamente a disegnare una linea orizzontale (in corrispondenza del valore 0 sull’asse verticale) e a scegliere il tipo di linea (il valore 2 indica una linea tratteggiata).</p>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="41">
-<li id="fn41"><p>Si usa il simbolo di tilde perché <tt>R</tt> è un software nato e sviluppato nei paesi anglosassoni e sulle tastiere US e UK tale simbolo è direttamente disponibile su uno dei tasti.<a href="simple-reg.html#fnref41">↩</a></p></li>
-<li id="fn42"><p>In generale, sui computer Mac dovreste poter recuperare il simbolo di tilde con la combinazione di tasti alt+5, ovvero il tasto option solitamente situato a sinistra della barra spaziatrice insieme al numero 5. Sulla maggior parte dei computer desktop (ma non laptop) con sistema operativo Windows, la tilde si riesce a recuperare con la combinazione di tasti Alt+126, ovvero il tasto Alt (di solito situato a sinsitra della barra spaziatrice) insieme al numero 126. Il numero 126 deve essere digitato sul tastierino numerico della tastiera (ovvero non dovete usare i numeri posti sopra la parte centrale della tastiera). Purtroppo, sui laptop la posizione di questo simbolo dipende dalla tastiera e dal brand del laptop stesso, per cui vi invitiamo a consultare le istruzioni del vostro laptop.<a href="simple-reg.html#fnref42">↩</a></p></li>
-<li id="fn43"><p>Ciò è necessario perché le variabili di un data frame non sono disponibili come oggetti autonomi nella memoria di <tt>R</tt>, a meno che non abbiate prima usato <tt>attach()</tt>.<a href="simple-reg.html#fnref43">↩</a></p></li>
-<li id="fn44"><p>L’opzione <tt>lwd</tt> consente di scegliere lo spessore della linea, mentre <tt>col</tt> permette di scegliere il colore.<a href="simple-reg.html#fnref44">↩</a></p></li>
+<ol start="40">
+<li id="fn40"><p>Si usa il simbolo di tilde perché R è un software nato e sviluppato nei paesi anglosassoni e sulle tastiere US e UK tale simbolo è direttamente disponibile su uno dei tasti.<a href="simple-reg.html#fnref40">↩</a></p></li>
+<li id="fn41"><p>In generale, sui computer Mac dovreste poter recuperare il simbolo di tilde con la combinazione di tasti alt+5, ovvero il tasto option solitamente situato a sinistra della barra spaziatrice insieme al numero 5. Sulla maggior parte dei computer desktop (ma non laptop) con sistema operativo Windows, la tilde si riesce a recuperare con la combinazione di tasti Alt+126, ovvero il tasto Alt (di solito situato a sinsitra della barra spaziatrice) insieme al numero 126. Il numero 126 deve essere digitato sul tastierino numerico della tastiera (ovvero non dovete usare i numeri posti sopra la parte centrale della tastiera). Purtroppo, sui laptop la posizione di questo simbolo dipende dalla tastiera e dal brand del laptop stesso, per cui vi invitiamo a consultare le istruzioni del vostro laptop.<a href="simple-reg.html#fnref41">↩</a></p></li>
+<li id="fn42"><p>Ciò è necessario perché le variabili di un data frame non sono disponibili come oggetti autonomi nella memoria di R, a meno che non abbiate prima usato <code>attach()</code>.<a href="simple-reg.html#fnref42">↩</a></p></li>
+<li id="fn43"><p>L’opzione <code>lwd</code> consente di scegliere lo spessore della linea, mentre <code>col</code> permette di scegliere il colore.<a href="simple-reg.html#fnref43">↩</a></p></li>
 </ol>
 </div>
             </section>
@@ -338,7 +343,7 @@ Figure 5.2: Grafico dei residui contro i valori previsti per il modello <tt>comp
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
-"github": true,
+"github": false,
 "facebook": false,
 "twitter": true,
 "google": false,

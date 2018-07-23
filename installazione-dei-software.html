@@ -7,11 +7,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Elementi di R e Radiant per un primo corso di Statistica</title>
   <meta name="description" content="Breve manuale per l’apprendimento di alcuni elementi di R e Radiant. Materiale di supporto per il Corso 30001 (Statistica) dell’Università Bocconi.">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
   <meta property="og:title" content="Elementi di R e Radiant per un primo corso di Statistica" />
   <meta property="og:type" content="book" />
-  
+  <meta property="og:url" content="https://sergioventurini.github.io/manuale_R" />
   
   <meta property="og:description" content="Breve manuale per l’apprendimento di alcuni elementi di R e Radiant. Materiale di supporto per il Corso 30001 (Statistica) dell’Università Bocconi." />
   <meta name="github-repo" content="sergioventurini/manuale_R" />
@@ -24,7 +24,7 @@
 
 
 
-<meta name="date" content="2018-07-20">
+<meta name="date" content="2018-07-23">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -46,6 +46,11 @@
 
 
 
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { TagSide: "left" }
+});
+</script>
 
 
 <style type="text/css">
@@ -99,7 +104,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">Elementi di <tt>R</tt> e <tt>Radiant</tt></a></li>
+<li><a href="./">Elementi di R e Radiant</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Premessa</a></li>
@@ -108,8 +113,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="1.1.1" data-path="installazione-dei-software.html"><a href="installazione-dei-software.html#installazione-su-windows"><i class="fa fa-check"></i><b>1.1.1</b> Installazione su Windows</a></li>
 <li class="chapter" data-level="1.1.2" data-path="installazione-dei-software.html"><a href="installazione-dei-software.html#installazione-su-mac"><i class="fa fa-check"></i><b>1.1.2</b> Installazione su Mac</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="lapproccio-al-calcolo-statistico-di-r.html"><a href="lapproccio-al-calcolo-statistico-di-r.html"><i class="fa fa-check"></i><b>1.2</b> L’approccio al calcolo statistico di <tt>R</tt></a></li>
-<li class="chapter" data-level="1.3" data-path="le-principali-strutture-di-dati-disponibili-in-r.html"><a href="le-principali-strutture-di-dati-disponibili-in-r.html"><i class="fa fa-check"></i><b>1.3</b> Le principali strutture di dati disponibili in <tt>R</tt></a><ul>
+<li class="chapter" data-level="1.2" data-path="lapproccio-al-calcolo-statistico-di-r.html"><a href="lapproccio-al-calcolo-statistico-di-r.html"><i class="fa fa-check"></i><b>1.2</b> L’approccio al calcolo statistico di R</a></li>
+<li class="chapter" data-level="1.3" data-path="le-principali-strutture-di-dati-disponibili-in-r.html"><a href="le-principali-strutture-di-dati-disponibili-in-r.html"><i class="fa fa-check"></i><b>1.3</b> Le principali strutture di dati disponibili in R</a><ul>
 <li class="chapter" data-level="1.3.1" data-path="le-principali-strutture-di-dati-disponibili-in-r.html"><a href="le-principali-strutture-di-dati-disponibili-in-r.html#tipi-di-dati-di-base"><i class="fa fa-check"></i><b>1.3.1</b> Tipi di dati di base</a></li>
 <li class="chapter" data-level="1.3.2" data-path="le-principali-strutture-di-dati-disponibili-in-r.html"><a href="le-principali-strutture-di-dati-disponibili-in-r.html#vettori"><i class="fa fa-check"></i><b>1.3.2</b> Vettori</a></li>
 <li class="chapter" data-level="1.3.3" data-path="le-principali-strutture-di-dati-disponibili-in-r.html"><a href="le-principali-strutture-di-dati-disponibili-in-r.html#matrix"><i class="fa fa-check"></i><b>1.3.3</b> Matrici</a></li>
@@ -118,14 +123,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="1.3.6" data-path="le-principali-strutture-di-dati-disponibili-in-r.html"><a href="le-principali-strutture-di-dati-disponibili-in-r.html#lists"><i class="fa fa-check"></i><b>1.3.6</b> Liste</a></li>
 <li class="chapter" data-level="1.3.7" data-path="le-principali-strutture-di-dati-disponibili-in-r.html"><a href="le-principali-strutture-di-dati-disponibili-in-r.html#funzioni"><i class="fa fa-check"></i><b>1.3.7</b> Funzioni</a></li>
 </ul></li>
-<li class="chapter" data-level="1.4" data-path="howtogethelp.html"><a href="howtogethelp.html"><i class="fa fa-check"></i><b>1.4</b> Come reperire informazioni sui comandi di <tt>R</tt></a></li>
-<li class="chapter" data-level="1.5" data-path="packages.html"><a href="packages.html"><i class="fa fa-check"></i><b>1.5</b> I pacchetti di <tt>R</tt></a></li>
-<li class="chapter" data-level="1.6" data-path="lapplicazione-rstudio.html"><a href="lapplicazione-rstudio.html"><i class="fa fa-check"></i><b>1.6</b> L’applicazione <tt>RStudio</tt></a></li>
-<li class="chapter" data-level="1.7" data-path="il-pacchetto-radiant.html"><a href="il-pacchetto-radiant.html"><i class="fa fa-check"></i><b>1.7</b> Il pacchetto <tt>Radiant</tt></a></li>
-<li class="chapter" data-level="1.8" data-path="file-loading.html"><a href="file-loading.html"><i class="fa fa-check"></i><b>1.8</b> Come caricare e salvare un file in <tt>R</tt> e <tt>Radiant</tt></a></li>
+<li class="chapter" data-level="1.4" data-path="howtogethelp.html"><a href="howtogethelp.html"><i class="fa fa-check"></i><b>1.4</b> Come reperire informazioni sui comandi di R</a></li>
+<li class="chapter" data-level="1.5" data-path="packages.html"><a href="packages.html"><i class="fa fa-check"></i><b>1.5</b> I pacchetti di R</a></li>
+<li class="chapter" data-level="1.6" data-path="lapplicazione-rstudio.html"><a href="lapplicazione-rstudio.html"><i class="fa fa-check"></i><b>1.6</b> L’applicazione RStudio</a></li>
+<li class="chapter" data-level="1.7" data-path="il-pacchetto-radiant.html"><a href="il-pacchetto-radiant.html"><i class="fa fa-check"></i><b>1.7</b> Il pacchetto Radiant</a></li>
+<li class="chapter" data-level="1.8" data-path="file-loading.html"><a href="file-loading.html"><i class="fa fa-check"></i><b>1.8</b> Come caricare e salvare un file in R e Radiant</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="statistica-descrittiva.html"><a href="statistica-descrittiva.html"><i class="fa fa-check"></i><b>2</b> Statistica descrittiva</a><ul>
-<li class="chapter" data-level="2.1" data-path="descriptive-R.html"><a href="descriptive-R.html"><i class="fa fa-check"></i><b>2.1</b> Primi esempi con <tt>R</tt></a></li>
+<li class="chapter" data-level="2.1" data-path="descriptive-R.html"><a href="descriptive-R.html"><i class="fa fa-check"></i><b>2.1</b> Primi esempi con R</a></li>
 <li class="chapter" data-level="2.2" data-path="analisi-descrittive-univariate.html"><a href="analisi-descrittive-univariate.html"><i class="fa fa-check"></i><b>2.2</b> Analisi descrittive univariate</a><ul>
 <li class="chapter" data-level="2.2.1" data-path="analisi-descrittive-univariate.html"><a href="analisi-descrittive-univariate.html#una-singola-variabile-categorica"><i class="fa fa-check"></i><b>2.2.1</b> Una singola variabile categorica</a></li>
 <li class="chapter" data-level="2.2.2" data-path="analisi-descrittive-univariate.html"><a href="analisi-descrittive-univariate.html#una-singola-variabile-numerica"><i class="fa fa-check"></i><b>2.2.2</b> Una singola variabile numerica</a></li>
@@ -158,12 +163,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="5.4" data-path="le-osservazioni-influenti.html"><a href="le-osservazioni-influenti.html"><i class="fa fa-check"></i><b>5.4</b> Le osservazioni influenti</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="appendix.html"><a href="appendix.html"><i class="fa fa-check"></i><b>6</b> Appendice</a><ul>
-<li class="chapter" data-level="6.1" data-path="alcune-funzioni-di-r-per-la-statistica-descrittiva.html"><a href="alcune-funzioni-di-r-per-la-statistica-descrittiva.html"><i class="fa fa-check"></i><b>6.1</b> Alcune funzioni di <tt>R</tt> per la statistica descrittiva</a><ul>
+<li class="chapter" data-level="6.1" data-path="alcune-funzioni-di-r-per-la-statistica-descrittiva.html"><a href="alcune-funzioni-di-r-per-la-statistica-descrittiva.html"><i class="fa fa-check"></i><b>6.1</b> Alcune funzioni di R per la statistica descrittiva</a><ul>
 <li class="chapter" data-level="6.1.1" data-path="alcune-funzioni-di-r-per-la-statistica-descrittiva.html"><a href="alcune-funzioni-di-r-per-la-statistica-descrittiva.html#analisi-descrittive-univariate-1"><i class="fa fa-check"></i><b>6.1.1</b> Analisi descrittive univariate</a></li>
 <li class="chapter" data-level="6.1.2" data-path="alcune-funzioni-di-r-per-la-statistica-descrittiva.html"><a href="alcune-funzioni-di-r-per-la-statistica-descrittiva.html#analisi-descrittive-bivariate-1"><i class="fa fa-check"></i><b>6.1.2</b> Analisi descrittive bivariate</a></li>
 <li class="chapter" data-level="6.1.3" data-path="alcune-funzioni-di-r-per-la-statistica-descrittiva.html"><a href="alcune-funzioni-di-r-per-la-statistica-descrittiva.html#ulteriori-rappresentazioni-grafiche"><i class="fa fa-check"></i><b>6.1.3</b> Ulteriori rappresentazioni grafiche</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="alcune-funzioni-r-per-la-statistica-inferenziale.html"><a href="alcune-funzioni-r-per-la-statistica-inferenziale.html"><i class="fa fa-check"></i><b>6.2</b> Alcune funzioni <tt>R</tt> per la statistica inferenziale</a><ul>
+<li class="chapter" data-level="6.2" data-path="alcune-funzioni-r-per-la-statistica-inferenziale.html"><a href="alcune-funzioni-r-per-la-statistica-inferenziale.html"><i class="fa fa-check"></i><b>6.2</b> Alcune funzioni R per la statistica inferenziale</a><ul>
 <li class="chapter" data-level="6.2.1" data-path="alcune-funzioni-r-per-la-statistica-inferenziale.html"><a href="alcune-funzioni-r-per-la-statistica-inferenziale.html#inferenza-sulla-media-di-una-popolazione-normale-1"><i class="fa fa-check"></i><b>6.2.1</b> Inferenza sulla media di una popolazione normale</a></li>
 <li class="chapter" data-level="6.2.2" data-path="alcune-funzioni-r-per-la-statistica-inferenziale.html"><a href="alcune-funzioni-r-per-la-statistica-inferenziale.html#inferenza-sulla-proporzione-di-successi-in-una-popolazione-bernoulliana-1"><i class="fa fa-check"></i><b>6.2.2</b> Inferenza sulla proporzione di successi in una popolazione bernoulliana</a></li>
 <li class="chapter" data-level="6.2.3" data-path="alcune-funzioni-r-per-la-statistica-inferenziale.html"><a href="alcune-funzioni-r-per-la-statistica-inferenziale.html#inferenza-sul-confronto-tra-le-medie-di-due-popolazioni-normali-1"><i class="fa fa-check"></i><b>6.2.3</b> Inferenza sul confronto tra le medie di due popolazioni normali</a></li>
@@ -182,7 +187,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><strong>Elementi di <tt>R</tt> e <tt>Radiant</tt> per un primo corso di Statistica</strong></a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Elementi di R e Radiant per un primo corso di Statistica</a>
           </h1>
         </div>
 
@@ -194,12 +199,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2><span class="header-section-number">1.1</span> Installazione dei software</h2>
 <p>Per poter utilizzare i comandi descritti nel resto del manuale è necessario scaricare e installare nell’ordine qui presentato i seguenti software:</p>
 <ul>
-<li>l’applicazione <tt>R</tt> (<a href="http://www.r-project.org" class="uri">http://www.r-project.org</a>)</li>
-<li>l’applicazione <tt>RStudio</tt> (<a href="http://www.rstudio.com" class="uri">http://www.rstudio.com</a>)</li>
-<li>il pacchetto <tt>Radiant</tt> (<a href="https://vnijs.github.io/radiant" class="uri">https://vnijs.github.io/radiant</a>)</li>
+<li>l’applicazione R (<a href="http://www.r-project.org" class="uri">http://www.r-project.org</a>)</li>
+<li>l’applicazione RStudio (<a href="http://www.rstudio.com" class="uri">http://www.rstudio.com</a>)</li>
+<li>il pacchetto Radiant (<a href="https://vnijs.github.io/radiant" class="uri">https://vnijs.github.io/radiant</a>)</li>
 </ul>
-<p>Banalizzando un po’, possiamo dire che la prima componente, <tt>R</tt>, rappresenta il motore della nostra macchina per le analisi statistiche, senza il quale non si va da nessuna parte. La seconda componente, <tt>RStudio</tt>, rappresenta la plancia di comando dell’auto con cui possiamo controllare e regolare la potenza del motore. Infine, la terza componente, ovvero <tt>Radiant</tt>, costituisce la carrozzeria esterna dell’auto, la quale conferisce all’auto un aspetto più gradevole e meno tecnico rispetto alla complicata meccanica interna.</p>
-<p>Come abbiamo già accennato nella premessa a questo manuale, non sarebbe strettamente necessario installare tutte queste componenti, in quanto basterebbe solo la prima, <tt>R</tt>. Tuttavia, non essendo <tt>R</tt> dotato di un’interfaccia grafica, il suo utilizzo non è sempre intuitivo. Per questo motivo abbiamo deciso di semplificarne l’apprendimento introducendo altre componenti software che rendono più gestibile l’uso di <tt>R</tt> come motore di calcolo.</p>
+<p>Banalizzando un po’, possiamo dire che la prima componente, R, rappresenta il motore della nostra macchina per le analisi statistiche, senza il quale non si va da nessuna parte. La seconda componente, RStudio, rappresenta la plancia di comando dell’auto con cui possiamo controllare e regolare la potenza del motore. Infine, la terza componente, ovvero Radiant, costituisce la carrozzeria esterna dell’auto, la quale conferisce all’auto un aspetto più gradevole e meno tecnico rispetto alla complicata meccanica interna.</p>
+<p>Come abbiamo già accennato nella premessa a questo manuale, non sarebbe strettamente necessario installare tutte queste componenti, in quanto basterebbe solo la prima, R. Tuttavia, non essendo R dotato di un’interfaccia grafica, il suo utilizzo non è sempre intuitivo. Per questo motivo abbiamo deciso di semplificarne l’apprendimento introducendo altre componenti software che rendono più gestibile l’uso di R come motore di calcolo.</p>
 <p>Tutti i software che utilizzeremo sono <em>open-source</em>, ovvero liberamente scaricabili un numero illimitato di volte.</p>
 <p>Nelle prossime sezioni riportiamo le istruzioni per l’installazione dei software separatamente per computer con sistema operativo Windows o Mac.</p>
 <div class="rmdcaution">
@@ -207,163 +212,163 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="installazione-su-windows" class="section level3">
 <h3><span class="header-section-number">1.1.1</span> Installazione su Windows</h3>
-<p>Le istruzioni qui riportate si riferiscono all’ultima versione disponibile di Windows, ovvero la 10<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>.</p>
+<p>Le istruzioni qui riportate si riferiscono all’ultima versione disponibile di Windows, ovvero la 10<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>.</p>
 <div id="download-e-installazione-di-r" class="section level4">
-<h4><span class="header-section-number">1.1.1.1</span> Download e installazione di <tt>R</tt></h4>
+<h4><span class="header-section-number">1.1.1.1</span> Download e installazione di R</h4>
 <ol style="list-style-type: decimal">
 <li>Aprite il vostro browser e andate sulla home page del <em>Comprehensive R Archive Network</em> (CRAN), che trovate all’indirizzo <a href="https://cran.r-project.org" class="uri">https://cran.r-project.org</a> (si veda la Figura <a href="installazione-dei-software.html#fig:CRAN">1.1</a>).</li>
 </ol>
 <div class="figure" style="text-align: center"><span id="fig:CRAN"></span>
 <img src="images/CRAN.png" alt="Pagina iniziale del CRAN." width="90%" />
 <p class="caption">
-Figure 1.1: Pagina iniziale del CRAN.
+Figura 1.1: Pagina iniziale del CRAN.
 </p>
 </div>
 <ol start="2" style="list-style-type: decimal">
-<li>Fate click sul link <tt>Download R for Windows</tt> e sarete reindirizzati alla pagina web mostrata in Figura <a href="installazione-dei-software.html#fig:CRAN-Windows">1.2</a>.</li>
+<li>Fate click sul link <code>Download R for Windows</code> e sarete reindirizzati alla pagina web mostrata in Figura <a href="installazione-dei-software.html#fig:CRAN-Windows">1.2</a>.</li>
 </ol>
 <div class="figure" style="text-align: center"><span id="fig:CRAN-Windows"></span>
-<img src="images/CRAN_Windows.png" alt="Pagina del CRAN da cui scaricare la versione di &lt;tt&gt;R&lt;/tt&gt; per Windows." width="90%" />
+<img src="images/CRAN_Windows.png" alt="Pagina del CRAN da cui scaricare la versione di R per Windows." width="90%" />
 <p class="caption">
-Figure 1.2: Pagina del CRAN da cui scaricare la versione di <tt>R</tt> per Windows.
+Figura 1.2: Pagina del CRAN da cui scaricare la versione di R per Windows.
 </p>
 </div>
 <ol start="3" style="list-style-type: decimal">
-<li>Quindi, fate click sul link <tt>install R for the first time</tt> e vi sarà mostrata la pagina che vedete in Figura <a href="installazione-dei-software.html#fig:CRAN-first">1.3</a>.</li>
+<li>Quindi, fate click sul link <code>install R for the first time</code> e vi sarà mostrata la pagina che vedete in Figura <a href="installazione-dei-software.html#fig:CRAN-first">1.3</a>.</li>
 </ol>
 <div class="figure" style="text-align: center"><span id="fig:CRAN-first"></span>
-<img src="images/CRAN_first.png" alt="Pagina del CRAN da cui scaricare &lt;tt&gt;R&lt;/tt&gt; nel caso sia la prima volta che viene installato su Windows." width="90%" />
+<img src="images/CRAN_first.png" alt="Pagina del CRAN da cui scaricare R nel caso sia la prima volta che viene installato su Windows." width="90%" />
 <p class="caption">
-Figure 1.3: Pagina del CRAN da cui scaricare <tt>R</tt> nel caso sia la prima volta che viene installato su Windows.
+Figura 1.3: Pagina del CRAN da cui scaricare R nel caso sia la prima volta che viene installato su Windows.
 </p>
 </div>
 <ol start="4" style="list-style-type: decimal">
-<li>Fate click sul link <tt>Download R 3.5.1 for Windows</tt>. Questa operazione scaricherà un file eseguibile chiamato <tt>R 3.5.1-win.exe</tt><a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>.</li>
-<li>Una volta scaricato, fate doppio click sul file appena scaricato. In Windows 10, comparirà un messaggio di warning: “Windows protected your PC. Windows SmartScreen prevented an unrecognized app from starting. Running this app might put your PC at risk”. Fate click su <tt>More info</tt> e poi sul pulsante <tt>Run anyway</tt>. Windows fornisce questo warning se le impostazioni del vostro account utente sono quelle di default e state scaricando software che non proviene dal Windows App Store ufficiale.</li>
+<li>Fate click sul link <code>Download R 3.5.1 for Windows</code>. Questa operazione scaricherà un file eseguibile chiamato <code>R 3.5.1-win.exe</code><a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>.</li>
+<li>Una volta scaricato, fate doppio click sul file appena scaricato. In Windows 10, comparirà un messaggio di warning: “Windows protected your PC. Windows SmartScreen prevented an unrecognized app from starting. Running this app might put your PC at risk”. Fate click su <code>More info</code> e poi sul pulsante <code>Run anyway</code>. Windows fornisce questo warning se le impostazioni del vostro account utente sono quelle di default e state scaricando software che non proviene dal Windows App Store ufficiale.</li>
 <li>Durante la procedura di installazione vi consigliamo di usare le impostazioni di default proposte.</li>
-<li>Una volta installato, lanciate <tt>R</tt> come ogni altro software (per esempio, facendo doppio click sull’icona sul desktop, o selezionandolo dal manu Start di Windows). Se state utilizzando <tt>R</tt> su un computer con sistema operativo Windows a 64-bit (praticamente tutti i computer attuali), troverete che sono state installate entrambe le versioni a 64 e 32-bit. Potete usare l’una o l’altra, ma vi suggeriamo di usare la versione a 64-bit (potreste anche eliminare dal vostro desktop l’icona di quella a 32-bit).</li>
+<li>Una volta installato, lanciate R come ogni altro software (per esempio, facendo doppio click sull’icona sul desktop, o selezionandolo dal manu Start di Windows). Se state utilizzando R su un computer con sistema operativo Windows a 64-bit (praticamente tutti i computer attuali), troverete che sono state installate entrambe le versioni a 64 e 32-bit. Potete usare l’una o l’altra, ma vi suggeriamo di usare la versione a 64-bit (potreste anche eliminare dal vostro desktop l’icona di quella a 32-bit).</li>
 </ol>
 </div>
 <div id="download-e-installazione-di-rstudio" class="section level4">
-<h4><span class="header-section-number">1.1.1.2</span> Download e installazione di <tt>RStudio</tt></h4>
-<p><tt>RStudio</tt> è un tipo di applicazione che i programmatori chiamano <em>integrated development environment</em> (IDE), ovvero un ambiente di sviluppo per <tt>R</tt>. Un IDE è una cosa diversa da un’interfaccia grafica (<em>graphical user interface</em>, GUI), la quale fornisce uno strumento per interagire con un’applicazione e visualizzarne gli output.</p>
-<p>Come abbiamo detto, non sarebbe strettamente necessario passare per l’installazione di <tt>RStudio</tt>, ma ciò rende più agevole l’utilizzo degli strumenti di cui parleremo successivamente.</p>
+<h4><span class="header-section-number">1.1.1.2</span> Download e installazione di RStudio</h4>
+<p>RStudio è un tipo di applicazione che i programmatori chiamano <em>integrated development environment</em> (IDE), ovvero un ambiente di sviluppo per R. Un IDE è una cosa diversa da un’interfaccia grafica (<em>graphical user interface</em>, GUI), la quale fornisce uno strumento per interagire con un’applicazione e visualizzarne gli output.</p>
+<p>Come abbiamo detto, non sarebbe strettamente necessario passare per l’installazione di RStudio, ma ciò rende più agevole l’utilizzo degli strumenti di cui parleremo successivamente.</p>
 <ol style="list-style-type: decimal">
-<li>Aprite il browser e andate sulla home page di <tt>RStudio</tt> collegandovi all’indirizzo <a href="https://www.rstudio.com" class="uri">https://www.rstudio.com</a> (si veda la Figura <a href="installazione-dei-software.html#fig:RStudio-hp">1.4</a>).</li>
+<li>Aprite il browser e andate sulla home page di RStudio collegandovi all’indirizzo <a href="https://www.rstudio.com" class="uri">https://www.rstudio.com</a> (si veda la Figura <a href="installazione-dei-software.html#fig:RStudio-hp">1.4</a>).</li>
 </ol>
 <div class="figure" style="text-align: center"><span id="fig:RStudio-hp"></span>
-<img src="images/RStudio_hp.png" alt="Pagina iniziale del sito di &lt;tt&gt;RStudio&lt;/tt&gt;." width="90%" />
+<img src="images/RStudio_hp.png" alt="Pagina iniziale del sito di RStudio." width="90%" />
 <p class="caption">
-Figure 1.4: Pagina iniziale del sito di <tt>RStudio</tt>.
+Figura 1.4: Pagina iniziale del sito di RStudio.
 </p>
 </div>
 <ol start="2" style="list-style-type: decimal">
-<li>Cliccate su <tt>Download RStudio</tt> nel banner iniziale spostandovi così nella pagina riportata in Figura <a href="installazione-dei-software.html#fig:RStudio-download">1.5</a></li>
+<li>Cliccate su <code>Download RStudio</code> nel banner iniziale spostandovi così nella pagina riportata in Figura <a href="installazione-dei-software.html#fig:RStudio-download">1.5</a></li>
 </ol>
 <div class="figure" style="text-align: center"><span id="fig:RStudio-download"></span>
-<img src="images/RStudio_download.png" alt="Pagina per il download di &lt;tt&gt;RStudio&lt;/tt&gt;." width="90%" />
+<img src="images/RStudio_download.png" alt="Pagina per il download di RStudio." width="90%" />
 <p class="caption">
-Figure 1.5: Pagina per il download di <tt>RStudio</tt>.
+Figura 1.5: Pagina per il download di RStudio.
 </p>
 </div>
 <ol start="3" style="list-style-type: decimal">
-<li>Cliccate quindi sul pulsante di download relativo a <tt>RStudio Desktop Open Source License</tt>, la versione gratuita (si veda la Figura <a href="installazione-dei-software.html#fig:RStudio-installer">1.6</a>)</li>
+<li>Cliccate quindi sul pulsante di download relativo a <code>RStudio Desktop Open Source License</code>, la versione gratuita (si veda la Figura <a href="installazione-dei-software.html#fig:RStudio-installer">1.6</a>)</li>
 </ol>
 <div class="figure" style="text-align: center"><span id="fig:RStudio-installer"></span>
-<img src="images/RStudio_installer.png" alt="Pagina per il download di &lt;tt&gt;RStudio&lt;/tt&gt;." width="90%" />
+<img src="images/RStudio_installer.png" alt="Pagina per il download di RStudio." width="90%" />
 <p class="caption">
-Figure 1.6: Pagina per il download di <tt>RStudio</tt>.
+Figura 1.6: Pagina per il download di RStudio.
 </p>
 </div>
 <ol start="4" style="list-style-type: decimal">
-<li>Cliccate infine sul link <tt>RStudio 1.1.456 - Windows Vista/7/8/10</tt>, con cui scaricherete un file eseguibile denominato <tt>RStudio 1.1.456.exe</tt><a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a>.</li>
+<li>Cliccate infine sul link <code>RStudio 1.1.456 - Windows Vista/7/8/10</code>, con cui scaricherete un file eseguibile denominato <code>RStudio 1.1.456.exe</code><a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>.</li>
 <li>Una volta scaricato, fate doppio click sul file ed eseguite l’installazione.</li>
-<li>Una volta installato, lanciate <tt>RStudio</tt> come ogni altro software (per esempio, facendo doppio click sull’icona sul desktop, o selezionandolo dal manu Start di Windows).</li>
+<li>Una volta installato, lanciate RStudio come ogni altro software (per esempio, facendo doppio click sull’icona sul desktop, o selezionandolo dal manu Start di Windows).</li>
 </ol>
 </div>
 <div id="radiant-win" class="section level4">
-<h4><span class="header-section-number">1.1.1.3</span> Installazione di <tt>Radiant</tt></h4>
-<p>Le funzioni di <tt>R</tt> sono organizzate in pacchetti che fanno riferimento a specifiche tipologie di analisi. <tt>R</tt> viene fornito con un insieme base di pacchetti che consentono di effettuare le più comuni analisi statistiche. Tuttavia, è possibile ampliare le funzionalità base di <tt>R</tt> installando pacchetti aggiuntivi (i cosiddetti <em>contributed packages</em>). <tt>Radiant</tt> è di uno di questi pacchetti, il quale fornisce una GUI basata su browser per un buon numero di funzioni di <tt>R</tt>.</p>
-<p>La pagina web di <tt>Radiant</tt> si trova all’indirizzo <a href="https://vnijs.github.io/radiant" class="uri">https://vnijs.github.io/radiant</a> (vedi Figura <a href="installazione-dei-software.html#fig:Radiant">1.7</a>), da cui è possibile reperire tutte le informazioni sull’installazione e sull’uso del pacchetto. In questo manuale presenteremo solo le funzionalità di <tt>Radiant</tt> (così come di <tt>R</tt> e <tt>RStudio</tt>) che sono rilevanti per il nostro corso.</p>
+<h4><span class="header-section-number">1.1.1.3</span> Installazione di Radiant</h4>
+<p>Le funzioni di R sono organizzate in pacchetti che fanno riferimento a specifiche tipologie di analisi. R viene fornito con un insieme base di pacchetti che consentono di effettuare le più comuni analisi statistiche. Tuttavia, è possibile ampliare le funzionalità base di R installando pacchetti aggiuntivi (i cosiddetti <em>contributed packages</em>). Radiant è di uno di questi pacchetti, il quale fornisce una GUI basata su browser per un buon numero di funzioni di R.</p>
+<p>La pagina web di Radiant si trova all’indirizzo <a href="https://vnijs.github.io/radiant" class="uri">https://vnijs.github.io/radiant</a> (vedi Figura <a href="installazione-dei-software.html#fig:Radiant">1.7</a>), da cui è possibile reperire tutte le informazioni sull’installazione e sull’uso del pacchetto. In questo manuale presenteremo solo le funzionalità di Radiant (così come di R e RStudio) che sono rilevanti per il nostro corso.</p>
 <div class="figure" style="text-align: center"><span id="fig:Radiant"></span>
-<img src="images/Radiant.png" alt="Home page del pacchetto &lt;tt&gt;Radiant&lt;/tt&gt;." width="90%" />
+<img src="images/Radiant.png" alt="Home page del pacchetto Radiant." width="90%" />
 <p class="caption">
-Figure 1.7: Home page del pacchetto <tt>Radiant</tt>.
+Figura 1.7: Home page del pacchetto Radiant.
 </p>
 </div>
-<p>Per installare <tt>Radiant</tt> è necessario avviare <tt>RStudio</tt> e nella finestra denominata <tt>Console</tt> (ovvero nella finestra che si trova nella metà sinistra dell’applicazione; si veda la Figura <a href="lapplicazione-rstudio.html#fig:RStudio">1.14</a>) è necessario digitare il seguente comando<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a>:</p>
+<p>Per installare Radiant è necessario avviare RStudio e nella finestra denominata <code>Console</code> (ovvero nella finestra che si trova nella metà sinistra dell’applicazione; si veda la Figura <a href="lapplicazione-rstudio.html#fig:RStudio">1.14</a>) è necessario digitare il seguente comando<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a>:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">install.packages</span>(<span class="st">&quot;radiant&quot;</span>, <span class="dt">repos =</span> <span class="st">&quot;https://radiant-rstats.github.io/minicran/&quot;</span>, <span class="dt">type =</span> <span class="st">&#39;binary&#39;</span>)</code></pre></div>
-<p>Questo comando scaricherà ed installerà non solo <tt>Radiant</tt>, ma anche una serie di altri pacchetti da cui <tt>Radiant</tt> dipende.</p>
-<p>Alla fine dell’installazione potete avviare <tt>Radiant</tt> eseguendo nella <tt>Console</tt> il comando</p>
+<p>Questo comando scaricherà ed installerà non solo Radiant, ma anche una serie di altri pacchetti da cui Radiant dipende.</p>
+<p>Alla fine dell’installazione potete avviare Radiant eseguendo nella <code>Console</code> il comando</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span>radiant<span class="op">::</span><span class="kw">radiant</span>()</code></pre></div>
-<p>o alternativamente scegliendo il comando <tt>Start radiant (browser)</tt> che si trova cliccando sul pulsante <tt>Addins</tt> nella barra degli strumenti di <tt>RStudio</tt>. Una volta avviato, <tt>Radiant</tt> aprirà il vostro browser predefinito e mostrerà la schermata riportata in Figura <a href="installazione-dei-software.html#fig:Radiant-start">1.8</a>. Per interrompere la sessione di lavoro in <tt>Radiant</tt> è sufficiente scegliere <tt>Stop</tt> dal menu che riporta il simbolo di on/off nella barra dei menu in alto.</p>
+<p>o alternativamente scegliendo il comando <code>Start radiant (browser)</code> che si trova cliccando sul pulsante <code>Addins</code> nella barra degli strumenti di RStudio. Una volta avviato, Radiant aprirà il vostro browser predefinito e mostrerà la schermata riportata in Figura <a href="installazione-dei-software.html#fig:Radiant-start">1.8</a>. Per interrompere la sessione di lavoro in Radiant è sufficiente scegliere <code>Stop</code> dal menu che riporta il simbolo di on/off nella barra dei menu in alto.</p>
 <div class="figure" style="text-align: center"><span id="fig:Radiant-start"></span>
-<img src="images/Radiant_start.png" alt="Schermata di avvio del pacchetto &lt;tt&gt;Radiant&lt;/tt&gt;." width="90%" />
+<img src="images/Radiant_start.png" alt="Schermata di avvio del pacchetto Radiant." width="90%" />
 <p class="caption">
-Figure 1.8: Schermata di avvio del pacchetto <tt>Radiant</tt>.
+Figura 1.8: Schermata di avvio del pacchetto Radiant.
 </p>
 </div>
-<p>La pagina web <a href="https://radiant-rstats.github.io/docs/tutorials.html" class="uri">https://radiant-rstats.github.io/docs/tutorials.html</a> contiene una serie di video tutorial su come installare ed utilizzare <tt>Radiant</tt>.</p>
+<p>La pagina web <a href="https://radiant-rstats.github.io/docs/tutorials.html" class="uri">https://radiant-rstats.github.io/docs/tutorials.html</a> contiene una serie di video tutorial su come installare ed utilizzare Radiant.</p>
 </div>
 </div>
 <div id="installazione-su-mac" class="section level3">
 <h3><span class="header-section-number">1.1.2</span> Installazione su Mac</h3>
 <div id="download-e-installazione-di-r-1" class="section level4">
-<h4><span class="header-section-number">1.1.2.1</span> Download e installazione di <tt>R</tt></h4>
+<h4><span class="header-section-number">1.1.2.1</span> Download e installazione di R</h4>
 <ol style="list-style-type: decimal">
 <li><p>Aprite il vostro browser e andate sulla home page del <em>Comprehensive R Archive Network</em> (CRAN), che trovate all’indirizzo <a href="https://cran.r-project.org" class="uri">https://cran.r-project.org</a> (si veda la Figura <a href="installazione-dei-software.html#fig:CRAN">1.1</a>).</p></li>
-<li><p>Fate click sul link <tt>Download R for (Mac) OS X</tt> e sarete reindirizzati alla pagina web mostrata nella Figura <a href="installazione-dei-software.html#fig:CRAN-Mac">1.9</a>.</p></li>
+<li><p>Fate click sul link <code>Download R for (Mac) OS X</code> e sarete reindirizzati alla pagina web mostrata nella Figura <a href="installazione-dei-software.html#fig:CRAN-Mac">1.9</a>.</p></li>
 </ol>
 <div class="figure" style="text-align: center"><span id="fig:CRAN-Mac"></span>
-<img src="images/CRAN_Mac.png" alt="Pagina del CRAN da cui scaricare la versione di &lt;tt&gt;R&lt;/tt&gt; per Mac." width="90%" />
+<img src="images/CRAN_Mac.png" alt="Pagina del CRAN da cui scaricare la versione di R per Mac." width="90%" />
 <p class="caption">
-Figure 1.9: Pagina del CRAN da cui scaricare la versione di <tt>R</tt> per Mac.
+Figura 1.9: Pagina del CRAN da cui scaricare la versione di R per Mac.
 </p>
 </div>
 <ol start="3" style="list-style-type: decimal">
-<li>Fate click sul link <tt>R 3.5.1.pkg</tt><a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a>. Questa operazione scaricherà un file eseguibile chiamato <tt>R 3.5.1.pkg</tt>.</li>
+<li>Fate click sul link <code>R 3.5.1.pkg</code><a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a>. Questa operazione scaricherà un file eseguibile chiamato <code>R 3.5.1.pkg</code>.</li>
 <li>Una volta scaricato, fate doppio click sul file ed eseguite l’installazione.</li>
 <li>Durante la procedura di installazione vi consigliamo di usare le impostazioni di default proposte.</li>
-<li>Una volta installato, lanciate <tt>R</tt> come ogni altro software (tipicamente facendo doppio click sulla sua icona nella cartella <tt>Applicazioni</tt>).</li>
+<li>Una volta installato, lanciate R come ogni altro software (tipicamente facendo doppio click sulla sua icona nella cartella <code>Applicazioni</code>).</li>
 </ol>
 </div>
 <div id="download-e-installazione-di-rstudio-1" class="section level4">
-<h4><span class="header-section-number">1.1.2.2</span> Download e installazione di <tt>RStudio</tt></h4>
-<p><tt>RStudio</tt> è un tipo di applicazione che i programmatori chiamano <em>integrated development environment</em> (IDE), ovvero un ambiente di sviluppo per <tt>R</tt>. Un IDE è una cosa diversa da un’interfaccia grafica (<em>graphical user interface</em>, GUI), la quale fornisce uno strumento per interagire con un’applicazione e visualizzarne gli output.</p>
-<p>Come abbiamo detto, non sarebbe strettamente necessario passare per l’installazione di <tt>RStudio</tt>, ma ciò rende più agevole l’utilizzo degli strumenti di cui parleremo successivamente.</p>
+<h4><span class="header-section-number">1.1.2.2</span> Download e installazione di RStudio</h4>
+<p>RStudio è un tipo di applicazione che i programmatori chiamano <em>integrated development environment</em> (IDE), ovvero un ambiente di sviluppo per R. Un IDE è una cosa diversa da un’interfaccia grafica (<em>graphical user interface</em>, GUI), la quale fornisce uno strumento per interagire con un’applicazione e visualizzarne gli output.</p>
+<p>Come abbiamo detto, non sarebbe strettamente necessario passare per l’installazione di RStudio, ma ciò rende più agevole l’utilizzo degli strumenti di cui parleremo successivamente.</p>
 <ol style="list-style-type: decimal">
-<li>Aprite il browser e andate sulla home page di <tt>RStudio</tt> collegandovi all’indirizzo <a href="https://www.rstudio.com" class="uri">https://www.rstudio.com</a> (si veda la Figura <a href="installazione-dei-software.html#fig:RStudio-hp">1.4</a>).</li>
-<li>Cliccate su <tt>Download RStudio</tt> nel banner iniziale spostandovi così nella pagina riportata in Figura <a href="installazione-dei-software.html#fig:RStudio-download">1.5</a></li>
-<li>Cliccate quindi sul pulsante di download relativo a <tt>RStudio Desktop Open Source License</tt>, la versione gratuita (si veda la Figura <a href="installazione-dei-software.html#fig:RStudio-installer">1.6</a>)</li>
-<li>Cliccate infine sul link <tt>RStudio 1.1.456 - Mac OS X 10.6+ (64-bit)</tt>, con cui scaricherete un file eseguibile denominato <tt>RStudio 1.1.456.dmg</tt><a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a>.</li>
+<li>Aprite il browser e andate sulla home page di RStudio collegandovi all’indirizzo <a href="https://www.rstudio.com" class="uri">https://www.rstudio.com</a> (si veda la Figura <a href="installazione-dei-software.html#fig:RStudio-hp">1.4</a>).</li>
+<li>Cliccate su <code>Download RStudio</code> nel banner iniziale spostandovi così nella pagina riportata in Figura <a href="installazione-dei-software.html#fig:RStudio-download">1.5</a></li>
+<li>Cliccate quindi sul pulsante di download relativo a <code>RStudio Desktop Open Source License</code>, la versione gratuita (si veda la Figura <a href="installazione-dei-software.html#fig:RStudio-installer">1.6</a>)</li>
+<li>Cliccate infine sul link <code>RStudio 1.1.456 - Mac OS X 10.6+ (64-bit)</code>, con cui scaricherete un file eseguibile denominato <code>RStudio 1.1.456.dmg</code><a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a>.</li>
 <li>Una volta scaricato, fate doppio click sul file appena scaricato ed eseguite l’installazione.</li>
-<li>Una volta installato, lanciate <tt>RStudio</tt> come ogni altro software, ovvero facendo doppio click sull’icona nella cartella <tt>Applicazioni</tt>.</li>
+<li>Una volta installato, lanciate RStudio come ogni altro software, ovvero facendo doppio click sull’icona nella cartella <code>Applicazioni</code>.</li>
 </ol>
 </div>
 <div id="radiant-mac" class="section level4">
-<h4><span class="header-section-number">1.1.2.3</span> Installazione di <tt>Radiant</tt></h4>
-<p>Le funzioni di <tt>R</tt> sono organizzate in pacchetti che fanno riferimento a specifiche tipologie di analisi. <tt>R</tt> viene fornito con un insieme base di pacchetti, che consentono di effettuare le più comuni analisi statistiche. Tuttavia, è possibile ampliare le funzionalità base di <tt>R</tt> installando pacchetti aggiuntivi (i cosiddetti <em>contributed packages</em>). <tt>Radiant</tt> è di uno di questi pacchetti, il quale fornisce una GUI basata su browser per un buon numero di funzioni di <tt>R</tt>.</p>
-<p>La pagina web di <tt>Radiant</tt> si trova all’indirizzo <a href="https://vnijs.github.io/radiant" class="uri">https://vnijs.github.io/radiant</a> (vedi Figura <a href="installazione-dei-software.html#fig:Radiant">1.7</a>), da cui è possibile reperire tutte le informazioni sull’installazione e sull’uso del pacchetto. In questo manuale presenteremo solo le funzionalità di <tt>Radiant</tt> (così come di <tt>R</tt> e <tt>RStudio</tt>) che sono rilevanti per il nostro corso.</p>
-<p>Per installare <tt>Radiant</tt> è necessario avviare <tt>RStudio</tt> e nella finestra denominata <tt>Console</tt> (ovvero nella finestra che si trova nella metà sinistra dell’applicazione) è necessario digitare il seguente comando<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a>:</p>
+<h4><span class="header-section-number">1.1.2.3</span> Installazione di Radiant</h4>
+<p>Le funzioni di R sono organizzate in pacchetti che fanno riferimento a specifiche tipologie di analisi. R viene fornito con un insieme base di pacchetti, che consentono di effettuare le più comuni analisi statistiche. Tuttavia, è possibile ampliare le funzionalità base di R installando pacchetti aggiuntivi (i cosiddetti <em>contributed packages</em>). Radiant è di uno di questi pacchetti, il quale fornisce una GUI basata su browser per un buon numero di funzioni di R.</p>
+<p>La pagina web di Radiant si trova all’indirizzo <a href="https://vnijs.github.io/radiant" class="uri">https://vnijs.github.io/radiant</a> (vedi Figura <a href="installazione-dei-software.html#fig:Radiant">1.7</a>), da cui è possibile reperire tutte le informazioni sull’installazione e sull’uso del pacchetto. In questo manuale presenteremo solo le funzionalità di Radiant (così come di R e RStudio) che sono rilevanti per il nostro corso.</p>
+<p>Per installare Radiant è necessario avviare RStudio e nella finestra denominata <code>Console</code> (ovvero nella finestra che si trova nella metà sinistra dell’applicazione) è necessario digitare il seguente comando<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a>:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">install.packages</span>(<span class="st">&quot;radiant&quot;</span>, <span class="dt">repos =</span> <span class="st">&quot;https://radiant-rstats.github.io/minicran/&quot;</span>, <span class="dt">type =</span> <span class="st">&#39;binary&#39;</span>)</code></pre></div>
-<p>Questo comando scaricherà ed installerà non solo <tt>Radiant</tt>, ma anche una serie di altri pacchetti da cui <tt>Radiant</tt> dipende.</p>
-<p>Alla fine dell’installazione potete avviare <tt>Radiant</tt> eseguendo nella <tt>Console</tt> il comando</p>
+<p>Questo comando scaricherà ed installerà non solo Radiant, ma anche una serie di altri pacchetti da cui Radiant dipende.</p>
+<p>Alla fine dell’installazione potete avviare Radiant eseguendo nella <code>Console</code> il comando</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span>radiant<span class="op">::</span><span class="kw">radiant</span>()</code></pre></div>
-<p>o alternativamente scegliendo il comando <tt>Start radiant (browser)</tt> che si trova nel menu <tt>Addins</tt> nella barra degli strumenti di <tt>RStudio</tt>. Una volta avviato, <tt>Radiant</tt> aprirà il vostro browser predefinito e mostrerà la schermata riportata in Figura <a href="installazione-dei-software.html#fig:Radiant-start">1.8</a>. Per interrompere la sessione di lavoro in <tt>Radiant</tt> è sufficiente scegliere <tt>Stop</tt> dal menu che riporta il simbolo di on/off nella barra dei menu in alto.</p>
-<p>La pagina web <a href="https://radiant-rstats.github.io/docs/tutorials.html" class="uri">https://radiant-rstats.github.io/docs/tutorials.html</a> contiene una serie di video tutorial su come installare ed utilizzare <tt>Radiant</tt>.</p>
+<p>o alternativamente scegliendo il comando <code>Start radiant (browser)</code> che si trova nel menu <code>Addins</code> nella barra degli strumenti di RStudio. Una volta avviato, Radiant aprirà il vostro browser predefinito e mostrerà la schermata riportata in Figura <a href="installazione-dei-software.html#fig:Radiant-start">1.8</a>. Per interrompere la sessione di lavoro in Radiant è sufficiente scegliere <code>Stop</code> dal menu che riporta il simbolo di on/off nella barra dei menu in alto.</p>
+<p>La pagina web <a href="https://radiant-rstats.github.io/docs/tutorials.html" class="uri">https://radiant-rstats.github.io/docs/tutorials.html</a> contiene una serie di video tutorial su come installare ed utilizzare Radiant.</p>
 </div>
 </div>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="2">
-<li id="fn2"><p>E’ molto probabile che le stesse istruzioni funzionino anche con versioni precedenti di Windows, ma non siamo in grado di garantirlo al 100%.<a href="installazione-dei-software.html#fnref2">↩</a></p></li>
-<li id="fn3"><p>Per tutta la durata del corso suggeriamo di utilizzare la versione 3.5.1. Pertanto, anche se fossero disponibili versioni successive, vi invitiamo ad installare sempre questa versione (le versioni precedenti di <tt>R</tt> possono essere recuperate cliccando sul link <tt>Previous releases</tt> visibile anche in Figura <a href="installazione-dei-software.html#fig:CRAN-first">1.3</a>).<a href="installazione-dei-software.html#fnref3">↩</a></p></li>
-<li id="fn4"><p>Vi ricordiamo ancora una volta che la versione che troverete nel momento in cui vi collegherete a questa pagina potrebbe essere diversa da quella qui riportata.<a href="installazione-dei-software.html#fnref4">↩</a></p></li>
-<li id="fn5"><p>Se doveste copiare e incollare il codice nella console, ricordatevi di cancellare il simbolo iniziale <tt>&gt;</tt>, che indentifica la cosiddetta riga di comando, ovvero il punto in cui inserire i comandi che si vogliono eseguire.<a href="installazione-dei-software.html#fnref5">↩</a></p></li>
-<li id="fn6"><p>Ribadiamo ancora una volta che la versione di <tt>R</tt> disponibile al momento del download potrebbe essere successiva alla 3.5.1. Tuttavia, per tutta la durata del corso suggeriamo di utilizzare la versione 3.5.1. Pertanto, anche se fossero disponibili versioni successive, vi invitiamo ad installare sempre questa versione (le versioni precedenti di <tt>R</tt> per Mac possono essere recuperate all’indirizzo <a href="https://cran.r-project.org/bin/macosx/el-capitan/base/" class="uri">https://cran.r-project.org/bin/macosx/el-capitan/base/</a>).<a href="installazione-dei-software.html#fnref6">↩</a></p></li>
-<li id="fn7"><p>Ricordiamo ancora una volta che la versione che troverete nel momento in cui vi collegherete a questa pagina potrebbe essere diversa da quella qui riportata.<a href="installazione-dei-software.html#fnref7">↩</a></p></li>
-<li id="fn8"><p>Se doveste copiare e incollare il codice nella console, ricordatevi di cancellare il simbolo iniziale <tt>&gt;</tt>, che indentifica la cosiddetta riga di comando, ovvero il punto in cui inserire i comandi che si vogliono eseguire.<a href="installazione-dei-software.html#fnref8">↩</a></p></li>
+<ol start="1">
+<li id="fn1"><p>E’ molto probabile che le stesse istruzioni funzionino anche con versioni precedenti di Windows, ma non siamo in grado di garantirlo al 100%.<a href="installazione-dei-software.html#fnref1">↩</a></p></li>
+<li id="fn2"><p>Per tutta la durata del corso suggeriamo di utilizzare la versione 3.5.1. Pertanto, anche se fossero disponibili versioni successive, vi invitiamo ad installare sempre questa versione (le versioni precedenti di R possono essere recuperate cliccando sul link <code>Previous releases</code> visibile anche in Figura <a href="installazione-dei-software.html#fig:CRAN-first">1.3</a>).<a href="installazione-dei-software.html#fnref2">↩</a></p></li>
+<li id="fn3"><p>Vi ricordiamo ancora una volta che la versione che troverete nel momento in cui vi collegherete a questa pagina potrebbe essere diversa da quella qui riportata.<a href="installazione-dei-software.html#fnref3">↩</a></p></li>
+<li id="fn4"><p>Se doveste copiare e incollare il codice nella console, ricordatevi di cancellare il simbolo iniziale <code>&gt;</code>, che indentifica la cosiddetta riga di comando, ovvero il punto in cui inserire i comandi che si vogliono eseguire.<a href="installazione-dei-software.html#fnref4">↩</a></p></li>
+<li id="fn5"><p>Ribadiamo ancora una volta che la versione di R disponibile al momento del download potrebbe essere successiva alla 3.5.1. Tuttavia, per tutta la durata del corso suggeriamo di utilizzare la versione 3.5.1. Pertanto, anche se fossero disponibili versioni successive, vi invitiamo ad installare sempre questa versione (le versioni precedenti di R per Mac possono essere recuperate all’indirizzo <a href="https://cran.r-project.org/bin/macosx/el-capitan/base/" class="uri">https://cran.r-project.org/bin/macosx/el-capitan/base/</a>).<a href="installazione-dei-software.html#fnref5">↩</a></p></li>
+<li id="fn6"><p>Ricordiamo ancora una volta che la versione che troverete nel momento in cui vi collegherete a questa pagina potrebbe essere diversa da quella qui riportata.<a href="installazione-dei-software.html#fnref6">↩</a></p></li>
+<li id="fn7"><p>Se doveste copiare e incollare il codice nella console, ricordatevi di cancellare il simbolo iniziale <code>&gt;</code>, che indentifica la cosiddetta riga di comando, ovvero il punto in cui inserire i comandi che si vogliono eseguire.<a href="installazione-dei-software.html#fnref7">↩</a></p></li>
 </ol>
 </div>
             </section>
@@ -386,7 +391,7 @@ Figure 1.9: Pagina del CRAN da cui scaricare la versione di <tt>R</tt> per Mac.
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
-"github": true,
+"github": false,
 "facebook": false,
 "twitter": true,
 "google": false,
